@@ -68,14 +68,14 @@ function Home() {
   const progressPercent = ((currentStep - 1) / (steps.length - 1)) * 100;
 
   return (
-    <>
+    <div className='body'>
     <div className="afterNavBar">
       <h1>ROADMAP</h1>
       <Link to='Roadmap'><button>Roadmap</button></Link>
     </div>
     <div className="mt-5">
-      <h6 className="head text-center">Road Map</h6>
-      <h2 className="text-white mb-5 text-center">The Journey of Dalilak</h2>
+      <h6 className="head text-center fs-5">Road Map</h6>
+      <h2 className="text-white mb-5 text-center fs-2">The Journey of Dalilak</h2>
 
       <div className="progress-container">
         <div className="progress-background">
@@ -143,10 +143,8 @@ function Home() {
         <img src='/src/images/mail.png' className='img'></img>
       </div>
 
-      <img src="/src/images/Dalilak7.png" alt="Dalilak" ></img>
 
-
-    </>
+    </div>
   );
 }
 

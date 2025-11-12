@@ -1,7 +1,7 @@
-body {
-  background-color: rgba(15, 5, 29);
+/* .body {
+  background-color: rgb(15, 5, 29);
   color: white;
-}
+} */
 
 body::selection{
   color: rgb(182, 110, 188);
@@ -99,14 +99,14 @@ body::selection{
 }
 
 .Buttonsteps {
-  background-color: rgba(15, 5, 29);
-  border-color: rgba(192, 191, 191, 0.3);
-  color: rgb(173, 172, 172);
+  background-color: rgb(15, 5, 29) !important;
+  border-color: rgb(192, 191, 191, 0.3) !important;
+  color: rgb(173, 172, 172) !important;
 }
 
 .Buttonsteps:hover {
-  background-color: #9B3DFF;
-  border-color:#9B3DFF ;
+  background-color: #9B3DFF !important;
+  border-color:#9B3DFF !important;
 }
 
 .progress-container {

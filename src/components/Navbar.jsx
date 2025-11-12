@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import "../App.css"
+import '../styles/navBar.css'
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import Logo from "../assets/Logo.jpg";

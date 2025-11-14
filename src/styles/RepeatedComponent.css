@@ -1,0 +1,26 @@
+.rep-comp-container{
+    border: 1px solid rgb(53, 9, 65);
+    width: 60%;
+    height: 35vh;
+    border-radius: 19px;
+    padding: 50px;
+    background: linear-gradient(to right, #33285c, #4a2a7d, rgb(130, 57, 107, 0.5));
+    margin-bottom: 10rem;
+    
+}
+.mybutn{
+    width: 37%;
+    height: 35%;
+    border-radius: 12px !important;
+    background-color: #F254D6 !important;
+    display: flex;
+    justify-content: space-around !important;
+    text-transform: capitalize !important;
+}
+.mybutn:hover{
+    background-color: #e64eca !important;
+}
+
+.mytxt{
+    font-weight: bold;
+}

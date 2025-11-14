@@ -11,7 +11,7 @@ function Navbar() {
       <div className="  p-3  d-flex  justify-content-between  navbar navbarcontainer">
         <div className="container">
           <div>
-            <img src={Logo} alt="Logo" className="logo" />
+            <img src='/src/images/Dalilak.png' alt="Logo" className="logo" />
           </div>
 
           <div className="d-flex gap-5 navbar navbarwords">

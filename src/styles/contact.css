@@ -1,0 +1,72 @@
+.headcontact{
+    font-size: 48px !important;
+    font-weight: bold !important;
+}
+.touch{
+    
+    background: linear-gradient(90deg, rgb(145, 56, 234), rgb(233, 57, 167));;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.form{
+    background-color: rgb(29, 19, 58) !important;
+    border: 0.1px solid rgba(141, 107, 251,0.7);
+    color: #eee !important;
+    line-height: 31px;
+}
+::placeholder{
+    color: #aaa !important;
+    font-size: 16px !important;
+}
+input,textarea{
+    background-color: rgb(26, 22, 40) !important;
+    border: 0.1px solid rgba(138, 102, 255, 0.8) !important;
+    border-radius: 14px !important;
+}
+input{
+    height: 54px;
+}
+textarea{
+    height: 150px;
+}
+h1{
+    font-size: 25px !important;
+}
+p{
+    color:#cdc7d2 !important;
+}
+.phead{
+    color: #cdc7d2 !important;
+    font-size: 18px !important;
+    width: 680px !important;
+    text-align: center;
+}
+.formButton{
+    background-color: rgba(138, 71, 206,1);
+    height: 50px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    color: white;
+    border-radius: 14px;
+}
+.icon-box {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  color: #aaa;
+  background: linear-gradient(to top left, rgb(145, 56, 234), rgb(233, 57, 167))!important;
+}
+
+.info-item h5 {
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+.info-item p {
+  font-size: 16px;
+}

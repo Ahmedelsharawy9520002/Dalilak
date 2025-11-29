@@ -18,27 +18,27 @@ function Navbar() {
 
           <div className="d-flex gap-5 navbar navbarwords ">
             <div>
-              <NavLink to="/" >
+              <NavLink to="/"className={({ isActive }) => isActive ? "active-link" : ""} >
                 Home
               </NavLink>
             </div>
             <div>
-              <NavLink to="/About" >
+              <NavLink to="/About" className={({ isActive }) => isActive ? "active-link" : ""}>
                 About
               </NavLink>
             </div>
             <div>
-              <NavLink to="/Roadmaps" >
+              <NavLink to="/Roadmaps" className={({ isActive }) => isActive ? "active-link" : ""}>
                 Roadmaps
               </NavLink>
             </div>
             <div>
-              <NavLink to="/Dashboard" >
+              <NavLink to="/Dashboard" className={({ isActive }) => isActive ? "active-link" : ""}>
                 Dashboard
               </NavLink>
             </div>
             <div>
-              <NavLink to="/Contact">
+              <NavLink to="/Contact"className={({ isActive }) => isActive ? "active-link" : ""}>
               Contact
               </NavLink>
               

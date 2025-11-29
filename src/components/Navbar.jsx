@@ -5,16 +5,18 @@ import '../styles/navBar.css'
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import Logo from "../assets/Logo.jpg";
+import { BookOpen, Menu, X, Sun, Moon, Languages } from "lucide-react"
+import 'bootstrap/dist/css/bootstrap.min.css';
 function Navbar() {
   return (
     <>
-      <div className="  p-3  d-flex  justify-content-between  navbar navbarcontainer">
+      <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
         <div className="container">
-          <div>
-            <img src='/src/images/Dalilak.png' alt="Logo" className="logo" />
-          </div>
+          <NavLink href="/" className="flex items-center gap-2 group logo">
+            <span className="booklogo"><BookOpen  /></span> <span className="Logoname">dalilak</span>
+          </NavLink>
 
-          <div className="d-flex gap-5 navbar navbarwords">
+          <div className="d-flex gap-5 navbar navbarwords ">
             <div>
               <NavLink to="/" >
                 Home
@@ -26,8 +28,13 @@ function Navbar() {
               </NavLink>
             </div>
             <div>
-              <NavLink to="/Roadmap" >
-                Roadmap
+              <NavLink to="/Roadmaps" >
+                Roadmaps
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to="/Dashboard" >
+                Dashboard
               </NavLink>
             </div>
             <div>
@@ -38,13 +45,12 @@ function Navbar() {
             </div>
           </div>
           <div className="d-flex align-items-center gap-2 ">
-              <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  className="searchinput"
-              />
-              <Button variant="none" className="navbarsearch">Search</Button>
+            
+            <button className="navbarthemebtn"><Sun  className="sun"/></button>
+            <button className="  navbarlanguagebtn"><Languages className="lang" /><span className="ennavbar"> EN</span></button>
+            <button className=" navbarloginbtn">Login</button>
+            <button className=" navbarsignupbtn">Sign Up</button>
+              
           </div>
 
         </div>

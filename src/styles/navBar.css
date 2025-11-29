@@ -1,68 +1,122 @@
-/* *{
-    background-color: rgb(15, 5, 29);
-} */
-
-.navbarcontainer {
-  background-color: rgb(15, 5, 29); 
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+.navbar_content{
+  background-color: rgb(13, 11, 26);
+  border-bottom: 1px solid ;
+  border-color: rgb(36, 27, 66);
+  position: sticky !important;
+  top: 0;
+  z-index: 100;
+}
 .navbarwords a {
   position: relative;
-  color: #eee;
+  color: rgb(148, 147, 155);
   text-decoration: none;
-  transition: color 0.7s ease-in-out;
+  font-weight: 600;
 }
 
-.navbarwords a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background-color: rgb(146, 62, 111);
-    transition: width 0.5s ease-in-out;
+.navbarwords a:hover{
+  color: rgb(255, 255, 245);
+}
+.navbarwords a:focus{
+  color: rgb(161, 69, 255);
 }
 
-.navbarwords a:hover::after,
-.navbarwords a.active::after {
-  width: 100%;
+.logo{
+  text-decoration: none;
+  background-color: transparent;
+}
+.navbarsignupbtn{
+  background-color: #a145ff ;
+  color:rgb(255, 255, 245);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+
+}
+.navbarsignupbtn:hover{
+  background-color: rgb(146, 63, 233);
+}
+.navbarloginbtn{
+  background-color: transparent ;
+  color: rgb(255, 255, 245);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin: 0px 4px;
+}
+.navbarloginbtn:hover{
+  background-color: rgb(44, 28, 91);
 }
 
-.navbarwords a:hover ,
-.navbarwords a.active {
-  color: rgb(146, 62, 111);
+.navbarthemebtn{
+  background-color: transparent ;
+  color:rgb(161, 69, 255);
+  border: none;
+  padding: 7px 7px;
+  border-radius: 10px;
+  margin: 0px 4px;
+}
+.navbarthemebtn:hover{
+  background-color: rgb(44, 28, 91);
+  box-shadow: 0 2px 0 0 rgb(47, 25, 79);
+  filter: drop-shadow(0px 3px 3px  rgb(80, 37, 131));
 }
 
-.navbarsearch {
-  background: linear-gradient(to right, rgb(145, 56, 234), rgb(233, 57, 167))!important;
-  border: none !important;
-  color: white !important;
+.navbarlanguagebtn{
+  background-color: transparent ;
+  color:rgb(161, 69, 255);
+  border: none;
+  padding: 7px 7px;
+  border-radius: 10px;
+  margin: 0px 4px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.searchinput{
-  background-color: transparent !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  color: white !important;
-  padding: 6px 10px !important;
-  border-radius: 6px !important;
-  transition: all 0.25s ease !important;
-}
-.searchinput:focus {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgb(146, 62, 111) !important;
-  box-shadow: 0 0 6px rgba(146, 62, 111, 0.7) !important;
-  outline: none !important;
-}
-.searchinput::placeholder {
-  color: rgba(255, 255, 255, 0.6) !important;
+.lang{
+  width: 20px;
 }
 
-.logo {
-  width: 170px;
-  height: 50px;
+.sun{
+  width: 20px;
+}
+
+.navbarlanguagebtn:hover{
+  background-color: rgb(44, 28, 91);
+  box-shadow: 0 2px 0 0 rgb(47, 25, 79);
+  filter: drop-shadow(0px 2px 3px  rgb(80, 37, 131));
+}
+
+.ennavbar{
+  color: rgb(255, 255, 245);
+}
+.Logoname{
+  background: linear-gradient(to right, rgb(163, 70, 254), rgb(250, 77, 204));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; 
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Trirong", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.booklogo{
+  color:black;
+  border-radius: 10px;
+  padding: 6px 5px;
+  background: linear-gradient(to bottom right,rgb(173, 73, 249), rgb(245, 79, 209));
+}
+.booklogo:hover{
+  box-shadow: 0 2px 0 0 rgb(47, 25, 79);
+  filter: drop-shadow(0px 5px 3px  rgb(80, 37, 131));
+}
+
+.logo:hover .booklogo {
+  box-shadow: 0 2px 0 0 rgb(47, 25, 79);
+  filter: drop-shadow(0px 5px 3px  rgb(80, 37, 131));
 }

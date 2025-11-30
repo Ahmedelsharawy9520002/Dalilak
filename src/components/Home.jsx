@@ -19,8 +19,8 @@ function Home() {
         <div className='cont container'>
             <div className='first-part d-flex flex-column align-items-center'>
                 <h1 className='header1'><span className='text-light'>Master</span> <span className='mycolor'>Computer Science</span></h1>
-                <h4 className='header2 text-light opacity-75'>Navigate your learning journey with expertly crafted roadmaps.
-                    From beginner fundamentals to expert mastery—find your path to success.</h4>
+                <h5 className='header2 text-light opacity-75'>Navigate your learning journey with expertly crafted roadmaps.
+                    From beginner fundamentals to expert mastery—find your path to success.</h5>
                 <span className='buttons d-flex gap-4'>
                     <Button variant="contained" className='butn1 d-flex justify-content-evenly'><span>Get Started</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></Button>
                     <Button variant="outlined" className='butn2 d-flex justify-content-evenly'><span>Contact Us</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></Button>

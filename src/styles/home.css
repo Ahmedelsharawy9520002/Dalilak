@@ -19,14 +19,14 @@
 }
 
 .header2{
-    width: 60%;
+    width: 50%;
     margin-bottom: 3%;
 }
 
 
 .butn1, .butn2{
-    height: 70px;
-    width: 200px;
+    height: 60px;
+    width: 180px;
     border-radius: 12px !important;
     font-weight: bold !important;
 }
@@ -37,7 +37,7 @@
 }
 .butn1:hover{
    background: #9440EC !important; 
-   width: 205px;
+   width: 187px;
 }
 
 .butn2{

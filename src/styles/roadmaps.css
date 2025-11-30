@@ -33,6 +33,9 @@
 .level:hover{
     border: solid rgb(92, 47, 136) 1px;
 }
+.cardscont{
+    margin-bottom: 150px;
+}
 .roadmapsqrcont{
     border: solid #312e4e 1px;
     background-color: #1E1640;
@@ -40,9 +43,7 @@
     width: 342px;
     padding: 20px;
     border-radius: 20px;
-    margin-bottom: 20px;
     transition: all 0.1s ease;
-    cursor: default;
 
 }
 .roadmapsqrcont:hover{

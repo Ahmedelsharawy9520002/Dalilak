@@ -68,7 +68,7 @@ function Roadmaps(){
                 <div className='level'>Expert</div>
             </div>
             <p>Showing 6 of 6 roadmaps</p>
-            <div className='d-flex flex-wrap gap-4'>
+            <div className='cardscont d-flex flex-wrap gap-4'>
                 {
                 roadmaps.map((elem)=>(
                     <RoadmapSqr title={elem.title} desc={elem.description} level={elem.level} duration={elem.duration} steps={elem.steps} />

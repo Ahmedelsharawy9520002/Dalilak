@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import { Routes, Route } from "react-router-dom";
 import Roadmap from './components/Roadmap';
+import Roadmaps from './components/Roadmaps';
 import Home from './components/Home';
 import About from './components/About';
 import Footer from './components/Footer';
@@ -17,6 +18,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Roadmap" element={<Roadmap />} />
+        <Route path="/Roadmaps" element={<Roadmaps />} />
         <Route path="/Dashboard" element={<Dashboard />} />
 
       </Routes>

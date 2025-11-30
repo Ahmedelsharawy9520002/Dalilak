@@ -11,13 +11,13 @@ function Footer(){
     return(
 
 
-        <div className="footer-container roboto-font">
+        <div className="footer-container roboto-font ">
             <div className="footer-itself ">
-                <Container fluid className='footer-table'> 
+                <Container fluid className='footer-table container'> 
                     <Row> 
 
                         <Col className='columns first-column'> 
-                            <img src={logo} alt="Company Logo" className="footer-logo"/>
+                            <img src={logo} alt="Company Logo" className="footer-logo "/>
                             <p className="footer-pargraph">
                                 Master computer science with expertly crafted roadmaps.
                             </p>
@@ -76,7 +76,7 @@ function Footer(){
                 </Container>
 
 
-                <div className='footer-bottom'>
+                <div className='footer-bottom container'>
                     <div className='copyrights'>© 2025 Dalilak. All rights reserved.</div>
                 
                     <div className='social-media'>

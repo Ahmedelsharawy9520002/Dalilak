@@ -9,9 +9,9 @@ import { FiTarget } from "react-icons/fi";
 
 function Home() {
     const elements = [
-        {icon:< FiBookOpen className='myicon fs-4'/>, header:"Structured Learning Paths", p:"Follow carefully designed roadmaps that break down complex topics into manageable steps."},
-        {icon:< SlEnergy className='myicon fs-4'/>, header:"Three Difficulty Levels", p:"Choose your path: Beginner, Intermediate, or Expert. Progress at your own pace."},
-        {icon:< FiTarget className='myicon fs-4'/>, header:"Goal-Oriented Learning", p:"Track your progress and achieve your learning objectives with detailed guidance."}
+        {icon:< FiBookOpen className='myicon fs-4 text-black'/>, header:"Structured Learning Paths", p:"Follow carefully designed roadmaps that break down complex topics into manageable steps."},
+        {icon:< SlEnergy className='myicon fs-4 text-black'/>, header:"Three Difficulty Levels", p:"Choose your path: Beginner, Intermediate, or Expert. Progress at your own pace."},
+        {icon:< FiTarget className='myicon fs-4 text-black'/>, header:"Goal-Oriented Learning", p:"Track your progress and achieve your learning objectives with detailed guidance."}
     ]
 
     return (
@@ -27,7 +27,7 @@ function Home() {
                 </span>
                 
             </div>
-            <div className='sec-part d-flex gap-4 justify-content-center'>
+            <div className='sec-part d-flex gap-4 justify-content-center '>
                 {
                     elements.map((val)=>(
                         <Infosqr icon={val.icon} header={val.header} p={val.p}  />

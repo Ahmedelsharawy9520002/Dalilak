@@ -13,13 +13,13 @@ function Navbar() {
     <>
       <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
         <div className="container px-5">
-          <NavLink href="/" className="flex items-center gap-2 group logo">
+          <NavLink to="/" className="flex items-center gap-2 group logo">
             <span className="booklogo"><BookOpen  /></span> <span className="Logoname">dalilak</span>
           </NavLink>
 
           <div className="d-flex gap-5 navbar navbarwords ">
             <div>
-              <NavLink to="/"className={({ isActive }) => isActive ? "active-link" : ""} >
+              <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""} >
                 Home
               </NavLink>
             </div>

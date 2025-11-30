@@ -19,7 +19,7 @@ function Navbar() {
 
           <div className="d-flex gap-5 navbar navbarwords ">
             <div>
-              <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""} >
+              <NavLink to="/Dalilak" className={({ isActive }) => isActive ? "active-link" : ""} >
                 Home
               </NavLink>
             </div>

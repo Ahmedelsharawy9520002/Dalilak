@@ -7,11 +7,12 @@ import { Button } from "react-bootstrap";
 import Logo from "../assets/Logo.jpg";
 import { BookOpen, Menu, X, Sun, Moon, Languages } from "lucide-react"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Dashboard from './Dashboard';
 function Navbar() {
   return (
     <>
       <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
-        <div className="container">
+        <div className="container px-5">
           <NavLink href="/" className="flex items-center gap-2 group logo">
             <span className="booklogo"><BookOpen  /></span> <span className="Logoname">dalilak</span>
           </NavLink>

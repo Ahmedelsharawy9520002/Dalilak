@@ -5,7 +5,7 @@
 }
 
 .navbar_content{
-  background-color: rgb(13, 11, 26);
+  background-color: rgba(13, 11, 26,0.98);
   border-bottom: 1px solid ;
   border-color: rgb(36, 27, 66);
   position: sticky !important;

@@ -9,7 +9,7 @@ function Roadmapsqr(props){
             <h5 className="mytitle fw-bold">{props.title}</h5>
             <p>{props.desc}</p>
             <div className="d-flex gap-2">
-                <p className="levelsqr">{props.level}</p>
+                <p className="levelsqr" level={props.level}>{props.level}</p>
                 <p className="duration">{props.duration}</p>
             </div>
             <p className="fs-small">{props.steps}</p>

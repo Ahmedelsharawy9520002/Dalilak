@@ -54,9 +54,13 @@
     border-radius: 12px;
     font-weight: 600;
     cursor: default;
+    user-select: none;
 }
 .level:hover{
     border: solid rgb(92, 47, 136) 1px;
+}
+.active{
+    background-color: #9763d2;
 }
 .cardscont{
     margin-bottom: 150px;
@@ -100,14 +104,26 @@
 }
 .levelsqr{
     border-radius: 10px;
-    border: 1px rgb(22, 158, 124) solid;
-    background-color: rgba(26, 151, 103, 0.5);
     padding: 0 5px 0 5px;
     height: 30px;
     font-size: small;
-    color: rgb(22, 158, 124) !important;
     display: flex;
     align-items: center;
+}
+.levelsqr[level="Beginner"]{
+    border: 1px rgb(22, 158, 124) solid;
+    background-color: rgba(26, 151, 103, 0.5);
+    color: rgb(22, 158, 124) !important;
+}
+.levelsqr[level="Intermediate"]{
+    border: 1px rgb(245, 93, 17) solid;
+    background-color: rgba(154, 100, 38, 0.5);
+    color: rgb(245, 93, 17) !important;
+}
+.levelsqr[level="Expert"]{
+    border: 1px rgb(241, 19, 90) solid;
+    background-color: rgba(166, 27, 83, 0.5);
+    color: rgb(241, 19, 90) !important;
 }
 .duration{
     border-radius: 10px;

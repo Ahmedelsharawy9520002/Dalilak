@@ -1,5 +1,6 @@
 import RoadmapSqr from './RoadmapSqr'
 import '../styles/roadmaps.css'
+import { useState } from 'react';
 
 
 function Roadmaps(){
@@ -54,6 +55,9 @@ function Roadmaps(){
                         },
                         
                     ];
+    const levels = ["All Roadmaps", "Beginner", "Intermediate", "Expert"];
+
+    const [activeIndex, setActiveIndex] = useState(0);
 
     return(
         <div className="container ">
@@ -64,10 +68,15 @@ function Roadmaps(){
                 <input type="text" className='searchinp' placeholder='        Search roadmaps by title or topic...' />
             </div>
             <div className="levels d-flex gap-3">
-                <div className='level'>All Roadmaps</div>
-                <div className='level'>Beginner</div>
-                <div className='level'>Intermidate</div>
-                <div className='level'>Expert</div>
+                {levels.map((item, index) => (
+                    <div
+                        key={index}
+                        className={activeIndex === index ? "level active" : "level"}
+                        onClick={() => setActiveIndex(index)}
+                    >
+                        {item}
+                    </div>
+                ))}
             </div>
             <p>Showing 6 of 6 roadmaps</p>
             <div className='cardscont d-flex flex-wrap gap-4'>

@@ -1,32 +1,21 @@
 .dashboard-container {
-  /* background-color: rgb(10, 8, 20); */
   min-height: 100vh;
   color: white;
 }
-
 .top-container {
   background-color: rgb(29, 19, 58);
-  height:23vh;
-  margin-left:0 !important;
-  padding-left:230px;
-  padding-right:200px;
+  height:20vh;
   padding-top:50px;
-  /* margin-top:0 !important; */
-  /* width: 130%; */
-  /* border: 1px solid rgba(141, 107, 251, 0.4); */
 }
-
 .top-container .welcome-title {
   font-size: 37px !important;
   font-weight: 700;
 }
-
 .top-container .welcome-sub {
   font-size: 17px;
   color: #ccc;
   margin-top: 5px;
 }
-
 .explore-btn {
   margin-right:30px;
   height: 46px;
@@ -36,10 +25,6 @@
   font-size: 16px;
   font-weight:500;
   border-radius: 12px;
-}
-
-.stats-section{
-    margin-left:200px;
 }
 .stat-card {
   background-color: rgb(29, 19, 58);
@@ -55,7 +40,6 @@
   font-size: 17px;
   color: #c7c2d2;
 }
-
 .stat-number {
   font-size: 32px;
   font-weight: 700;
@@ -63,21 +47,17 @@
   -webkit-text-fill-color: transparent;
   background-color:white;
 }
-
 .progress-card {
   background-color: rgb(29, 19, 58);
   border: 1px solid rgba(141, 107, 251, 0.5);
 }
-
 .progress-title {
   font-size: 22px;
   font-weight: 600;
 }
-
 .progress-level {
   color: #b9b4c2;
 }
-
 .progress-section{
     width: 1100px;
 }
@@ -87,7 +67,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .progress-bar-container {
   width: 100%;
   height: 9px;
@@ -96,14 +75,11 @@
   margin-top: 15px;
   overflow: hidden;
 }
-
 .progress-fill {
-  
   height: 100%;
   background: linear-gradient(90deg, rgb(145, 56, 234), rgb(233, 57, 167));
   border-radius: 10px;
 }
-
 .bottomDashboard{
     display:flex;
     flex-direction:column;
@@ -115,18 +91,16 @@
     width: 800px;
     height:250px;
     background-color: rgba(40, 27, 81, 1);
-  border: 1px solid rgba(141, 107, 251, 0.5);
+    border: 1px solid rgba(141, 107, 251, 0.5);
     border-radius:14px;
     margin-bottom: 60px;
 }
-
 .learn-btn{
     background-color:rgba(236, 72, 173, 1);
     margin-top:15px;
     width: 310px;
     font-size:26;
 }
-
 .endlogo{
     color:rgba(236, 72, 173, 1);
 }

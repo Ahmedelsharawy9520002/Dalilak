@@ -31,7 +31,7 @@ function Footer(){
                                     <NavLink to="/roadmaps" className="roboto-font">Roadmaps</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/aboutus" className="roboto-font">Dashboard</NavLink>
+                                    <NavLink to="/Dashboard" className="roboto-font">Dashboard</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/pricing" className="roboto-font">Pricing</NavLink>

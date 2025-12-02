@@ -28,6 +28,7 @@ input{
 }
 textarea{
     height: 150px;
+    resize: none;
 }
 h1{
     font-size: 25px !important;
@@ -42,7 +43,7 @@ p{
     text-align: center;
 }
 .formButton{
-    background-color: rgba(138, 71, 206,1);
+    background-color: rgb(161, 69, 255);
     height: 50px;
     text-align: center;
     font-size: 17px;
@@ -50,6 +51,10 @@ p{
     border: none;
     color: white;
     border-radius: 14px;
+}
+.formButton:hover{
+    background-color:rgb(148, 64, 235);
+
 }
 .icon-box {
   width: 45px;
@@ -59,7 +64,7 @@ p{
   align-items: center;
   border-radius: 14px;
   color: #aaa;
-  background: linear-gradient(to top left, rgb(145, 56, 234), rgb(233, 57, 167))!important;
+  background: linear-gradient(to bottom right, rgb(135, 79, 250), rgb(241, 81, 208)) !important;
 }
 
 .info-item h5 {
@@ -69,4 +74,8 @@ p{
 
 .info-item p {
   font-size: 16px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 9px rgba(138, 102, 255, 0.8);
 }

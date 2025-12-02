@@ -92,11 +92,11 @@ body{
 
 
 .icon {
-  background: linear-gradient(to right, #8f1ff8, #8f6aff, #ff53ac);
+  background: linear-gradient(to bottom right, rgb(133, 79, 251),rgb(244, 81, 208));
   border-radius: 10px;
   width: 50px;
   height: 50px;
-  color: #d5a6ff;
+  color: rgb(0, 0, 0);
   font-size: 28px;
   display: flex;
   align-items: center;

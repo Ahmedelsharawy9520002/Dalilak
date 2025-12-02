@@ -47,3 +47,12 @@
 .butn2:hover{
     background: linear-gradient(to right, rgba(117, 90, 239, 0.1), #1a113f) ; 
 }
+.readydiv Button{
+    height: 53px;
+    width: 260px;
+    font-size: 15px;
+}
+.readydiv Button:hover{
+    background-color: rgb(234, 72, 191);
+
+}

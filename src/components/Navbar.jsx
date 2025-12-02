@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <>
       <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
-        <div className="container px-5">
+        <div className="container ">
           <NavLink to="/" className="flex items-center gap-2 group logo">
             <span className="booklogo"><BookOpen  /></span> <span className="Logoname">dalilak</span>
           </NavLink>

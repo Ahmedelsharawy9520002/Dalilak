@@ -56,7 +56,7 @@ function Contact() {
 
             <div className="info-item d-flex align-items-center mb-4">
               <div className="icon-box">
-                <MdOutlineEmail size={25} color="rgba(74, 44, 124, 1)"/>
+                <MdOutlineEmail size={25} color="black"/>
               </div>
               <div className="ps-3">
                 <h5 className="text-white fw-bold">Email</h5>
@@ -66,7 +66,7 @@ function Contact() {
 
             <div className="info-item d-flex align-items-center mb-4">
               <div className="icon-box">
-                <MdOutlinePhone size={25} color="rgba(74, 44, 124, 1)" />
+                <MdOutlinePhone size={25} color="black" />
               </div>
               <div className="ps-3">
                 <h5 className="text-white fw-bold">Phone</h5>
@@ -76,7 +76,7 @@ function Contact() {
 
             <div className="info-item d-flex align-items-center mb-4">
               <div className="icon-box">
-                <MdOutlineLocationOn size={25} color="rgba(74, 44, 124, 1)" />
+                <MdOutlineLocationOn size={25} color="black" />
               </div>
               <div className="ps-3">
                 <h5 className="text-white fw-bold">Address</h5>

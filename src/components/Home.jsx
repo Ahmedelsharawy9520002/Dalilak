@@ -34,13 +34,13 @@ function Home() {
                     ))
                 }            
             </div>
-            <div className='third-part d-flex justify-content-center'>
+            <div className='third-part d-flex justify-content-center readydiv'>
                 <RepeatedComponent 
                 header="Ready to start your journey?" 
                 p="Choose your skill level and begin
                 mastering computer science concepts today."
                 btntxt="explore all roadmaps"
-                mysvg={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>}
+                mysvg={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>}
                 />
                 
             </div>

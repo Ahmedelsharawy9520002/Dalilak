@@ -51,11 +51,13 @@ function Roadmaps(){
                             level: "Expert",
                             duration: "14 weeks",
                             steps: "22 steps"
-                        }
+                        },
+                        
                     ];
 
     return(
-        <div className="container">
+        <div className="container ">
+            
             <h1 className='title'>Computer Science <span className='word'>Roadmaps</span></h1>
             <p className='desc'>Select your skill level and dive into a structured learning path designed to take you from beginner to expert.</p>
             <div className="search">

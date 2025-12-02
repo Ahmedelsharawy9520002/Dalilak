@@ -1,9 +1,10 @@
 import React from "react";
 import "../styles/about.css";
-
-import { FaBookOpen, FaMedal } from "react-icons/fa6";
+import { FiBookOpen } from "react-icons/fi";
+import { Award, Users} from "lucide-react"
 import { GoGoal } from "react-icons/go";
-import { BsPeopleFill } from "react-icons/bs";
+// import { FaMedal } from "react-icons/fa6";
+// import { BsPeopleFill } from "react-icons/bs";
 
 export default function About() {
   return (
@@ -34,7 +35,7 @@ export default function About() {
         <section className="cvals">
           <article className="corecard">
             <div className="icon">
-              <FaBookOpen />
+              <FiBookOpen />
             </div>
             <h3>Accessible Learning</h3>
             <p>
@@ -54,7 +55,7 @@ export default function About() {
 
           <article className="corecard">
             <div className="icon">
-              <BsPeopleFill />
+              <Users />
             </div>
             <h3>Community-Driven</h3>
             <p>
@@ -64,7 +65,7 @@ export default function About() {
 
           <article className="corecard">
             <div className="icon">
-              <FaMedal />
+              <Award />
             </div>
             <h3>Quality Content</h3>
             <p>

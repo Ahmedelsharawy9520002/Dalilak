@@ -18,6 +18,12 @@
 .searchinp{
     width: 1088px;
     margin-bottom: 33px;
+    background-color: rgb(15, 12, 29) !important;
+    border-color: rgb(60, 43, 106) !important;
+}
+.searchinp:focus{
+    border-color: rgb(159, 68, 252) !important;
+    color: rgb(255, 255, 241) !important;
 }
 .levels{
     margin-bottom: 60px;
@@ -48,7 +54,7 @@
 }
 .roadmapsqrcont:hover{
     border-color: #61348f;
-    background-color: #2a134e ; 
+    background-color: rgb(44, 28, 91) ; 
     box-shadow: 10px 25px 10px rgba(49, 30, 87, 0.1);
 }
 .roadmapsqrcont:hover .mytitle{

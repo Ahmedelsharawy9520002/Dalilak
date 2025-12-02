@@ -25,7 +25,7 @@ body{
 }
 
 .header .title {
-  font-size: 36px;
+  font-size: 39px;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -37,7 +37,7 @@ body{
 }
 
 .header .subt {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.5;
   max-width: 600px;
   margin: 0 auto 40px;
@@ -45,9 +45,11 @@ body{
 }
 
 .mission {
-  border: 1px solid #4d1f7a;
+  /* border: 1px solid #4d1f7a; */
+  border: 1px solid #443771;
   border-radius: 12px;
-  background-color: #15002c;
+  /* background-color: #15002c; */
+  background-color: #1c1338;
   padding: 25px 35px;
   margin-bottom: 50px;
   text-align: left;
@@ -57,18 +59,18 @@ body{
   color: #fff;
   font-weight: 600;
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 29px;
 }
 
 .mission p {
   line-height: 1.6;
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 15px;
-  color: #eee;
+  color: #e4e3e3;
 }
 
 .cvalstitle {
-  font-size: 22px;
+  font-size: 29px;
   font-weight: 600;
   margin-bottom: 25px;
   text-align: center;
@@ -82,8 +84,10 @@ body{
 }
 
 .corecard {
-  background-color: #15002c;
-  border: 1px solid #4d1f7a;
+  /* background-color: #15002c; */
+  background-color: #1c1338;
+  /* border: 1px solid #4d1f7a; */
+  border: 1px solid #443771;
   border-radius: 12px;
   padding: 25px;
   text-align: left;
@@ -108,25 +112,27 @@ body{
 .corecard h3 {
   margin: 0 0 10px 0;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 
 .corecard p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.4;
   color: #d9d9d9;
 }
 
 
 .stats {
-  background:#15002c ;
-  border: 1px solid #4d1f7a;
+  /* background:#15002c ; */
+  background-color: #1c1338;
+  /* border: 1px solid #4d1f7a; */
+  border: 1px solid #443771;
   border-radius: 12px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  padding: 25px;
+  padding: 35px;
   color: #b357ff;
   font-weight: 700;
   font-size: 15px;
@@ -136,14 +142,16 @@ body{
 
 
 .statcard h2 {
-  font-size: 30px;
+  font-size: 39px;
+  font-weight: bold;
   margin: 0 0 6px 0;
-  background: linear-gradient(to right, #8f1ff8, #8f6aff, #ff53ac);
+  /* background: linear-gradient(to right, #8f1ff8, #8f6aff, #ff53ac); */
+  background-color: #e057ff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .statcard p {
-  font-size: 12px;
+  font-size: 13px;
   color: #c9c9c9;
   margin: 0;
 }

@@ -15,22 +15,41 @@
     max-width: 650px;
     margin-bottom: 30px;
 }
+
 .searchinp{
     width: 1088px;
     margin-bottom: 33px;
-    background-color: rgb(15, 12, 29) !important;
-    border-color: rgb(60, 43, 106) !important;
+    /* background-color: rgb(15, 12, 29) !important; */
+    background-color:rgba(14, 12, 28, 0.5)  !important;
+    /* border-color:rgb(60, 43, 106) !important; */
+    border: 1px solid rgb(75, 55, 130) ;
+    border-radius: 12px !important;
 }
+
 .searchinp:focus{
-    border-color: rgb(159, 68, 252) !important;
+    border: 1px solid #a145ff !important;
+    box-shadow: none !important;
+    outline: none !important;
     color: rgb(255, 255, 241) !important;
+    padding-left: 25px;
 }
+
+
+/* .searchinp:focus{
+    /* border-color: rgb(159, 68, 252) !important; */
+    /* border: 2px solid rgb(60, 43, 106) !important; */
+    
+    /* color: rgb(255, 255, 241) !important; */
+   
+/* } */ 
 .levels{
     margin-bottom: 60px;
 }
 .level{
-    border: solid #312e4e 1px;
-    background-color: #1E1640;
+    /* border: solid #312e4e 1px; */
+    /* background-color: #281e55; */
+    background-color: #2c1c5b;
+    border: 1px solid rgba(141, 107, 251, 0.5);
     padding: 10px 20px 10px;
     border-radius: 12px;
     font-weight: 600;
@@ -66,7 +85,9 @@
 .iconcont{
     width: 297px;
     height: 80px;
-    background: linear-gradient(to bottom, #ff53ac, #6316ab);
+    /* background: linear-gradient(to bottom, #ff53ac, #6316ab); */
+    background: linear-gradient(80deg, rgb(145, 56, 234), rgb(233, 57, 167));
+    
     border-radius: 10px;
     margin-bottom: 20px;
 }

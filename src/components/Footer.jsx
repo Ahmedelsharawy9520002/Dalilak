@@ -17,7 +17,7 @@ function Footer(){
                     <Row> 
 
                         <Col className='columns first-column'> 
-                            <img src={logo} alt="Company Logo" className="footer-logo "/>
+                            <Link to='/Dalilak'><img src={logo} alt="Company Logo" className="footer-logo "/></Link>
                             <p className="footer-pargraph">
                                 Master computer science with expertly crafted roadmaps.
                             </p>

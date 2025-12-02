@@ -10,7 +10,7 @@ export default function About() {
   return (
 
     <div className="aboutpage">
-      <div className="contbox">
+      <div className="contbox container">
         <header className="header">
           <h1 className="title">
             About <span className="imp">Dalilak</span>

@@ -13,7 +13,7 @@ function Navbar() {
     <>
       <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
         <div className="container ">
-          <NavLink to="/" className="flex items-center gap-2 group logo">
+          <NavLink to="/Dalilak" className="flex items-center gap-2 group logo">
             <span className="booklogo"><BookOpen  /></span> <span className="Logoname">dalilak</span>
           </NavLink>
 

@@ -28,13 +28,13 @@ function Footer(){
                             <h4 className='footer-marketplace footer-heading roboto-font'>Product</h4>
                             <ul className='footer-list '>
                                 <li>
-                                    <NavLink to="/roadmaps" className="roboto-font">Roadmaps</NavLink>
+                                    <Link to="/roadmaps" className="roboto-font">Roadmaps</Link>
                                 </li>
                                 <li>
-                                    <NavLink to="/Dashboard" className="roboto-font">Dashboard</NavLink>
+                                    <Link to="/Dashboard" className="roboto-font">Dashboard</Link>
                                 </li>
                                 <li>
-                                    <NavLink to="/pricing" className="roboto-font">Pricing</NavLink>
+                                    <Link to="/pricing" className="roboto-font">Pricing</Link>
                                 </li>
                             </ul>
                         </Col>
@@ -44,13 +44,13 @@ function Footer(){
                             <h4 className='footer-heading roboto-font'>Resources</h4>
                             <ul className='footer-list'>
                                 <li>
-                                    <NavLink to="/blog" className="roboto-font">Blog</NavLink>
+                                    <Link to="/blog" className="roboto-font">Blog</Link>
                                 </li>
                                 <li>
-                                    <NavLink to="/documentation" className="roboto-font">Documentation</NavLink>
+                                    <Link to="/documentation" className="roboto-font">Documentation</Link>
                                 </li>
                                 <li>
-                                    <NavLink to="/community" className="roboto-font">Community</NavLink>
+                                    <Link to="/community" className="roboto-font">Community</Link>
                                 </li>
                                 
                             </ul>
@@ -61,13 +61,13 @@ function Footer(){
                             <h4 className='footer-heading roboto-font'>Legal</h4>
                             <ul className='footer-list'>
                                 <li>
-                                    <NavLink to="/privacypolicy" className="roboto-font">Privacy Policy</NavLink>
+                                    <Link to="/privacypolicy" className="roboto-font">Privacy Policy</Link>
                                 </li>
                                 <li>
-                                    <NavLink to="/Termsofservice" className="roboto-font">Terms of service</NavLink>
+                                    <Link to="/Termsofservice" className="roboto-font">Terms of service</Link>
                                 </li>
                                 <li>
-                                    <NavLink to="/contact" className="roboto-font">contact</NavLink>
+                                    <Link to="/contact" className="roboto-font">contact</Link>
                                 </li>
                             </ul>
                         </Col>

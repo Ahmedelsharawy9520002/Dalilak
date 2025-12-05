@@ -45,14 +45,28 @@ function Navbar() {
               
             </div>
           </div>
-          <div className="d-flex align-items-center gap-2 ">
+          {/* <div className="d-flex align-items-center gap-2 ">
             
             <button className="navbarthemebtn"><Sun  className="sun"/></button>
             <button className="  navbarlanguagebtn"><Languages className="lang" /><span className="ennavbar"> EN</span></button>
             <button className=" navbarloginbtn">Login</button>
             <button className=" navbarsignupbtn">Sign Up</button>
               
+          </div> */}
+
+          <div className="d-flex align-items-center gap-2 ">
+            <button className="navbarthemebtn"><Sun className="sun"/></button>
+            <button className="navbarlanguagebtn"><Languages className="lang" /><span className="ennavbar"> EN</span></button>
+            
+            <Link to="/login">
+              <button className="navbarloginbtn">Login</button>
+            </Link>
+
+            <Link to="/signup">
+              <button className="navbarsignupbtn">Sign Up</button>
+            </Link>
           </div>
+
 
         </div>
           

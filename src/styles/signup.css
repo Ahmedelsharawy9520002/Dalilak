@@ -35,7 +35,7 @@ body {
   display: flex;
   justify-content: center;  
   align-items: center;     
-  min-height: 130vh;        
+  min-height: 100vh;        
   background: linear-gradient(to bottom, #0a0720, #1c1145 50%, #0a0720);
 }
 

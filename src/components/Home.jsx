@@ -6,6 +6,7 @@ import RepeatedComponent from './RepeatedComponent';
 import { FiBookOpen } from "react-icons/fi";
 import { SlEnergy } from "react-icons/sl";
 import { FiTarget } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 function Home() {
     const elements = [
@@ -22,8 +23,12 @@ function Home() {
                 <h5 className='header2 text-light opacity-75'>Navigate your learning journey with expertly crafted roadmaps.
                     From beginner fundamentals to expert mastery—find your path to success.</h5>
                 <span className='buttons d-flex gap-4'>
-                    <Button variant="contained" className='butn1 d-flex justify-content-evenly'><span>Get Started</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></Button>
-                    <Button variant="outlined" className='butn2 d-flex justify-content-evenly'><span>Contact Us</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></Button>
+                    <Link to="/Roadmaps" className='homeroutes'>
+                        <Button variant="contained" className='butn1 d-flex justify-content-evenly'><span>Get Started</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></Button>
+                    </Link>
+                    <Link to="/Contact" className='homeroutes'>
+                        <Button variant="outlined" className='butn2 d-flex justify-content-evenly'><span>Contact Us</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></Button>
+                    </Link>
                 </span>
                 
             </div>

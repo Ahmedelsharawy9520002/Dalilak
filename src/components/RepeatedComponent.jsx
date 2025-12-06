@@ -1,6 +1,7 @@
 import React from "react"
 import Button from '@mui/material/Button';
 import '../styles/RepeatedComponent.css'
+import { Link } from "react-router-dom";
 
 function RepeatedComponent(props) {
 
@@ -10,7 +11,8 @@ function RepeatedComponent(props) {
         {/* <i></i>  لو فيه ايكون */}
         <h2 className="text-light fw-bold">{props.header}</h2>
         <p className="text-light opacity-50">{props.p}</p>
-        <Button variant="contained" className='mybutn'><span className="mytxt">{props.btntxt}</span>{props.mysvg}</Button>{/*هنا انا عاملة السهم svg ممكن تتعمل ايكون او اي حاجه وتتبعت كprops (او تتشال لو مش موجود)*/}
+        <Link to='/Roadmaps'><Button variant="contained" className='mybutn'><span className="mytxt">{props.btntxt}</span>{props.mysvg}</Button>
+        </Link>
       </div>
     </>
   )

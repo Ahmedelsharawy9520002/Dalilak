@@ -6,7 +6,7 @@ import { useState } from 'react';
 function Roadmaps(){
     const roadmaps = [
                         {
-                            id: 1,
+                            id: "Data Structures Fundamentals",
                             title: "Data Structures Fundamentals",
                             description: "Learn the basics of arrays, linked lists, stacks, and queues.",
                             level: "Beginner",
@@ -14,15 +14,15 @@ function Roadmaps(){
                             steps: "12 steps"
                         },
                         {
-                            id: 2,
+                            id: "Web Development Basics",
                             title: "Web Development Basics",
                             description: "Master HTML, CSS, and JavaScript fundamentals for web development.",
                             level: "Beginner",
                             duration: "6 weeks",
-                            steps: "15 steps"
+                            steps: "6 steps"
                         },
                         {
-                            id: 3,
+                            id: "Advanced Algorithms",
                             title: "Advanced Algorithms",
                             description: "Dive deep into sorting, searching, and graph algorithms.",
                             level: "Intermediate",
@@ -30,7 +30,7 @@ function Roadmaps(){
                             steps: "20 steps"
                         },
                         {
-                            id: 4,
+                            id: "System Design Principles",
                             title: "System Design Principles",
                             description: "Learn scalability, load balancing, and distributed systems.",
                             level: "Intermediate",
@@ -38,7 +38,7 @@ function Roadmaps(){
                             steps: "18 steps"
                         },
                         {
-                            id: 5,
+                            id: "Machine Learning Mastery",
                             title: "Machine Learning Mastery",
                             description: "Explore neural networks, deep learning, and advanced ML techniques.",
                             level: "Expert",
@@ -46,7 +46,7 @@ function Roadmaps(){
                             steps: "25 steps"
                         },
                         {
-                            id: 6,
+                            id: "Compiler Design & Theory",
                             title: "Compiler Design & Theory",
                             description: "Build compilers and understand formal language theory.",
                             level: "Expert",
@@ -82,7 +82,7 @@ function Roadmaps(){
             <div className='cardscont d-flex flex-wrap gap-4'>
                 {
                 roadmaps.map((elem)=>(
-                    <RoadmapSqr title={elem.title} desc={elem.description} level={elem.level} duration={elem.duration} steps={elem.steps} />
+                    <RoadmapSqr id={elem.id} title={elem.title} desc={elem.description} level={elem.level} duration={elem.duration} steps={elem.steps} />
                 ))
                 }
             </div>

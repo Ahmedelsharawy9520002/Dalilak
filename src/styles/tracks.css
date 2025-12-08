@@ -1,0 +1,41 @@
+.tracksnavbar{
+    background-color: rgba(13, 11, 26,0.98);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgb(36, 27, 66);
+    position: sticky !important;
+    top: 58px;
+    z-index: 101;
+    
+}
+.backtoroadmaps{
+    color: rgb(150, 65, 238);
+}
+.backtoroadmaps:hover{
+    color:rgb(126, 54, 200);
+}
+.containerdetails[level="Beginner"]{
+    border-bottom: 1px rgb(8, 101, 78) solid;
+    background: linear-gradient(to bottom, rgb(10, 64, 56), rgb(14, 32, 42));
+}
+.containerdetails[level="Intermediate"]{
+    border-bottom: 1px rgb(72, 49, 63) solid;
+    background: linear-gradient(to bottom, rgb(85, 54, 19), rgb(38, 26, 26));
+}
+.containerdetails[level="Expert"]{
+    border-bottom: 1px rgb(137, 22, 58)solid;
+     background: linear-gradient(to bottom, rgb(85, 17, 44), rgb(39, 14, 34));
+}
+.roadmapsstats{
+    display: flex;
+    gap: 20px;
+
+}
+.BookOpen{
+    color: rgb(147, 62, 228);
+}
+.Clock{
+    color: rgb(122, 76, 255);
+}

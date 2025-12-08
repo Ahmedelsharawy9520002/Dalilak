@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import { RxLightningBolt } from "react-icons/rx";
 
 function Roadmapsqr(props){
     return(
+        <Link to={`/tracks/${props.id}`} style={{textDecoration: 'none', color: 'inherit'}}>
         <div className="roadmapsqrcont">
             <div className="iconcont d-flex justify-content-center align-items-center">
                 <RxLightningBolt className="lightning"/>
@@ -15,6 +17,7 @@ function Roadmapsqr(props){
             <p className="fs-small">{props.steps}</p>
             <p className="view">View Roadmap &gt;</p>
         </div>
+        </Link>
     )
 }
 export default Roadmapsqr;

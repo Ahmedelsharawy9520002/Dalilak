@@ -19,11 +19,11 @@
 .searchinp{
     width: 1088px;
     margin-bottom: 33px;
-    /* background-color: rgb(15, 12, 29) !important; */
     background-color:rgba(14, 12, 28, 0.5)  !important;
-    /* border-color:rgb(60, 43, 106) !important; */
     border: 1px solid rgb(75, 55, 130) ;
     border-radius: 12px !important;
+    color: white;
+    padding: 25px;
 }
 
 .searchinp:focus{

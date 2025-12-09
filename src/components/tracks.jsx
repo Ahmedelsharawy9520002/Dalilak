@@ -757,6 +757,16 @@ export default function RoadmapDetail() {
   const toggleStep = (num) => {
     setOpenSteps((prev) => ({ ...prev, [num]: !prev[num] }));
   };
+// ده بيحدد الاستيب الاكتيف والكومبليتد وكده
+  const [activeStep, setActiveStep] = useState(0);
+  const handleCompleteStep = (index) => {
+    if (!completedSteps.includes(index)) {
+      setCompletedSteps([...completedSteps, index]);
+    }
+    if (index < roadmap.steps.length - 1) {
+      setActiveStep(index + 1);
+    }
+  };
 
   return (
     <>
@@ -800,12 +810,18 @@ export default function RoadmapDetail() {
       {/* انا زودت ف الداتا بتاعتك ف الريسورسز icon عشان احط شكل الديكيومنت والكورس (مش لاقية ايقونز عسولة ف حطاها كتيكست) */}
       <div className="container" style={{ padding: "20px" }}>
         <div className="steps">
-          {roadmap.steps.map((step) => (
+          {roadmap.steps.map((step, index) => {
+            const isCompleted = completedSteps.includes(index);
+            const isActive = index === activeStep;
+            const isLocked = index > activeStep;
+            return(
             <div
-              className="onestep"
-              key={step.number}
-              style={{ marginBottom: "20px" }}
-            >
+                className={`onestep ${isActive ? "active-step" : ""} ${
+                  isCompleted ? "completed-step" : ""
+                }`}
+                key={step.number}
+                style={{ marginBottom: "20px" }}
+              >
               <div className="stepNumber">{step.number}</div>
 
               <div
@@ -813,7 +829,7 @@ export default function RoadmapDetail() {
                 onClick={() => toggleStep(step.number)}
               >
                 {/* ال svg هنا شكل الاسهم يعني لانهم كتيكست مش حلوين ف اخداهم من ال ui نفسه */}
-                <div style={{ display: "flex", gap: "10px" }}>
+                <div style={{ display: "flex", gap: "10px" }} className="containercomplete">
                   <h3 style={{ color: "#eee" , fontSize:'24px'}}>{step.title}</h3>
                   <span style={{ fontSize: "20px", color: "white" }}>
                     {openSteps[step.number] ? (
@@ -844,9 +860,39 @@ export default function RoadmapDetail() {
                       </svg>
                     )}
                   </span>
+                  {isActive && (
+                      <button
+                        className="complete"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCompleteStep(index);
+                        }}
+                        style={{
+                          backgroundColor: "#331b58",
+                          border:'1px solid #9d42ef',
+                          color: "#9d42ef",
+                          border:'none'
+                        }}
+                      >
+                        Mark Complete
+                      </button>
+                    )}
+
+                    {isCompleted && (
+                      <span style={{ color: "#a82a68",backgroundColor: "#491c48" ,border:"1px solid #a82a68",padding: "5px 10px",
+                          borderRadius: "10px"}}className="complete">
+                        ✓ Completed
+                      </span>
+                    )}
+                    {isLocked && !isActive && !isCompleted && (
+                      <span style={{ color: "#777293",backgroundColor:'#3e365c',border:'1px solid #777293'}}className="complete">
+                        Complete Previous
+                      </span>
+                    )}
                 </div>
 
                 <p>{step.description}</p>
+                
 
                 {/* Topics */}
                 {step.topics && (
@@ -912,7 +958,8 @@ export default function RoadmapDetail() {
                 )}
               </div>
             </div>
-          ))}
+          );
+          })}
         </div>
       </div>
     </>

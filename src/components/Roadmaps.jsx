@@ -68,13 +68,12 @@ function Roadmaps(){
     const [inputdata, setinputdata] = useState("")
 
     const [displayed, setdisplayed] = useState(roadmaps)
-    console.log(inputdata)
 
     const handleSearch = (e)=>{
-        console.log("searched");
-        var newdisplayed = !e.target.value?roadmaps : displayed.filter((rm)=>rm.title.toLowerCase().includes(e.target.value.toLowerCase()))
+        var newdisplayed = !e.target.value? roadmaps : displayed.filter((rm)=>rm.title.toLowerCase().includes(e.target.value.toLowerCase()))
         setdisplayed(newdisplayed)
     }
+
     const handleFilter = (selectedCategory)=>{
         selectedCategory === 0? setdisplayed(roadmaps) : setdisplayed(roadmaps.filter((rm)=>rm.category === selectedCategory))
     }
@@ -86,9 +85,12 @@ function Roadmaps(){
             <div className="search">
                 <input type="text"
                 className='searchinp'
-                onChange={(e)=>setinputdata(e.target.value)}
-                onKeyDown={(e)=>{if (e.key == "Enter") handleSearch(e)}}
-                placeholder='Search roadmaps by title or topic...' />
+                onChange={(e)=>{
+                    setinputdata(e.target.value),
+                    handleSearch(e)
+                }}
+                placeholder='Search roadmaps by title or topic...'
+                />
             </div>
             <div className="levels d-flex gap-3">
                 {levels.map((item, index) => (
@@ -108,7 +110,7 @@ function Roadmaps(){
             <div className='cardscont d-flex flex-wrap gap-4'>
                 {
                 displayed.map((elem)=>(
-                    <RoadmapSqr id={elem.id} title={elem.title} desc={elem.description} level={elem.level} duration={elem.duration} steps={elem.steps}  stepsCount={elem.steps.length} />
+                    <RoadmapSqr id={elem.id} title={elem.title} desc={elem.description} level={elem.level} duration={elem.duration} steps={elem.steps} />
                 ))
                 }
             </div>

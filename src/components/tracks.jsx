@@ -803,7 +803,7 @@ export default function RoadmapDetail() {
           </div>
 
           <div className="flex roadmapsprogress" level={roadmap.level}>
-            <span>Progress: 0/{stepsCount}</span>
+            <span>Progress: {completedSteps.length}/{stepsCount}</span>
           </div>
         </div>
       </div>

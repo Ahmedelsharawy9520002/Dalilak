@@ -31,6 +31,7 @@
 .roadmapsstats{
     display: flex;
     gap: 20px;
+    font-weight: 500;
 
 }
 .BookOpen{
@@ -38,4 +39,63 @@
 }
 .Clock{
     color: rgb(122, 76, 255);
+}
+.containerdetails{
+    height: 220px;
+    padding: 35px 30px;
+    
+}
+.roadmaptitle{
+    color: rgb(255, 255, 255) !important;
+    font-size: 45px !important;
+    font-weight: 700;
+}
+.roadmapdescription{
+    font-size: 18px !important;
+    color: rgb(176, 175, 203) !important;
+    font-weight: 500;
+}
+
+.roadmaplevel span{
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.roadmaplevel[level="Beginner"] span{
+    background-color: rgb(42, 44, 85);
+    color: rgb(161, 69, 228);
+    border: 1px solid rgb(77, 52, 136);
+}
+.roadmaplevel[level="Intermediate"] span{
+    background-color: rgb(72, 40, 70);
+    color: rgb(153, 69, 255);
+    border: 1px solid rgb(97, 48, 125);
+}
+
+.roadmaplevel[level="Expert"] span{
+    background-color: rgb(72, 26, 81);
+    color: rgb(161, 61, 210);
+    border: 1px solid rgb(98, 39, 133);
+}
+.roadmapsprogress span{
+    padding: 4px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight:500;
+}
+.roadmapsprogress[level="Beginner"] span{
+    background-color: rgb(61, 44, 75);
+    color: rgb(255, 75, 175);
+    border: 1px solid rgb(119, 54, 114);
+}
+.roadmapsprogress[level="Intermediate"] span{
+    background-color: rgb(92, 42, 60);
+    color: rgb(255, 77, 176);
+    border: 1px solid rgb(139, 53, 103);
+}
+.roadmapsprogress[level="Expert"] span{
+    background-color: rgb(91, 27, 71);
+    color: rgb(255, 77, 186);
+    border: 1px solid rgb(139, 41, 110);
 }

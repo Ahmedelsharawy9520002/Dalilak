@@ -3,7 +3,7 @@ import { RxLightningBolt } from "react-icons/rx";
 
 function Roadmapsqr(props){
     return(
-        <Link to={`/tracks/${props.id}`} style={{textDecoration: 'none', color: 'inherit'}}>
+        <Link to={`/tracks/${props.title}`} style={{textDecoration: 'none', color: 'inherit'}}>
         <div className="roadmapsqrcont">
             <div className="iconcont d-flex justify-content-center align-items-center">
                 <RxLightningBolt className="lightning"/>

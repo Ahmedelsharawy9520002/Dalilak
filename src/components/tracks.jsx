@@ -9,6 +9,7 @@ import "../styles/tracks.css"
 const roadmapDetails = {
     // DATA STRUCTURES 
   "Data Structures Fundamentals": {
+    id: 1,
     title: "Data Structures Fundamentals",
     description:
       "Learn the basics of arrays, linked lists, stacks, and queues. Master the foundation of computer science.",
@@ -194,6 +195,7 @@ const roadmapDetails = {
   // WEB DEV
 
   "Web Development Basics": {
+    id: 2,
     title: "Web Development Basics",
     description: "Master HTML, CSS, and JavaScript fundamentals.",
     level: "Beginner",
@@ -253,6 +255,7 @@ const roadmapDetails = {
   // ALGORITHMS 
 
   "Advanced Algorithms": {
+    id: 3,
   title: "Advanced Algorithms",
   description: "Dive deep into sorting, searching, and graph algorithms.",
   level: "Intermediate",
@@ -409,6 +412,7 @@ const roadmapDetails = {
   // SYSTEM DESIGN
 
   "System Design Principles": {
+    id: 4,
   title: "System Design Principles",
   description: "Learn scalability, load balancing, and distributed systems.",
   level: "Intermediate",
@@ -439,6 +443,7 @@ const roadmapDetails = {
   //  MACHINE LEARNING 
 
   "Machine Learning Mastery": {
+    id: 5,
   title: "Machine Learning Mastery",
   description: "Explore neural networks, deep learning, and advanced ML techniques.",
   level: "Expert",
@@ -476,6 +481,7 @@ const roadmapDetails = {
   // COMPILER DESIGN
 
   "Compiler Design & Theory": {
+    id: 6,
   title: "Compiler Design & Theory",
   description: "Build compilers and understand formal language theory.",
   level: "Expert",
@@ -508,12 +514,14 @@ const roadmapDetails = {
 };
 
 export default function RoadmapDetail() {
-  const { id } = useParams();
+  const { title } = useParams();
+  
 
   const [completedSteps, setCompletedSteps] = useState([])
   const [expandedSteps, setExpandedSteps] = useState([])
 
-  const roadmap = roadmapDetails[id]
+  const roadmap = roadmapDetails[title]
+  const stepsCount = roadmap.steps.length;
 
   return (
     <>
@@ -523,8 +531,8 @@ export default function RoadmapDetail() {
         </div>
     </div>
     <div className="container containerdetails " level={roadmap.level}>
-        <h1 >{roadmap.title}</h1>
-        <p>{roadmap.description}</p>
+        <h1 className="roadmaptitle mb-4">{roadmap.title}</h1>
+        <p className="roadmapdescription mb-4">{roadmap.description}</p>
         <div className="flex info-row roadmapsstats">
             <div className="flex">
                 <BookOpen className="me-2 BookOpen"/><span >{roadmap.steps.length} steps</span>
@@ -532,8 +540,11 @@ export default function RoadmapDetail() {
             <div className="flex"> 
                 <Clock className="me-2 Clock"/><span>{roadmap.duration}</span>
             </div>
-            <div className="flex">
+            <div className="flex roadmaplevel" level={roadmap.level}>
                 <span >{roadmap.level}</span>
+            </div>
+            <div className="flex roadmapsprogress" level={roadmap.level}>
+                <span>Progress: 0/{stepsCount}</span>
             </div>
         </div>
     </div>

@@ -109,7 +109,7 @@ function Roadmaps(){
             <div className='cardscont d-flex flex-wrap gap-4'>
                 {
                 displayed.map((elem)=>(
-                    <RoadmapSqr id={elem.id} title={elem.title} desc={elem.description} level={elem.level} duration={elem.duration} steps={elem.steps} />
+                    <RoadmapSqr id={elem.id} title={elem.title} desc={elem.description} level={elem.level} duration={elem.duration} steps={elem.steps}  stepsCount={elem.steps.length} />
                 ))
                 }
             </div>

@@ -68,7 +68,6 @@ function Roadmaps(){
     const [inputdata, setinputdata] = useState("")
 
     const [displayed, setdisplayed] = useState(roadmaps)
-    console.log(inputdata)
 
     const handleSearch = (e)=>{
         console.log("searched");
@@ -89,7 +88,8 @@ function Roadmaps(){
                 className='searchinp'
                 onChange={(e)=>setinputdata(e.target.value)}
                 onKeyDown={(e)=>{if (e.key == "Enter") handleSearch(e)}}
-                placeholder='Search roadmaps by title or topic...' />
+                placeholder='Search roadmaps by title or topic...'
+                />
             </div>
             <div className="levels d-flex gap-3">
                 {levels.map((item, index) => (

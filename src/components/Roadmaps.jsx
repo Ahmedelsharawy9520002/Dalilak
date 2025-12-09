@@ -72,8 +72,7 @@ function Roadmaps(){
     const [category, setcategory] = useState(0);
 
     const handleSearch = (e)=>{
-        var newdisplayed = !e.target.value? roadmaps.filter((rm)=>rm.category === category) : displayed.filter((rm)=>rm.title.toLowerCase().includes(e.target.value.toLowerCase()))
-        setdisplayed(newdisplayed)
+        !e.target.value? handleFilter(category) : setdisplayed(displayed.filter((rm)=>rm.title.toLowerCase().includes(e.target.value.toLowerCase())))
     }
 
     const handleFilter = (selectedCategory)=>{

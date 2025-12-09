@@ -29,7 +29,7 @@ const roadmapDetails = {
         resources: [
           {
             name: "Data Structures Guide",
-            url: "https://docs.example.com/ds-intro",
+            url: "https://www.geeksforgeeks.org/data-structures/",
             type: 'document',
             icon:'📄'
           },
@@ -54,13 +54,13 @@ const roadmapDetails = {
         resources: [
           {
             name: "Arrays Documentation",
-            url: "https://docs.example.com/arrays",
+            url: "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/",
             type: "document",
             icon:'📄'
           },
           {
             name: "Udemy Arrays Course",
-            url: "https://udemy.com",
+            url: "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/",
             type: "course",
             icon: "📚"
           }
@@ -79,13 +79,13 @@ const roadmapDetails = {
         resources: [
           {
             name: "Stacks Tutorial",
-            url: "https://docs.example.com/stacks",
+            url: "https://www.programiz.com/dsa/stack",
             type: "document",
             icon:'📄'
           },
           {
             name: "Stack Implementation Course",
-            url: "https://udemy.com",
+            url: "https://www.freecodecamp.org/news/stack-data-structure/",
             type:"course",
             icon: "📚"
           }
@@ -104,13 +104,13 @@ const roadmapDetails = {
         resources: [
           {
             name: "Queues Guide",
-            url: "https://docs.example.com/queues",
+            url: "https://www.programiz.com/dsa/queue",
             type: "document",
             icon:'📄'
           },
           {
             name: "Advanced Queues Course",
-            url: "https://udemy.com",
+            url: "https://www.freecodecamp.org/news/queue-data-structure/",
             type: "course",
             icon: "📚"
           }
@@ -129,7 +129,7 @@ const roadmapDetails = {
         resources: [
           {
             name: "Linked Lists Reference",
-            url: "https://docs.example.com/linked-lists",
+            url: "https://www.geeksforgeeks.org/data-structures/linked-list/",
             type: "document",
             icon:'📄'
           }
@@ -148,7 +148,7 @@ const roadmapDetails = {
         resources: [
           {
             name: "Trees Documentation",
-            url: "https://docs.example.com/trees",
+            url: "https://www.programiz.com/dsa/binary-tree",
             type: "document",
             icon:'📄'
           }
@@ -163,6 +163,14 @@ const roadmapDetails = {
           "Collision handling",
           "Hash table operations",
           "Performance"
+        ],
+        resources: [
+          {
+            name: "GeeksforGeeks Hashing Tutorial",
+            url: "https://www.geeksforgeeks.org/hashing-data-structure/",
+            type: "document",
+            icon: "📄"
+          }
         ]
       },
       {
@@ -173,13 +181,22 @@ const roadmapDetails = {
           "Graph representation",
           "Directed and undirected graphs",
           "Basic terminology"
+        ],
+        resources: [
+          {
+            name: "Programiz Graphs Tutorial",
+            url: "https://www.programiz.com/dsa/graph",
+            type: "document",
+            icon: "📄"
+          }
         ]
       },
       {
         number: 9,
         title: "Practice: Building a Stack",
         description: "Implement a stack from scratch.",
-        topics: ["Implementation", "Edge cases", "Testing"]
+        topics: ["Implementation", "Edge cases", "Testing"],
+        
       },
       {
         number: 10,
@@ -220,13 +237,13 @@ const roadmapDetails = {
         resources: [
           {
             name: "HTML Guide",
-            url: "https://docs.example.com/html",
+            url: "https://developer.mozilla.org/en-US/docs/Learn/HTML",
             type: "document",
             icon:'📄'
           },
           {
             name: "Udemy HTML Course",
-            url: "https://udemy.com",
+            url: "https://www.freecodecamp.org/learn/responsive-web-design/",
             type: "course",
             icon: "📚"
           }
@@ -236,13 +253,41 @@ const roadmapDetails = {
         number: 2,
         title: "CSS Basics",
         description: "Style your web pages with CSS.",
-        topics: ["Selectors", "Properties", "Box model", "Layout basics"]
+        topics: ["Selectors", "Properties", "Box model", "Layout basics"],
+        resources: [
+          {
+            name: "MDN CSS Guide",
+            url: "https://developer.mozilla.org/en-US/docs/Learn/CSS",
+            type: "document",
+            icon: "📄"
+          },
+          {
+            name: "FreeCodeCamp CSS Course",
+            url: "https://www.freecodecamp.org/learn/responsive-web-design/#basic-css",
+            type: "course",
+            icon: "📚"
+          }
+        ]
       },
       {
         number: 3,
         title: "JavaScript Essentials",
         description: "Add interactivity with JavaScript.",
-        topics: ["Variables", "Functions", "DOM manipulation", "Events"]
+        topics: ["Variables", "Functions", "DOM manipulation", "Events"],
+        resources: [
+          {
+            name: "MDN JavaScript Guide",
+            url: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript",
+            type: "document",
+            icon: "📄"
+          },
+          {
+            name: "FreeCodeCamp JavaScript Course",
+            url: "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
+            type: "course",
+            icon: "📚"
+          }
+        ]
       },
       {
         number: 4,
@@ -283,6 +328,20 @@ const roadmapDetails = {
         "Bubble, Selection, Insertion sorting",
         "Divide-and-conquer sorting (Merge / Quick Sort)",
         "Time complexity comparison"
+      ],
+      resources: [
+        {
+          name: "Understanding Sorting Algorithms",
+          url: "https://www.freecodecamp.org/news/understanding-sorting-algorithms/",
+          type: "course",
+          icon: "📚"
+        },
+        {
+          name: "Programiz Sorting Algorithms Overview",
+          url: "https://www.programiz.com/dsa/sorting-algorithm",
+          type: "document",
+          icon: "📄"
+        }
       ]
     },
     {
@@ -290,133 +349,291 @@ const roadmapDetails = {
       title: "Advanced Searching Techniques",
       description:
         "Learn efficient ways to search through massive datasets and structured collections.",
-      topics: ["Binary search", "Searching trees", "Search complexity"]
+      topics: ["Binary search", "Searching trees", "Search complexity"],
+      resources: [
+        {
+          name: "GeeksforGeeks DSA Tutorial (includes searching + complexity)",
+          url: "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 3,
       title: "Greedy Algorithms Explained",
       description:
         "Discover how greedy algorithms make optimal choices at each step to solve specific problems.",
-      topics: ["Greedy strategy", "Optimality", "Activity selection problem"]
+      topics: ["Greedy strategy", "Optimality", "Activity selection problem"],
+      resources: [
+        {
+          name: "GeeksforGeeks Greedy Algorithms Tutorial",
+          url: "https://www.geeksforgeeks.org/greedy-algorithms/",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 4,
       title: "Dynamic Programming (DP) Concepts",
       description:
         "Learn how DP breaks problems into overlapping subproblems and reuses solutions.",
-      topics: ["Memoization", "Tabulation", "Classic DP problems"]
+      topics: ["Memoization", "Tabulation", "Classic DP problems"],
+      resources: [
+        {
+          name: "Learn X in Y Minutes – Dynamic Programming",
+          url: "https://learnxinyminutes.com/dynamic-programming/",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 5,
       title: "Backtracking Algorithms",
       description:
         "Understand how backtracking systematically searches for solutions by exploring all possibilities.",
-      topics: ["Recursion tree", "Constraint satisfaction", "N-Queens problem"]
+      topics: ["Recursion tree", "Constraint satisfaction", "N-Queens problem"],
+      resources: [
+        {
+          name: "GeeksforGeeks Backtracking Algorithms",
+          url: "https://www.geeksforgeeks.org/backtracking-algorithms/",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 6,
       title: "Graph Theory Basics",
       description:
         "Explore graph data structures and understand relationships represented by nodes and edges.",
-      topics: ["Graph types", "Representations", "Applications"]
+      topics: ["Graph types", "Representations", "Applications"],
+      resources: [
+        {
+          name: "freeCodeCamp – Learn How Graph Algorithms Work",
+          url: "https://www.freecodecamp.org/news/learn-how-graph-algorithms-work/",
+          type: "course",
+          icon: "📚"
+        },
+        {
+          name: "Programiz Graph Tutorial",
+          url: "https://www.programiz.com/dsa/graph",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 7,
       title: "Graph Traversal Techniques",
       description:
         "Learn how to traverse graphs efficiently and explore connected components.",
-      topics: ["BFS", "DFS", "Traversal complexity"]
+      topics: ["BFS", "DFS", "Traversal complexity"],
+      resources: [
+        {
+          name: "freeCodeCamp – Learn How Graph Algorithms Work",
+          url: "https://www.freecodecamp.org/news/learn-how-graph-algorithms-work/",
+          type: "course",
+          icon: "📚"
+        }
+      ]
     },
     {
       number: 8,
       title: "Shortest Path Algorithms",
       description:
         "Learn algorithms used in GPS systems, networking, and routing.",
-      topics: ["Dijkstra", "Bellman-Ford", "Weighted graphs"]
+      topics: ["Dijkstra", "Bellman-Ford", "Weighted graphs"],
+      resources: [
+        {
+          name: "Programiz Graph Algorithms (includes shortest paths)",
+          url: "https://www.programiz.com/dsa/graph",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 9,
       title: "Minimum Spanning Trees (MST)",
       description:
         "Understand how MST algorithms reduce network cost in an optimal way.",
-      topics: ["Kruskal", "Prim", "Union-Find"]
+      topics: ["Kruskal", "Prim", "Union-Find"],
+       resources: [
+        {
+          name: "GeeksforGeeks Minimum Spanning Tree Tutorial",
+          url: "https://www.geeksforgeeks.org/prims-minimum-spanning-tree-mst-greedy-algo-5/",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 10,
       title: "Divide and Conquer Approach",
       description:
         "Learn how complex problems can be solved by repeatedly dividing into smaller ones.",
-      topics: ["Problem decomposition", "Examples", "Performance"]
+      topics: ["Problem decomposition", "Examples", "Performance"],
+      resources: [
+        {
+          name: "GeeksforGeeks Divide and Conquer Algorithms",
+          url: "https://www.geeksforgeeks.org/divide-and-conquer-algorithm-introduction/",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 11,
       title: "String Searching Algorithms",
       description:
         "Explore efficient ways to match patterns inside large strings.",
-      topics: ["KMP", "Rabin-Karp", "Pattern preprocessing"]
+      topics: ["KMP", "Rabin-Karp", "Pattern preprocessing"],
+      resources: [
+        {
+          name: "GeeksforGeeks String Matching Algorithms",
+          url: "https://www.geeksforgeeks.org/string-searching-algorithms-in-java/",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 12,
       title: "Advanced Recursion Techniques",
       description:
         "Go deeper into recursive patterns and understand optimizations.",
-      topics: ["Tail recursion", "Recursion depth", "Optimization"]
+      topics: ["Tail recursion", "Recursion depth", "Optimization"],
+      resources: [
+        {
+          name: "GeeksforGeeks Recursion Tutorial",
+          url: "https://www.geeksforgeeks.org/recursion/",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 13,
       title: "Heuristic Algorithms",
       description:
         "Learn approximation methods used when exact solutions are expensive.",
-      topics: ["A* search", "Heuristic design", "Applications"]
+      topics: ["A* search", "Heuristic design", "Applications"],
+      resources: [
+        {
+          name: "GeeksforGeeks A* and Heuristic Algorithms",
+          url: "https://www.geeksforgeeks.org/a-search-algorithm/​",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 14,
       title: "Bit Manipulation Techniques",
       description:
         "Use binary operations to solve problems efficiently with minimal memory.",
-      topics: ["Bitwise tricks", "Masks", "Low-level optimizations"]
+      topics: ["Bitwise tricks", "Masks", "Low-level optimizations"],
+      resources: [
+        {
+          name: "GeeksforGeeks Bitwise Algorithms",
+          url: "https://www.geeksforgeeks.org/bitwise-algorithms/​",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 15,
       title: "Complexity Analysis Mastery",
       description:
         "Deep dive into time and space analysis for building optimal algorithms.",
-      topics: ["Big-O", "Lower bounds", "Performance profiling"]
+      topics: ["Big-O", "Lower bounds", "Performance profiling"],
+      resources: [
+        {
+          name: "GeeksforGeeks Analysis of Algorithms",
+          url: "https://www.geeksforgeeks.org/analysis-of-algorithms-set-1-asymptotic-analysis/",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 16,
       title: "Advanced Graph Algorithms",
       description:
         "Learn powerful techniques used in real-world network systems.",
-      topics: ["Topological sort", "Strongly connected components", "Cycle detection"]
+      topics: ["Topological sort", "Strongly connected components", "Cycle detection"],
+      resources: [
+        {
+          name: "GeeksforGeeks Graph Algorithms Tutorial",
+          url: "https://www.geeksforgeeks.org/graph-algorithms/​",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 17,
       title: "Network Flow Algorithms",
       description:
         "Understand algorithms used in scheduling, matching, and resource allocation.",
-      topics: ["Ford-Fulkerson", "Max flow", "Matching problems"]
+      topics: ["Ford-Fulkerson", "Max flow", "Matching problems"],
+      resources: [
+        {
+          name: "GeeksforGeeks Max Flow Algorithms",
+          url: "https://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 18,
       title: "Optimization Problems",
       description:
         "Learn how to optimize algorithms for performance in real environments.",
-      topics: ["Pruning", "Caching", "Performance strategies"]
+      topics: ["Pruning", "Caching", "Performance strategies"],
+      resources: [
+        {
+          name: "GeeksforGeeks Algorithmic Optimizations Guide",
+          url: "https://www.geeksforgeeks.org/algorithmic-optimizations/​",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 19,
       title: "Advanced Data Structures in Algorithms",
       description:
         "Explore powerful structures that enhance algorithm performance.",
-      topics: ["Heaps", "Tries", "Segment trees"]
+      topics: ["Heaps", "Tries", "Segment trees"],
+      resources: [
+        {
+          name: "GeeksforGeeks Data Structures Advanced (Heap, Trie)",
+          url: "https://www.geeksforgeeks.org/data-structures/​",
+          type: "document",
+          icon: "📄"
+        }
+      ]
     },
     {
       number: 20,
       title: "Capstone: Applying All Techniques",
       description:
         "Solve real-world problems using a combination of all algorithmic techniques.",
-      topics: ["Problem decomposition", "Strategy mixing", "Final project"]
+      topics: ["Problem decomposition", "Strategy mixing", "Final project"],
+      resources: [
+        {
+          name: "freeCodeCamp – Algorithms & Data Structures Full Course",
+          url: "https://www.youtube.com/watch?v=8hly31xKli0",
+          type: "course",
+          icon: "📚"
+        }
+      ]
     }
   ]
 },

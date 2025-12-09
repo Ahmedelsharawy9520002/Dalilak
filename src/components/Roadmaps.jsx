@@ -65,8 +65,6 @@ function Roadmaps(){
 
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const [inputdata, setinputdata] = useState("")
-
     const [displayed, setdisplayed] = useState(roadmaps)
 
     const [category, setcategory] = useState(0);
@@ -88,7 +86,6 @@ function Roadmaps(){
                 <input type="text"
                 className='searchinp'
                 onChange={(e)=>{
-                    setinputdata(e.target.value),
                     handleSearch(e)
                 }}
                 placeholder='Search roadmaps by title or topic...'

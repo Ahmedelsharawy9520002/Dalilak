@@ -72,10 +72,9 @@ function Roadmaps(){
 
     const handleSearch = (e)=>{
         console.log("searched");
-        var newdisplayed = !e.target.value?roadmaps : displayed.filter((rm)=>rm.title.toLowerCase().startsWith(e.target.value.toLowerCase()))
+        var newdisplayed = !e.target.value?roadmaps : displayed.filter((rm)=>rm.title.toLowerCase().includes(e.target.value.toLowerCase()))
         setdisplayed(newdisplayed)
     }
-
     const handleFilter = (selectedCategory)=>{
         selectedCategory === 0? setdisplayed(roadmaps) : setdisplayed(roadmaps.filter((rm)=>rm.category === selectedCategory))
     }

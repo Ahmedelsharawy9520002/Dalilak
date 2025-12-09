@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { ChevronLeft, Clock, BookOpen, ExternalLink, CheckCircle2, ChevronDown } from "lucide-react"
 import "../styles/tracks.css"
+import { icon } from "@fortawesome/fontawesome-svg-core";
 // Roadmap details 
 const roadmapDetails = {
     // DATA STRUCTURES 
@@ -29,12 +30,14 @@ const roadmapDetails = {
           {
             name: "Data Structures Guide",
             url: "https://docs.example.com/ds-intro",
-            type: "document"
+            type: 'document',
+            icon:'📄'
           },
           {
             name: "CS50 Introduction",
             url: "https://cs50.harvard.edu",
-            type: "course"
+            type: 'course',
+            icon: "📚"
           }
         ]
       },
@@ -52,12 +55,14 @@ const roadmapDetails = {
           {
             name: "Arrays Documentation",
             url: "https://docs.example.com/arrays",
-            type: "document"
+            type: "document",
+            icon:'📄'
           },
           {
             name: "Udemy Arrays Course",
             url: "https://udemy.com",
-            type: "course"
+            type: "course",
+            icon: "📚"
           }
         ]
       },
@@ -75,12 +80,14 @@ const roadmapDetails = {
           {
             name: "Stacks Tutorial",
             url: "https://docs.example.com/stacks",
-            type: "document"
+            type: "document",
+            icon:'📄'
           },
           {
             name: "Stack Implementation Course",
             url: "https://udemy.com",
-            type: "course"
+            type:"course",
+            icon: "📚"
           }
         ]
       },
@@ -98,12 +105,14 @@ const roadmapDetails = {
           {
             name: "Queues Guide",
             url: "https://docs.example.com/queues",
-            type: "document"
+            type: "document",
+            icon:'📄'
           },
           {
             name: "Advanced Queues Course",
             url: "https://udemy.com",
-            type: "course"
+            type: "course",
+            icon: "📚"
           }
         ]
       },
@@ -121,7 +130,8 @@ const roadmapDetails = {
           {
             name: "Linked Lists Reference",
             url: "https://docs.example.com/linked-lists",
-            type: "document"
+            type: "document",
+            icon:'📄'
           }
         ]
       },
@@ -139,7 +149,8 @@ const roadmapDetails = {
           {
             name: "Trees Documentation",
             url: "https://docs.example.com/trees",
-            type: "document"
+            type: "document",
+            icon:'📄'
           }
         ]
       },
@@ -210,12 +221,14 @@ const roadmapDetails = {
           {
             name: "HTML Guide",
             url: "https://docs.example.com/html",
-            type: "document"
+            type: "document",
+            icon:'📄'
           },
           {
             name: "Udemy HTML Course",
             url: "https://udemy.com",
-            type: "course"
+            type: "course",
+            icon: "📚"
           }
         ]
       },
@@ -515,87 +528,176 @@ const roadmapDetails = {
 
 export default function RoadmapDetail() {
   const { title } = useParams();
-  
 
-  const [completedSteps, setCompletedSteps] = useState([])
-  const [expandedSteps, setExpandedSteps] = useState([])
+  const [completedSteps, setCompletedSteps] = useState([]);
+  const [expandedSteps, setExpandedSteps] = useState([]);
 
-  const roadmap = roadmapDetails[title]
+  const roadmap = roadmapDetails[title];
   const stepsCount = roadmap.steps.length;
+
+// دي كده عشان السهم اللي جنب العنوان 
+  const [openSteps, setOpenSteps] = useState({});
+  const toggleStep = (num) => {
+    setOpenSteps((prev) => ({ ...prev, [num]: !prev[num] }));
+  };
 
   return (
     <>
-    <div className="tracksnavbar navbar">
+      <div className="tracksnavbar navbar">
         <div className="navbar container ">
-            <Link to="/roadmaps" style={{ textDecoration: "none" }} className="backtoroadmaps"><ChevronLeft /><span>Back to roadmaps</span></Link>
+          <Link
+            to="/roadmaps"
+            style={{ textDecoration: "none" }}
+            className="backtoroadmaps"
+          >
+            <ChevronLeft />
+            <span>Back to roadmaps</span>
+          </Link>
         </div>
-    </div>
-    <div className="container containerdetails " level={roadmap.level}>
+      </div>
+
+      <div className="container containerdetails" level={roadmap.level}>
         <h1 className="roadmaptitle mb-4">{roadmap.title}</h1>
         <p className="roadmapdescription mb-4">{roadmap.description}</p>
+
         <div className="flex info-row roadmapsstats">
-            <div className="flex">
-                <BookOpen className="me-2 BookOpen"/><span >{roadmap.steps.length} steps</span>
-            </div>
-            <div className="flex"> 
-                <Clock className="me-2 Clock"/><span>{roadmap.duration}</span>
-            </div>
-            <div className="flex roadmaplevel" level={roadmap.level}>
-                <span >{roadmap.level}</span>
-            </div>
-            <div className="flex roadmapsprogress" level={roadmap.level}>
-                <span>Progress: 0/{stepsCount}</span>
-            </div>
-        </div>
-    </div>
-    <div style={{ padding: "20px" }}>
-      <h1>{roadmap.title}</h1>
-      <p>{roadmap.description}</p>
-
-      <p><strong>Level:</strong> {roadmap.level}</p>
-      <p><strong>Duration:</strong> {roadmap.duration}</p>
-
-      <h2>Steps</h2>
-      <div>
-        {roadmap.steps.map((step) => (
-          <div key={step.number} style={{ marginBottom: "20px" }}>
-            
-            {/* Step Title */}
-            <h3>Step {step.number}: {step.title}</h3>
-
-            <p>{step.description}</p>
-
-            {/* Topics */}
-            {step.topics && (
-              <>
-                <h4>Topics:</h4>
-                <ul>
-                  {step.topics.map((t, index) => (
-                    <li key={index}>{t}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-
-            {/* Resources */}
-            {step.resources && (
-              <>
-                <h4>Resources:</h4>
-                <ul>
-                  {step.resources.map((r, index) => (
-                    <li key={index}>
-                      <a href={r.url} target="_blank">{r.name}</a> ({r.type})
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
-
-            <hr />
+          <div className="flex">
+            <BookOpen className="me-2 BookOpen" />
+            <span>{roadmap.steps.length} steps</span>
           </div>
-        ))}
+
+          <div className="flex">
+            <Clock className="me-2 Clock" />
+            <span>{roadmap.duration}</span>
+          </div>
+
+          <div className="flex roadmaplevel" level={roadmap.level}>
+            <span>{roadmap.level}</span>
+          </div>
+
+          <div className="flex roadmapsprogress" level={roadmap.level}>
+            <span>Progress: 0/{stepsCount}</span>
+          </div>
+        </div>
       </div>
-    </div>
+      {/* انا زودت ف الداتا بتاعتك ف الريسورسز icon عشان احط شكل الديكيومنت والكورس (مش لاقية ايقونز عسولة ف حطاها كتيكست) */}
+      <div className="container" style={{ padding: "20px" }}>
+        <div className="steps">
+          {roadmap.steps.map((step) => (
+            <div
+              className="onestep"
+              key={step.number}
+              style={{ marginBottom: "20px" }}
+            >
+              <div className="stepNumber">{step.number}</div>
+
+              <div
+                className="stepDescription"
+                onClick={() => toggleStep(step.number)}
+              >
+                {/* ال svg هنا شكل الاسهم يعني لانهم كتيكست مش حلوين ف اخداهم من ال ui نفسه */}
+                <div style={{ display: "flex", gap: "10px" }}>
+                  <h3 style={{ color: "#eee" , fontSize:'24px'}}>{step.title}</h3>
+                  <span style={{ fontSize: "20px", color: "white" }}>
+                    {openSteps[step.number] ? (
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M18 15l-6-6-6 6" />
+                      </svg>
+                    ) : (
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    )}
+                  </span>
+                </div>
+
+                <p>{step.description}</p>
+
+                {/* Topics */}
+                {step.topics && (
+                  <>
+                    <div className="topics">
+                      {step.topics.map((t, index) => (
+                        <div key={index} className="onetopic">
+                          {t}
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
+
+                {/* Resources */}
+                {step.resources && (
+                  <>
+                    {openSteps[step.number] && (
+                      <ul type="none">
+                        <hr />
+                        <h4 style={{ fontSize: "16px" }}>Resources:</h4>
+
+                        {step.resources.map((r, index) => (
+                          // ال li نفسها اللي هتودينا لل url ف شيلت الانكور تاج بتاعتك
+                          <Link
+                            to={r.url}
+                            target="_blank"
+                            className="url"
+                            key={index}
+                          >
+                            <li className="resourse">
+                              <div className="type_resource">
+                                {r.icon}
+                                {r.type}
+                              </div>
+
+                              <div className="iconlink">
+                                {/* ال svg علامة اللينك دي مش عارفه اسمها */}
+                                {r.name}
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="19"
+                                  height="19"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="white"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="svg lucide lucide-external-link w-4 h-4 text-muted group-hover/resource:text-primary transition-colors"
+                                >
+                                  <path d="M15 3h6v6"></path>
+                                  <path d="M10 14 21 3"></path>
+                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                </svg>
+                              </div>
+                            </li>
+                          </Link>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
-  )
+  );
 }

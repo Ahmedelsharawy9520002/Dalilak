@@ -70,8 +70,7 @@ function Roadmaps(){
     const [displayed, setdisplayed] = useState(roadmaps)
 
     const handleSearch = (e)=>{
-        console.log("searched");
-        var newdisplayed = !e.target.value?roadmaps : displayed.filter((rm)=>rm.title.toLowerCase().startsWith(e.target.value.toLowerCase()))
+        var newdisplayed = !e.target.value? roadmaps : displayed.filter((rm)=>rm.title.toLowerCase().includes(e.target.value.toLowerCase()))
         setdisplayed(newdisplayed)
     }
 
@@ -86,8 +85,10 @@ function Roadmaps(){
             <div className="search">
                 <input type="text"
                 className='searchinp'
-                onChange={(e)=>setinputdata(e.target.value)}
-                onKeyDown={(e)=>{if (e.key == "Enter") handleSearch(e)}}
+                onChange={(e)=>{
+                    setinputdata(e.target.value),
+                    handleSearch(e)
+                }}
                 placeholder='Search roadmaps by title or topic...'
                 />
             </div>

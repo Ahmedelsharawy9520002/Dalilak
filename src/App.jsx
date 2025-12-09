@@ -24,7 +24,7 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/tracks/:id" element={<RoadmapDetail />} />
+        <Route path="/tracks/:title" element={<RoadmapDetail />} />
 
       </Routes>
       <Footer/>

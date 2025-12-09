@@ -112,7 +112,7 @@
 }
 .levelsqr[level="Beginner"]{
     border: 1px rgb(22, 158, 124) solid;
-    background-color: rgba(26, 151, 103, 0.5);
+    background-color: rgba(18, 115, 78, 0.5);
     color: rgb(22, 158, 124) !important;
 }
 .levelsqr[level="Intermediate"]{
@@ -128,7 +128,7 @@
 .duration{
     border-radius: 10px;
     border: 1px rgb(99, 68, 139) solid;
-    background-color: rgba(144, 24, 236, 0.3);
+    background-color: rgba(105, 20, 170, 0.5);
     padding: 0 5px 0 5px;
     height: 30px;
     font-size: small;

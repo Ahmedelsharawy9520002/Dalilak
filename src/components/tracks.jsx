@@ -1,11 +1,12 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { ChevronLeft, Clock, BookOpen, ExternalLink, CheckCircle2, ChevronDown } from "lucide-react"
 import "../styles/tracks.css"
 import { icon } from "@fortawesome/fontawesome-svg-core";
+import Dashboard from "./Dashboard";
 // Roadmap details 
 const roadmapDetails = {
     // DATA STRUCTURES 
@@ -743,6 +744,8 @@ const roadmapDetails = {
 }
 };
 
+
+
 export default function RoadmapDetail() {
   const { title } = useParams();
 
@@ -750,18 +753,35 @@ export default function RoadmapDetail() {
   const [expandedSteps, setExpandedSteps] = useState([]);
 
   const roadmap = roadmapDetails[title];
+  if (!roadmap) return <p>Loading...</p>;
   const stepsCount = roadmap.steps.length;
 
-// دي كده عشان السهم اللي جنب العنوان 
+  // دي كده عشان السهم اللي جنب العنوان 
   const [openSteps, setOpenSteps] = useState({});
   const toggleStep = (num) => {
     setOpenSteps((prev) => ({ ...prev, [num]: !prev[num] }));
   };
-// ده بيحدد الاستيب الاكتيف والكومبليتد وكده
+
+  // ده بيحدد الاستيب الاكتيف والكومبليتد وكده
   const [activeStep, setActiveStep] = useState(0);
+
+
+  useEffect(() => {
+    const savedProgress = JSON.parse(localStorage.getItem("roadmapProgress")) || {};
+    if (savedProgress[title]) {
+      setCompletedSteps(savedProgress[title]);
+      setActiveStep(Math.max(...savedProgress[title]) + 1 || 0);
+    }
+  }, [title]);
+
   const handleCompleteStep = (index) => {
     if (!completedSteps.includes(index)) {
-      setCompletedSteps([...completedSteps, index]);
+      const newCompleted = [...completedSteps, index];
+      setCompletedSteps(newCompleted);
+
+      const savedProgress = JSON.parse(localStorage.getItem("roadmapProgress")) || {};
+      savedProgress[title] = newCompleted;
+      localStorage.setItem("roadmapProgress", JSON.stringify(savedProgress));
     }
     if (index < roadmap.steps.length - 1) {
       setActiveStep(index + 1);
@@ -807,7 +827,7 @@ export default function RoadmapDetail() {
           </div>
         </div>
       </div>
-      {/* انا زودت ف الداتا بتاعتك ف الريسورسز icon عشان احط شكل الديكيومنت والكورس (مش لاقية ايقونز عسولة ف حطاها كتيكست) */}
+
       <div className="container" style={{ padding: "20px" }}>
         <div className="steps">
           {roadmap.steps.map((step, index) => {
@@ -828,7 +848,6 @@ export default function RoadmapDetail() {
                 className="stepDescription"
                 onClick={() => toggleStep(step.number)}
               >
-                {/* ال svg هنا شكل الاسهم يعني لانهم كتيكست مش حلوين ف اخداهم من ال ui نفسه */}
                 <div style={{ display: "flex", gap: "10px" }} className="containercomplete">
                   <h3 style={{ color: "#eee" , fontSize:'24px'}}>{step.title}</h3>
                   <span style={{ fontSize: "20px", color: "white" }}>
@@ -860,6 +879,7 @@ export default function RoadmapDetail() {
                       </svg>
                     )}
                   </span>
+
                   {isActive && (
                       <button
                         className="complete"
@@ -880,43 +900,37 @@ export default function RoadmapDetail() {
 
                     {isCompleted && (
                       <span style={{ color: "#a82a68",backgroundColor: "#491c48" ,border:"1px solid #a82a68",padding: "5px 10px",
-                          borderRadius: "10px"}}className="complete">
+                          borderRadius: "10px"}} className="complete">
                         ✓ Completed
                       </span>
                     )}
                     {isLocked && !isActive && !isCompleted && (
-                      <span style={{ color: "#777293",backgroundColor:'#3e365c',border:'1px solid #777293'}}className="complete">
+                      <span style={{ color: "#777293",backgroundColor:'#3e365c',border:'1px solid #777293'}} className="complete">
                         Complete Previous
                       </span>
                     )}
                 </div>
 
                 <p>{step.description}</p>
-                
 
-                {/* Topics */}
                 {step.topics && (
-                  <>
-                    <div className="topics">
-                      {step.topics.map((t, index) => (
-                        <div key={index} className="onetopic">
-                          {t}
-                        </div>
-                      ))}
-                    </div>
-                  </>
+                  <div className="topics">
+                    {step.topics.map((t, index) => (
+                      <div key={index} className="onetopic">
+                        {t}
+                      </div>
+                    ))}
+                  </div>
                 )}
 
-                {/* Resources */}
                 {step.resources && (
                   <>
                     {openSteps[step.number] && (
-                      <ul type="none">
+                      <ul type="none" className="ul">
                         <hr />
                         <h4 style={{ fontSize: "16px" }}>Resources:</h4>
 
                         {step.resources.map((r, index) => (
-                          // ال li نفسها اللي هتودينا لل url ف شيلت الانكور تاج بتاعتك
                           <Link
                             to={r.url}
                             target="_blank"
@@ -930,7 +944,6 @@ export default function RoadmapDetail() {
                               </div>
 
                               <div className="iconlink">
-                                {/* ال svg علامة اللينك دي مش عارفه اسمها */}
                                 {r.name}
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -962,6 +975,10 @@ export default function RoadmapDetail() {
           })}
         </div>
       </div>
+
+      
+
+
     </>
   );
 }

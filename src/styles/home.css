@@ -6,11 +6,13 @@
 
 .first-part{
     margin-top: 10rem;
+    text-align: center;
 }
 
 .header1{
     font-size: 500% !important;
     font-weight: 700;
+    
 }
 
 .home-title-text {
@@ -71,3 +73,111 @@
 .homeroutes{
     text-decoration: none !important;
 }
+
+@media (max-width: 767px) {
+    .cont {
+        gap: 80px;
+    }
+
+    .first-part {
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .header1 {
+        font-size: 48px !important;
+    }
+
+    .header2 {
+        width: 90%;
+        margin: 24px auto 36px auto;
+        font-size: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .butn1, .butn2 {
+        width: 150px;
+        height: 50px;
+        font-size: 14px !important;
+    }
+
+    .sec-part {
+        flex-direction: column;
+        gap: 36px;
+        align-items: center;
+    }
+
+    .readydiv Button {
+        width: 200px;
+        font-size: 13px;
+        height: 45px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .cont {
+        gap: 112px;
+    }
+
+    .first-part {
+        margin-top: 112px;
+    }
+
+    .header1 {
+        font-size: 64px !important;
+    }
+
+    .header2 {
+        width: 70%;
+        margin-bottom: 32px;
+        font-size: 18px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        gap: 36px;
+    }
+
+    .butn1, .butn2 {
+        width: 160px;
+        height: 55px;
+        font-size: 18px !important;
+    }
+
+    .sec-part {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 36px;
+        justify-content: center;
+    }
+
+    .readydiv Button {
+        width: 230px;
+        height: 50px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px) {
+    .cont {
+        gap: 160px;
+    }
+
+    .header1 {
+        font-size: 80px !important;
+    }
+
+    .header2 {
+        width: 60%;
+        font-size: 18px;
+    }
+
+    .sec-part {
+        gap: 64px;
+    }
+}
+

@@ -891,7 +891,7 @@ export default function RoadmapDetail() {
                           backgroundColor: "#331b58",
                           border:'1px solid #9d42ef',
                           color: "#9d42ef",
-                          border:'none'
+                          // border:'none'
                         }}
                       >
                         Mark Complete

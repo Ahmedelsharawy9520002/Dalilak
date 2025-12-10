@@ -92,11 +92,11 @@
   --infosqr-p-color: #66758c;
 
 
-  --repeated-component-bg:linear-gradient(to right, #e5d1f4, #f0d2f5, #f5eaf7);
+  --repeated-component-bg:linear-gradient(to right, #d3cddc, #ecd8f1, #f5eaf7);
 
   --repeated-component-border:#cba8ec;
-  --repeated-component-btn-bg:#c026d3;
-  --repeated-component-btn-bg-hover:#c026d3e6;
+  --repeated-component-btn-bg:rgb(156, 47, 199);
+  --repeated-component-btn-bg-hover:rgb(166, 57, 209);
 
 
   /* about */

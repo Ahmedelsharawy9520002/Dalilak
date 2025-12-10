@@ -12,8 +12,14 @@
     font-size: 500% !important;
     font-weight: 700;
 }
+
+.home-title-text {
+    color: var(--text-hover); 
+}
+
+
 .mycolor{
-    background: linear-gradient(to right, #8f1ff8, #8f6aff, #ff53ac);
+    background: var(--home-mycolor);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -21,6 +27,8 @@
 .header2{
     width: 60%;
     margin-bottom: 3%;
+    color: var(--text-hover);
+    opacity: var(--header2-oacity)
 }
 
 
@@ -32,30 +40,34 @@
 }
 
 .butn1{
-   background: #A145FF !important; 
+   background: var(--signup-btn) !important; 
    transition: all 0.1s ease !important;
 }
 .butn1:hover{
-   background: #9440EC !important; 
+   background: var(--signup-btn-hover) !important; 
    width: 187px;
 }
 
 .butn2{
     border: #ad71f6 solid 3px !important;
-    color: white !important;
+    color: var(--text-hover) !important;
 }
+
 .butn2:hover{
-    background: linear-gradient(to right, rgba(117, 90, 239, 0.1), #1a113f) ; 
+    background: var(--btn2-hover); 
 }
+
 .readydiv Button{
     height: 53px;
     width: 260px;
     font-size: 15px;
 }
+
 .readydiv Button:hover{
     background-color: rgb(234, 72, 191);
 
 }
+
 .homeroutes{
     text-decoration: none !important;
 }

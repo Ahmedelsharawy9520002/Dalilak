@@ -8,7 +8,7 @@ import Logo from "../assets/Logo.jpg";
 import { BookOpen, Menu, X, Sun, Moon, Languages } from "lucide-react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './Dashboard';
-function Navbar() {
+function Navbar({ theme, switchTheme }) {
   return (
     <>
       <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
@@ -55,7 +55,7 @@ function Navbar() {
           </div> */}
 
           <div className="d-flex align-items-center gap-2 ">
-            <button className="navbarthemebtn"><Sun className="sun"/></button>
+            <button className="navbarthemebtn" onClick={switchTheme}><Sun className="sun"/></button>
             <button className="navbarlanguagebtn"><Languages className="lang" /><span className="ennavbar"> EN</span></button>
             
             <Link to="/login">

@@ -1,4 +1,103 @@
 #root {
-  background: linear-gradient(to top, #0c0a18, #24184b, #0c0a18);
+  background: var(--root-bg);
   color: white;
+}
+
+
+
+:root {
+
+  --root-bg:linear-gradient(to top, #0c0a18, #24184b, #0c0a18);
+
+  /* navar */
+  --navbar-bg: rgba(13, 11, 26,0.98);
+  --navbar-border: rgb(36, 27, 66);
+  --text-color: rgb(148, 147, 155);
+  --text-hover: rgb(255, 255, 245);
+  --btn-hover-bg: rgb(44, 28, 91);
+  --active-link: rgb(161, 69, 255);
+  --signup-btn:rgb(161, 69, 255);
+  --signup-btn-hover: rgb(146, 63, 233);
+  --btn-shadow:rgb(47, 25, 79);
+  --btn-drop-shadow:rgb(80, 37, 131);
+
+
+
+   /* home */
+
+  --home-mycolor:linear-gradient(to right, #8f1ff8, #8f6aff, #ff53ac);
+  --header2-oacity:0.75;
+  --btn2-hover:linear-gradient(to right, rgba(117, 90, 239, 0.1), #1a113f) ;
+
+
+  --infosr-outer-box-border:rgba(255, 255, 255, 0.1);
+  --infosr-outer-box-border-hover:rgb(97, 52, 143);
+  --infosr-outer-box-bg-hover:rgba(54, 42, 110, 0.1);
+  --infosqr-p-opacity:0.75;
+  --infosqr-p-color: #b8b8d1;
+
+  --repeated-component-bg:linear-gradient(to right, #33285c, #4a2a7d, rgb(130, 57, 107, 0.5));
+  --repeated-component-border:rgb(53, 9, 65);
+  --repeated-component-btn-bg:#F254D6;
+  --repeated-component-btn-bg-hover:#e64eca;
+
+  /* about */
+  --about-border:#443771;
+  --about-box-bg:#1c1338;
+  --stats-color:#b357ff;
+
+
+
+  /* footer */
+  --footr-a-bg-hover:#2c1c5b;
+}
+
+
+
+[data-theme='light'] {
+  --root-bg : rgb(254, 252, 255);
+
+  /* navar */
+  --navbar-bg: rgb(254, 252, 255);
+  --navbar-border: rgb(233, 213, 255);
+  --signup-btn:rgb(126, 34, 206);
+  --signup-btn-hover: rgb(146, 63, 233);
+  --text-hover:rgb(74, 29, 150);
+  --text-color: rgb(174 152 208);
+  --btn-hover-bg:white;
+  --btn-shadow: transparent;
+  --btn-drop-shadow: rgba(126, 34, 206, 0.4); 
+
+  
+  /* home */
+
+  --home-mycolor:linear-gradient(to right, #7e22ce, #6b21a8, #c026d3);
+  --header2-oacity:1;
+  --btn2-hover:linear-gradient(to right, rgba(126, 34, 206, 0.1), #ffffff) ;
+
+
+
+  --infosr-outer-box-border:rgb(233, 213, 255);
+  --infosr-outer-box-border-hover:rgb(146, 63, 233);
+  --infosr-outer-box-bg-hover:transparent;
+  --infosqr-p-opacity: 1;
+  --infosqr-p-color: #66758c;
+
+
+  --repeated-component-bg:linear-gradient(to right, #e5d1f4, #f0d2f5, #f5eaf7);
+
+  --repeated-component-border:#cba8ec;
+  --repeated-component-btn-bg:#c026d3;
+  --repeated-component-btn-bg-hover:#c026d3e6;
+
+
+  /* about */
+
+  --about-border:rgb(233, 213, 255);
+  --about-box-bg:rgb(254, 252, 255);
+  --stats-color:#8924cf;
+
+
+  /* footer */
+  --footr-a-bg-hover:#edd2f4;
 }

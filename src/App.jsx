@@ -9,13 +9,27 @@ import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import RoadmapDetail from './components/tracks';
+import { useState, useEffect} from 'react';
 
 
 
 function App() {
+
+
+  const [theme, setTheme] = useState('light');
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  };
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
+
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} switchTheme={switchTheme} />
       <Routes>
         <Route path="/Dalilak" element={<Home />} />
         <Route path="/About" element={<About />} />

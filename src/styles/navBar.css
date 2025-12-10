@@ -5,26 +5,26 @@
 }
 
 .navbar_content{
-  background-color: rgba(13, 11, 26,0.98);
+  background-color: var(--navbar-bg);
   border-bottom: 1px solid ;
-  border-color: rgb(36, 27, 66);
+  border-color: var(--navbar-border);
   position: sticky !important;
   top: 0;
   z-index: 100;
 }
 .navbarwords a {
   position: relative;
-  color: rgb(148, 147, 155);
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.4s;
 }
 
 .navbarwords a:hover{
-  color: rgb(255, 255, 245);
+  color: var(--text-hover);
 }
 .navbarwords a.active-link {
-  color: rgb(161, 69, 255) !important;
+  color: var(--active-link) !important;
 }
 
 .logo{
@@ -32,7 +32,7 @@
   background-color: transparent;
 }
 .navbarsignupbtn{
-  background-color: #a145ff ;
+  background-color: var(--signup-btn) ;
   color:rgb(255, 255, 245);
   border: none;
   padding: 8px 14px;
@@ -40,37 +40,44 @@
 
 }
 .navbarsignupbtn:hover{
-  background-color: rgb(146, 63, 233);
+  background-color: var(--signup-btn-hover);
 }
+
+
 .navbarloginbtn{
   background-color: transparent ;
-  color: rgb(255, 255, 245);
+  color: var(--text-hover);
   border: none;
   padding: 8px 14px;
   border-radius: 8px;
   margin: 0px 4px;
 }
+
+
 .navbarloginbtn:hover{
-  background-color: rgb(44, 28, 91);
+  background-color: var(--btn-hover-bg);
+  filter: drop-shadow(0px 2px 3px  var(--btn-drop-shadow));
+  
 }
 
 .navbarthemebtn{
   background-color: transparent ;
-  color:rgb(161, 69, 255);
+  color:var(--signup-btn);
   border: none;
   padding: 7px 7px;
   border-radius: 10px;
   margin: 0px 4px;
 }
+
 .navbarthemebtn:hover{
-  background-color: rgb(44, 28, 91);
-  box-shadow: 0 2px 0 0 rgb(47, 25, 79);
-  filter: drop-shadow(0px 3px 3px  rgb(80, 37, 131));
+  background-color: var(--btn-hover-bg);
+  box-shadow: 0 2px 0 0 var(--btn-shadow);
+  filter: drop-shadow(0px 2px 3px  var(--btn-drop-shadow));
 }
 
 .navbarlanguagebtn{
   background-color: transparent ;
-  color:rgb(161, 69, 255);
+  color:var(--signup-btn);
   border: none;
   padding: 7px 7px;
   border-radius: 10px;
@@ -88,16 +95,19 @@
 }
 
 .navbarlanguagebtn:hover{
-  background-color: rgb(44, 28, 91);
-  box-shadow: 0 2px 0 0 rgb(47, 25, 79);
-  filter: drop-shadow(0px 2px 3px  rgb(80, 37, 131));
+  background-color: var(--btn-hover-bg);
+  box-shadow: 0 2px 0 0 var(--btn-shadow);
+  filter: drop-shadow(0px 2px 3px  var(--btn-drop-shadow));
 }
 
 .ennavbar{
-  color: rgb(255, 255, 245);
+  color: var(--text-hover);
 }
+
+
 .Logoname{
   background: linear-gradient(to right, rgb(163, 70, 254), rgb(250, 77, 204));
+  background-clip: text; 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent; 
@@ -118,6 +128,6 @@
 }
 
 .logo:hover .booklogo {
-  box-shadow: 0 2px 0 0 rgb(47, 25, 79);
+  box-shadow: 0 2px 0 0 var(--btn-shadow);
   filter: drop-shadow(0px 5px 3px  rgb(80, 37, 131));
 }

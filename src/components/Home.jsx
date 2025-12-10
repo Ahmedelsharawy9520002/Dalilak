@@ -10,17 +10,17 @@ import { Link } from "react-router-dom";
 
 function Home() {
     const elements = [
-        {icon:< FiBookOpen className='myicon fs-4 text-black'/>, header:"Structured Learning Paths", p:"Follow carefully designed roadmaps that break down complex topics into manageable steps."},
-        {icon:< SlEnergy className='myicon fs-4 text-black'/>, header:"Three Difficulty Levels", p:"Choose your path: Beginner, Intermediate, or Expert. Progress at your own pace."},
-        {icon:< FiTarget className='myicon fs-4 text-black'/>, header:"Goal-Oriented Learning", p:"Track your progress and achieve your learning objectives with detailed guidance."}
+        {icon:< FiBookOpen className='myicon fs-4'/>, header:"Structured Learning Paths", p:"Follow carefully designed roadmaps that break down complex topics into manageable steps."},
+        {icon:< SlEnergy className='myicon fs-4 '/>, header:"Three Difficulty Levels", p:"Choose your path: Beginner, Intermediate, or Expert. Progress at your own pace."},
+        {icon:< FiTarget className='myicon fs-4 '/>, header:"Goal-Oriented Learning", p:"Track your progress and achieve your learning objectives with detailed guidance."}
     ]
 
     return (
     <>
         <div className='cont container'>
             <div className='first-part d-flex flex-column align-items-center'>
-                <h1 className='header1'><span className='text-light'>Master</span> <span className='mycolor'>Computer Science</span></h1>
-                <h5 className='header2 text-light opacity-75'>Navigate your learning journey with expertly crafted roadmaps.
+                <h1 className='header1'><span className='home-title-text'>Master</span> <span className='mycolor'>Computer Science</span></h1>
+                <h5 className='header2 home-desc-text'>Navigate your learning journey with expertly crafted roadmaps.
                     From beginner fundamentals to expert mastery—find your path to success.</h5>
                 <span className='buttons d-flex gap-4'>
                     <Link to="/Roadmaps" className='homeroutes'>
@@ -32,6 +32,7 @@ function Home() {
                 </span>
                 
             </div>
+
             <div className='sec-part d-flex gap-4 justify-content-center '>
                 {
                     elements.map((val)=>(
@@ -39,6 +40,7 @@ function Home() {
                     ))
                 }            
             </div>
+            
             <div className='third-part d-flex justify-content-center readydiv'>
                 <RepeatedComponent 
                 header="Ready to start your journey?" 

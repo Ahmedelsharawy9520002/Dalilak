@@ -11,6 +11,9 @@ import Signup from './components/Signup';
 import RoadmapDetail from './components/tracks';
 import { useState, useEffect} from 'react';
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./styles/toast.css";
 
 
 function App() {
@@ -42,6 +45,7 @@ function App() {
 
       </Routes>
       <Footer/>
+      <ToastContainer position="top-center" autoClose={3000} pauseOnHover draggable closeOnClick icon={false}/>
     </>
   )
 }

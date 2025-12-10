@@ -47,6 +47,10 @@
   --stats-color:#b357ff;
 
 
+  /* roadmaps */
+  --word-color:rgb(161, 69, 255);
+  --p-color:#cdc7d2;
+
 
   /* footer */
   --footr-a-bg-hover:#2c1c5b;
@@ -55,10 +59,14 @@
 
 
 [data-theme='light'] {
-  --root-bg : rgb(254, 252, 255);
+  /* --root-bg : rgb(254, 252, 255); */
+  --root-bg : rgb(235, 231, 237);
+
 
   /* navar */
-  --navbar-bg: rgb(254, 252, 255);
+  /* --navbar-bg: rgb(254, 252, 255); */
+  --navbar-bg: rgb(235, 231, 237);
+
   --navbar-border: rgb(233, 213, 255);
   --signup-btn:rgb(126, 34, 206);
   --signup-btn-hover: rgb(146, 63, 233);
@@ -94,9 +102,15 @@
   /* about */
 
   --about-border:rgb(233, 213, 255);
-  --about-box-bg:rgb(254, 252, 255);
+  /* --about-box-bg:rgb(254, 252, 255); */
+  --about-box-bg:rgb(238, 234, 238);
+
   --stats-color:#8924cf;
 
+
+  /* roadmaps */
+  --word-color:#7e22ce;
+  --p-color:#66758c;
 
   /* footer */
   --footr-a-bg-hover:#edd2f4;

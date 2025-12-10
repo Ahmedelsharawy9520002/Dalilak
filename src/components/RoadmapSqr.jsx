@@ -9,7 +9,7 @@ function Roadmapsqr(props){
                 <RxLightningBolt className="lightning"/>
             </div>
             <h5 className="mytitle fw-bold">{props.title}</h5>
-            <p>{props.desc}</p>
+            <p className="roadmapsqrdesc">{props.desc}</p>
             <div className="d-flex gap-2">
                 <p className="levelsqr" level={props.level}>{props.level}</p>
                 <p className="duration">{props.duration}</p>

@@ -8,7 +8,11 @@ import Logo from "../assets/Logo.jpg";
 import { BookOpen, Menu, X, Sun, Moon, Languages } from "lucide-react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './Dashboard';
-function Navbar() {
+import Dropdown from 'react-bootstrap/Dropdown';
+import profilepic from '../images/profilepic.webp'
+import { CgProfile } from "react-icons/cg";
+
+function Navbar(props) {
   return (
     <>
       <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
@@ -58,13 +62,35 @@ function Navbar() {
             <button className="navbarthemebtn"><Sun className="sun"/></button>
             <button className="navbarlanguagebtn"><Languages className="lang" /><span className="ennavbar"> EN</span></button>
             
-            <Link to="/login">
-              <button className="navbarloginbtn">Login</button>
-            </Link>
+            {
+              !props.currentUser &&( 
+              <>
+                <Link to="/login">
+                  <button className="navbarloginbtn">Login</button>
+                </Link>
 
-            <Link to="/signup">
-              <button className="navbarsignupbtn">Sign Up</button>
-            </Link>
+                <Link to="/signup">
+                  <button className="navbarsignupbtn">Sign Up</button>
+                </Link>
+              </>
+            )}
+
+            {
+              props.currentUser &&( 
+              <>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src={profilepic} alt="profilepic" className="rounded-circle" style={{height:"30px", width:"30px"}}/>
+                  </button>
+                  <ul class="dropdown-menu bg-secondary" >
+                    <li className="d-flex"><a class="dropdown-item rounded" href="#">{props.currentUser}</a></li>
+                    <li><Link to="/login" class="dropdown-item bg-danger rounded">Log Out</Link></li>
+                  </ul>
+                </div>
+              </>
+            )}
+
+            
           </div>
 
 

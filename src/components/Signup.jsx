@@ -76,6 +76,7 @@ import "../styles/signup.css";
 import githubLogo from "../assets/github_logo-removebg-preview.png";
 import googleLogo from "../assets/google_logo-removebg-preview.png";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const InputField = ({ label, type, placeholder, icon, name, value, onChange }) => {
   return (
@@ -111,7 +112,7 @@ const SocialLogin = () => {
   );
 };
 
-const Signup = () => {
+const Signup = (props) => {
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -121,6 +122,8 @@ const Signup = () => {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
 
   // أي تغيير في أي input
   const handleChange = (e) => {
@@ -152,6 +155,9 @@ const Signup = () => {
       .then((res) => {
         console.log("Signed up user:", res.data);
         alert("Account created successfully ✅");
+        navigate("/Dalilak");
+
+        props.setCurrentUser(form.fullName)
 
         // تفضّلي: امسحي الفورم بعد التسجيل
         setForm({

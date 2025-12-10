@@ -6,14 +6,16 @@
     font-weight: 700;
     margin-top: 50px;
     margin-bottom: 20px;
+    color: var(--text-hover);
 }
 .word{
-    color:rgb(161, 69, 255);
+    color:var(--word-color);
 }
 .desc{
     font-size: large;
     max-width: 650px;
     margin-bottom: 30px;
+    color: var(--p-color);
 }
 
 .searchinp{

@@ -1,5 +1,5 @@
 .container{
-    max-width: 1100px !important;
+    max-width: 1100px;
 }
 .title{
     font-size: 300% !important;
@@ -19,7 +19,7 @@
 }
 
 .searchinp{
-    width: 1088px;
+    width: 100%;
     margin-bottom: 33px;
     background-color:rgba(14, 12, 28, 0.5)  !important;
     border: 1px solid rgb(75, 55, 130) ;
@@ -36,20 +36,10 @@
     padding-left: 25px;
 }
 
-
-/* .searchinp:focus{
-    /* border-color: rgb(159, 68, 252) !important; */
-    /* border: 2px solid rgb(60, 43, 106) !important; */
-    
-    /* color: rgb(255, 255, 241) !important; */
-   
-/* } */ 
 .levels{
     margin-bottom: 60px;
 }
 .level{
-    /* border: solid #312e4e 1px; */
-    /* background-color: #281e55; */
     background-color: #2c1c5b;
     border: 1px solid rgba(141, 107, 251, 0.5);
     padding: 10px 20px 10px;
@@ -89,11 +79,8 @@
     color: rgb(161, 69, 255) !important;
 }
 .iconcont{
-    width: 297px;
     height: 80px;
-    /* background: linear-gradient(to bottom, #ff53ac, #6316ab); */
     background: linear-gradient(80deg, rgb(145, 56, 234), rgb(233, 57, 167));
-    
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -149,4 +136,25 @@
 .view{
     transition: all 0.1s ease;
     color: #1E1640 !important;
+}
+@media (max-width:1098px) and (min-width:1025px){
+    .roadmapsqrcont{
+        width: 300px;
+        height: 105%;
+    }
+}
+@media (max-width:732px){
+    .roadmapsqrcont{
+        width: 105%;
+        height: 100%;
+    }
+    .roadmapsqrdesc{
+        max-width: 400px;
+    }
+}
+@media (max-width:542px){
+    .roadmapsqrcont{
+        width: 100%;
+        height: 100%;
+    }
 }

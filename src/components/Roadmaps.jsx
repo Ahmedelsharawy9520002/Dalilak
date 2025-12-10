@@ -78,7 +78,7 @@ function Roadmaps(){
         setcategory(selectedCategory)
     }
     return(
-        <div className="container ">
+        <div className="container">
             
             <h1 className='title'>Computer Science <span className='word'>Roadmaps</span></h1>
             <p className='desc'>Select your skill level and dive into a structured learning path designed to take you from beginner to expert.</p>
@@ -91,7 +91,7 @@ function Roadmaps(){
                 placeholder='Search roadmaps by title or topic...'
                 />
             </div>
-            <div className="levels d-flex gap-3">
+            <div className="levels d-flex flex-wrap gap-3">
                 {levels.map((item, index) => (
                     <div
                         key={index}
@@ -106,7 +106,7 @@ function Roadmaps(){
                 ))}
             </div>
             <p>Showing {displayed.length} of {roadmaps.length} roadmaps</p>
-            <div className='cardscont d-flex flex-wrap gap-4'>
+            <div className='cardscont d-flex flex-wrap gap-4 justify-content-center'>
                 {
                 displayed.map((elem)=>(
                     <RoadmapSqr id={elem.id} title={elem.title} desc={elem.description} level={elem.level} duration={elem.duration} steps={elem.steps} />

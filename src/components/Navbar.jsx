@@ -8,7 +8,11 @@ import Logo from "../assets/Logo.jpg";
 import { BookOpen, Menu, X, Sun, Moon, Languages } from "lucide-react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './Dashboard';
-function Navbar({ theme, switchTheme }) {
+import Dropdown from 'react-bootstrap/Dropdown';
+import profilepic from '../images/profilepic.webp'
+import { CgProfile } from "react-icons/cg";
+
+function Navbar(props) {
   return (
     <>
       <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
@@ -55,16 +59,38 @@ function Navbar({ theme, switchTheme }) {
           </div> */}
 
           <div className="d-flex align-items-center gap-2 ">
-            <button className="navbarthemebtn" onClick={switchTheme}><Sun className="sun"/></button>
+            <button className="navbarthemebtn" onClick={props.switchTheme}><Sun className="sun"/></button>
             <button className="navbarlanguagebtn"><Languages className="lang" /><span className="ennavbar"> EN</span></button>
             
-            <Link to="/login">
-              <button className="navbarloginbtn">Login</button>
-            </Link>
+            {
+              !props.currentUser &&( 
+              <>
+                <Link to="/login">
+                  <button className="navbarloginbtn">Login</button>
+                </Link>
 
-            <Link to="/signup">
-              <button className="navbarsignupbtn">Sign Up</button>
-            </Link>
+                <Link to="/signup">
+                  <button className="navbarsignupbtn">Sign Up</button>
+                </Link>
+              </>
+            )}
+
+            {
+              props.currentUser &&( 
+              <>
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle border border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src={profilepic} alt="profilepic" className="rounded-circle" style={{height:"30px", width:"30px"}}/>
+                  </button>
+                  <ul class="dropdown-menu" style={{background:"var(--btn-shadow)"}}>
+                    <li className="d-flex"><a class="dropdown-item rounded" href="#" style={{color:"var(--text-hover)"}}>{props.currentUser}</a></li>
+                    <li><Link to="/login" class="dropdown-item bg-danger rounded" style={{color:"var(--text-hover)"}}>Log Out</Link></li>
+                  </ul>
+                </div>
+              </>
+            )}
+            {console.log(props.currentUser)}
+            
           </div>
 
 

@@ -1,5 +1,3 @@
-/* toast-alt.css - clean version WITHOUT left-side icons */
-
 .Toastify__toast-container {
   font-family: "Montserrat", sans-serif;
   z-index: 9999;
@@ -17,7 +15,6 @@
   color: #f3eefc;
 }
 
-/* remove icons completely */
 .toast-icon {
   display: none !important;
 }
@@ -30,7 +27,7 @@
   font-weight: 600;
 }
 
-/* progress bar */
+
 .Toastify__progress-bar {
   height: 3px !important;
   border-radius: 6px;
@@ -38,7 +35,6 @@
   opacity: 0.95 !important;
 }
 
-/* close button */
 .Toastify__close-button {
   color: rgba(255,255,255,0.75);
   opacity: 0.95;

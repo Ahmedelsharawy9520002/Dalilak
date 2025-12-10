@@ -12,7 +12,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import profilepic from '../images/profilepic.webp'
 import { CgProfile } from "react-icons/cg";
 
-function Navbar({ theme, switchTheme }props) {
+function Navbar(props) {
   return (
     <>
       <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
@@ -59,7 +59,7 @@ function Navbar({ theme, switchTheme }props) {
           </div> */}
 
           <div className="d-flex align-items-center gap-2 ">
-            <button className="navbarthemebtn" onClick={switchTheme}><Sun className="sun"/></button>
+            <button className="navbarthemebtn" onClick={props.switchTheme}><Sun className="sun"/></button>
             <button className="navbarlanguagebtn"><Languages className="lang" /><span className="ennavbar"> EN</span></button>
             
             {
@@ -79,17 +79,17 @@ function Navbar({ theme, switchTheme }props) {
               props.currentUser &&( 
               <>
                 <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn dropdown-toggle border border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src={profilepic} alt="profilepic" className="rounded-circle" style={{height:"30px", width:"30px"}}/>
                   </button>
-                  <ul class="dropdown-menu bg-secondary" >
-                    <li className="d-flex"><a class="dropdown-item rounded" href="#">{props.currentUser}</a></li>
-                    <li><Link to="/login" class="dropdown-item bg-danger rounded">Log Out</Link></li>
+                  <ul class="dropdown-menu" style={{background:"var(--btn-shadow)"}}>
+                    <li className="d-flex"><a class="dropdown-item rounded" href="#" style={{color:"var(--text-hover)"}}>{props.currentUser}</a></li>
+                    <li><Link to="/login" class="dropdown-item bg-danger rounded" style={{color:"var(--text-hover)"}}>Log Out</Link></li>
                   </ul>
                 </div>
               </>
             )}
-
+            {console.log(props.currentUser)}
             
           </div>
 

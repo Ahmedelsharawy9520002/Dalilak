@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      {!hideNavbar && <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+      {!hideNavbar && <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser} />}
       <Routes>
         <Route path="/Dalilak" element={<Home />} />
         <Route path="/About" element={<About />} />

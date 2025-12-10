@@ -12,7 +12,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import profilepic from '../images/profilepic.webp'
 import { CgProfile } from "react-icons/cg";
 
-function Navbar(props) {
+function Navbar({ theme, switchTheme }props) {
   return (
     <>
       <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
@@ -59,7 +59,7 @@ function Navbar(props) {
           </div> */}
 
           <div className="d-flex align-items-center gap-2 ">
-            <button className="navbarthemebtn"><Sun className="sun"/></button>
+            <button className="navbarthemebtn" onClick={switchTheme}><Sun className="sun"/></button>
             <button className="navbarlanguagebtn"><Languages className="lang" /><span className="ennavbar"> EN</span></button>
             
             {

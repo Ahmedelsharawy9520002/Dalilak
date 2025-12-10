@@ -2,12 +2,12 @@
     border-radius: 19px;
     width: 350px;
     height: 250px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--infosr-outer-box-border);
     transition: all 0.2s ease;
 }
 .outer-box:hover{
-    border-color: #61348f;
-    background-color: rgba(54, 42, 110, 0.1) ; 
+    border-color: var(--infosr-outer-box-border-hover);
+    background-color: var(--infosr-outer-box-bg-hover) ; 
     box-shadow: 10px 10px 15px rgba(26, 17, 63, 0.1);
 }
 .outer-box:hover .icon-bg{
@@ -24,4 +24,14 @@
 }
 .myicon{
     color: #930dd6;
+}
+
+
+.infosqr-h {
+    color: var(--text-hover); 
+}
+
+.infosqr-p{
+    color: var(--infosqr-p-color); 
+    opacity: var(--infosqr-p-opacity);
 }

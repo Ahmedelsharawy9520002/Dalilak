@@ -9,8 +9,8 @@ function Infosqr(props) {
         <div className='icon-bg d-flex justify-content-center align-items-center'>
             {props.icon}
         </div>
-        <h5 className='text-light fw-bold'>{props.header}</h5>
-        <p className='text-light opacity-50'>{props.p}</p>
+        <h5 className='infosqr-h fw-bold'>{props.header}</h5>
+        <p className='infosqr-p'>{props.p}</p>
       </div>
     </>
   )

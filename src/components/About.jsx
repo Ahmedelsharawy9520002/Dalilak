@@ -12,7 +12,7 @@ export default function About() {
     <div className="aboutpage">
       <div className="contbox container">
         <header className="header">
-          <h1 className="title">
+          <h1 className="title home-title-text">
             About <span className="imp">Dalilak</span>
           </h1>
           <p className="subt">
@@ -37,7 +37,7 @@ export default function About() {
             <div className="icon">
               <FiBookOpen />
             </div>
-            <h3>Accessible Learning</h3>
+            <h3 className="infosqr-h">Accessible Learning</h3>
             <p>
               We believe education should be accessible to everyone, regardless of background or resources. Our platform is designed to be free and inclusive.
             </p>
@@ -47,7 +47,7 @@ export default function About() {
             <div className="icon">
               <GoGoal />
             </div>
-            <h3>Goal-Oriented</h3>
+            <h3 className="infosqr-h">Goal-Oriented</h3>
             <p>
               Every roadmap is designed with clear milestones and objectives, helping you stay focused and motivated throughout your learning journey.
             </p>
@@ -57,7 +57,7 @@ export default function About() {
             <div className="icon">
               <Users />
             </div>
-            <h3>Community-Driven</h3>
+            <h3 className="infosqr-h">Community-Driven</h3>
             <p>
               Our roadmaps are created and refined by experts and learners alike, ensuring they reflect real-world needs and best practices.
             </p>
@@ -67,7 +67,7 @@ export default function About() {
             <div className="icon">
               <Award />
             </div>
-            <h3>Quality Content</h3>
+            <h3 className="infosqr-h">Quality Content</h3>
             <p>
               We curate and verify all learning resources to ensure you’re getting the most up-to-date and effective educational content available.
             </p>

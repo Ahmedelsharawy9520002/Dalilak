@@ -9,12 +9,24 @@ import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import RoadmapDetail from './components/tracks';
-import { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState, useEffect} from 'react';
 
 
 
 function App() {
+
+
+  const [theme, setTheme] = useState('light');
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  };
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
+
   const [currentUser, setCurrentUser] = useState(null)
   const location = useLocation();
 
@@ -22,7 +34,7 @@ function App() {
 
   return (
     <>
-      {!hideNavbar && <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+      {!hideNavbar && <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
       <Routes>
         <Route path="/Dalilak" element={<Home />} />
         <Route path="/About" element={<About />} />

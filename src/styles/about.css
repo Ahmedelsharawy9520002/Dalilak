@@ -7,7 +7,7 @@ body{
 .aboutpage {
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(to top, #24184b, #0c0a18);
+  background: var(--root-bg);
   display: flex;
   justify-content: center; 
   align-items: center;     
@@ -31,7 +31,7 @@ body{
 }
 
 .header .imp {
-  background: linear-gradient(to right, #8f1ff8, #8f6aff, #ff53ac);
+  background: var(--home-mycolor);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -41,22 +41,23 @@ body{
   line-height: 1.5;
   max-width: 600px;
   margin: 0 auto 40px;
-  color: #c9c9c9;
+  /* color: #c9c9c9; */
+  color: var(--infosqr-p-color);
 }
 
 .mission {
   /* border: 1px solid #4d1f7a; */
-  border: 1px solid #443771;
+  border: 1px solid var(--about-border);
   border-radius: 12px;
   /* background-color: #15002c; */
-  background-color: #1c1338;
+  background-color: var(--about-box-bg);
   padding: 25px 35px;
   margin-bottom: 50px;
   text-align: left;
 }
 
 .mission h2.sectitle {
-  color: #fff;
+  color: var(--text-hover);
   font-weight: 600;
   margin-bottom: 15px;
   font-size: 29px;
@@ -66,7 +67,7 @@ body{
   line-height: 1.6;
   font-size: 18px;
   margin-bottom: 15px;
-  color: #e4e3e3;
+  color: var(--infosqr-p-color);
 }
 
 .cvalstitle {
@@ -74,6 +75,8 @@ body{
   font-weight: 600;
   margin-bottom: 25px;
   text-align: center;
+  color: var(--text-hover);
+
 }
 
 .cvals {
@@ -85,9 +88,9 @@ body{
 
 .corecard {
   /* background-color: #15002c; */
-  background-color: #1c1338;
+  background-color: var(--about-box-bg);
   /* border: 1px solid #4d1f7a; */
-  border: 1px solid #443771;
+  border: 1px solid var(--about-border);
   border-radius: 12px;
   padding: 25px;
   text-align: left;
@@ -119,21 +122,22 @@ body{
 .corecard p {
   font-size: 16px;
   line-height: 1.4;
-  color: #d9d9d9;
+  /* color: #d9d9d9; */
+  color: var(--infosqr-p-color);
 }
 
 
 .stats {
   /* background:#15002c ; */
-  background-color: #1c1338;
+  background-color: var(--about-box-bg);
   /* border: 1px solid #4d1f7a; */
-  border: 1px solid #443771;
+  border: 1px solid var(--about-border);
   border-radius: 12px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   padding: 35px;
-  color: #b357ff;
+  color: var(--stats-color);
   font-weight: 700;
   font-size: 15px;
   text-align: center;
@@ -146,12 +150,12 @@ body{
   font-weight: bold;
   margin: 0 0 6px 0;
   /* background: linear-gradient(to right, #8f1ff8, #8f6aff, #ff53ac); */
-  background-color: #e057ff;
+  background-color: var(--stats-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .statcard p {
   font-size: 13px;
-  color: #c9c9c9;
+  color: var(--infosqr-p-color);
   margin: 0;
 }

@@ -133,3 +133,27 @@
 }
 
 
+@media (max-width: 768px) {
+  .navbarwords {
+    gap: 5px ; 
+  }
+  .navbarwords a {
+    font-size:11px;
+    margin: 1 4px;
+  }
+  .navbarsignupbtn,
+  .navbarloginbtn,
+  .navbarthemebtn,
+  .navbarlanguagebtn {
+    padding: 4px 18px; 
+    font-size: 12px; 
+    margin: 0 20px;
+  }
+  .booklogo {
+    padding: 3px 3px;
+  }
+  .Logoname {
+    font-size: 18px; 
+    margin-right: 9px;
+  }
+}

@@ -50,7 +50,7 @@ export default function RoadmapDetail() {
 
   return (
     <>
-      <Navbar />
+      
       
       <div className="tracksnavbar navbar">
         <div className="navbar container ">
@@ -139,6 +139,23 @@ export default function RoadmapDetail() {
                             {lang === 'ar' ? "إكمال الخطوة" : "Mark Complete"}
                         </button>
                         )}
+                  {isActive && (
+                      <button
+                        className="complete"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCompleteStep(index);
+                        }}
+                        style={{
+                          backgroundColor: "#331b58",
+                          border:'1px solid #9d42ef',
+                          color: "#9d42ef",
+                          // border:'none'
+                        }}
+                      >
+                        Mark Complete
+                      </button>
+                    )}
 
                         {isCompleted && (
                         <span style={{ color: "#a82a68",backgroundColor: "#491c48" ,border:"1px solid #a82a68",padding: "5px 10px", borderRadius: "10px"}} className="complete">
@@ -221,7 +238,7 @@ export default function RoadmapDetail() {
           })}
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

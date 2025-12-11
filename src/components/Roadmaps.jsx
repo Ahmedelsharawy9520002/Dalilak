@@ -86,7 +86,7 @@ const levels = [
         setcategory(selectedCategory)
     }
     return(
-        <div className="container ">
+        <div className="container">
             
             <h1 className='title'>{t('roadmapsPage.title')} <span className='word'>{t('roadmapsPage.titleSpan')}</span></h1>
             <p className='desc'> {t('roadmapsPage.desc')}</p>
@@ -99,7 +99,7 @@ const levels = [
                 placeholder={t('roadmapsPage.searchPh')}
                 />
             </div>
-            <div className="levels d-flex gap-3">
+            <div className="levels d-flex flex-wrap gap-3">
                 {levels.map((item, index) => (
                     <div
                         key={index}

@@ -122,6 +122,9 @@ text-align: left;
     width: 20px;
 }
 
+.active-link {
+  color: var(--active-link) !important;
+}
 
 
 @media (max-width: 767px) {

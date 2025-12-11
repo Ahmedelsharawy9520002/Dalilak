@@ -37,6 +37,13 @@ function Footer(){
                                 </li>
                                 <li>
                                     <Link to="/pricing" className="roboto-font">{t('footer.pricing')}</Link>
+                                    <NavLink to="/roadmaps" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>Roadmaps</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/Dashboard" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>Dashboard</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/pricing" className="roboto-font">Pricing</NavLink>
                                 </li>
                             </ul>
                         </Col>

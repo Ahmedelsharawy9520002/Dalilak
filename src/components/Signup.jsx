@@ -300,15 +300,18 @@ const SocialLogin = () => {
 
 const Signup = () => {
   const { t } = useTranslation(); 
+  const Signup = (props) => {
   const [form, setForm] = useState({
     fullName: "",
     email: "",
     password: "",
     confirmPassword: "",
-  });
+  })};
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     setForm((prev) => ({
@@ -337,6 +340,9 @@ const Signup = () => {
       .then((res) => {
         console.log("Signed up user:", res.data);
         toast.success("Account created successfully");
+        navigate("/Dalilak");
+
+        props.setCurrentUser(form.fullName)
 
         setForm({
           fullName: "",

@@ -159,3 +159,38 @@ body{
   color: var(--infosqr-p-color);
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .cvals {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+    font-size: 14px;
+  }
+  .statcard h2 {
+    font-size: 28px;
+  }
+  .mission {
+    padding: 20px 25px;
+  }
+  .header .title {
+    font-size: 28px;
+  }
+  .header .subt {
+    font-size: 16px;
+    max-width: 90%;
+    margin-bottom: 30px;
+  }
+  .corecard {
+    padding: 20px;
+  }
+  .icon {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+  }
+}

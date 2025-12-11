@@ -85,10 +85,24 @@
       "password": "12"
     },
     {
+<<<<<<< HEAD
+      "id": "20a9",
+      "name": "aa",
+      "email": "aa@a.a",
+      "password": "1"
+=======
+<<<<<<< HEAD
+      "name": "mariam nawara",
+      "email": "mariamnawara2005@gmail.com",
+      "password": "mariam",
+      "id": "So0N06E"
+=======
       "id": "ce02",
       "name": "lekaa",
       "email": "lekaab@gmail.com",
       "password": "12"
+>>>>>>> ef996750de476e2daba0dccfae86cef5613c9ad7
+>>>>>>> 818aac441e65c028003a0d9724f05d83a008722f
     },
     {
       "id": "a20e",

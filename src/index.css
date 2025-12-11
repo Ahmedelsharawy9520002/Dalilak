@@ -67,6 +67,15 @@
   --Expert-bg:rgba(166, 27, 83, 0.5);
   --duration-bg:rgba(105, 20, 170, 0.5);
 
+  /* contact us */
+
+  --contact-form-bg:rgb(29, 19, 58);
+  --contact-form-border:rgba(141, 107, 251,0.7);
+  --contact-input-bg:rgb(26, 22, 40);
+  --contact-input-border:rgba(138, 102, 255, 0.8);
+  --contact-btn-bg:rgb(161, 69, 255);
+  /* --contact-btn-bg-hover:rgb(148, 64, 235); */
+
 
 
   /* footer */
@@ -156,7 +165,8 @@
   --level-active:rgb(126, 34, 206);
 
   --roadmapsqrcont-border:rgb(233, 213, 255);
-  --roadmapsqrcont-bg:rgb(238, 234, 238);
+  /* --roadmapsqrcont-bg:rgb(238, 234, 238); */
+  --roadmapsqrcont-bg:rgb(238 226 238);
   --roadmapsqrcont-border-hover:rgb(206, 186, 228);
   --roadmapsqrcont-bg-hover:rgb(44, 28, 91);
 
@@ -164,6 +174,18 @@
   --Intermediate-bg:#f9dcce;
   --Expert-bg:#ffd1e0;
   --duration-bg:#ebe0f9;
+
+
+
+  /* contact us */
+
+  --contact-form-bg:#f9f9f9;
+  --contact-form-border:#e9d5ff;
+  --contact-input-bg:#f9f5ff;
+  --contact-input-border:#e9d5ff;
+  --contact-btn-bg:#7e22ce;
+  /* --contact-btn-bg-hover:#7e22ce; */
+
 
 
   /* footer */

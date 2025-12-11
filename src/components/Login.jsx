@@ -275,12 +275,11 @@ const SocialLogin = () => {
 
 const Login = () => {
   const { t } = useTranslation();
-const Login = (props) => {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-}
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -306,7 +305,7 @@ const Login = (props) => {
         const foundUser = users.find(
           (user) =>
             user.email === form.email &&
-            user.password === form.password    
+            user.password === form.password
         );
 
         if (!foundUser) {
@@ -316,7 +315,6 @@ const Login = (props) => {
 
           localStorage.setItem("user", JSON.stringify(foundUser));
           navigate("/Dalilak");
-          props.setCurrentUser(foundUser.name)
         }
       })
       .catch((err) => {

@@ -97,6 +97,12 @@ body{
   color: #eee;
 }
 
+.corecard:hover, .mission:hover{
+  border-color: var(--infosr-outer-box-border-hover);
+  background-color: var(--infosr-outer-box-bg-hover) ; 
+  box-shadow: 10px 10px 15px rgba(26, 17, 63, 0.1);
+}
+
 
 .icon {
   background: linear-gradient(to bottom right, rgb(133, 79, 251),rgb(244, 81, 208));

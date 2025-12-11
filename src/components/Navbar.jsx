@@ -23,13 +23,13 @@ function Navbar({ theme, switchTheme, currentUser }) {
     <>
       <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
         <div className="container ">
-          <Link to="/Dalilak" className="flex items-center gap-2 group logo ">
+          <Link to="/Home" className="flex items-center gap-2 group logo ">
             <span className="booklogo"><BookOpen  /></span> <span className="Logoname">{t('brandName')}</span>
           </Link>
 
           <div className="d-flex gap-5 navbar navbarwords ">
             <div>
-              <NavLink to="/Dalilak" className={({ isActive }) => isActive ? "active-link" : ""} >
+              <NavLink to="/Home" className={({ isActive }) => isActive ? "active-link" : ""} >
                 {t('nav.home')}
               </NavLink>
             </div>

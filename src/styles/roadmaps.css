@@ -21,8 +21,8 @@
 .searchinp{
     width: 100%;
     margin-bottom: 33px;
-    background-color:rgba(14, 12, 28, 0.5)  !important;
-    border: 1px solid rgb(75, 55, 130) ;
+    background-color:var(--searchinp-bg)  !important;
+    border: 1px solid var(--searchinp-border) ;
     border-radius: 12px !important;
     color: white;
     padding: 25px;
@@ -40,26 +40,38 @@
     margin-bottom: 60px;
 }
 .level{
-    background-color: #2c1c5b;
-    border: 1px solid rgba(141, 107, 251, 0.5);
+    background-color: var(--level-bg);
+    border: 1px solid var(--level-border);
     padding: 10px 20px 10px;
     border-radius: 12px;
     font-weight: 600;
     cursor: default;
     user-select: none;
+    color: var(--text-hover);
+
 }
 .level:hover{
-    border: solid rgb(92, 47, 136) 1px;
+    border: solid var(--level-border-hover) 1px;
 }
 .active{
-    background-color: #9763d2;
+    background-color: var(--level-active);
+    color: rgb(255, 255, 245);
 }
+
+.showing-text{
+    color: var(--p-color);
+
+}
+
+/* ============================================================= */
+
+
 .cardscont{
     margin-bottom: 150px;
 }
 .roadmapsqrcont{
-    border: solid #312e4e 1px;
-    background-color: #1E1640;
+    border: solid var(--roadmapsqrcont-border) 1px;
+    background-color: var(--roadmapsqrcont-bg);
     height: 355px;
     width: 342px;
     padding: 20px;
@@ -67,10 +79,22 @@
     transition: all 0.1s ease;
 
 }
+
+.roadmapsqrcont .mytitle{
+    color: var(--text-hover);
+}
+
+.roadmapsqrcont .roadmapsqrdesc, .roadmapsqrcont .steps{
+    color: var(--p-color);
+}
+
+
+
 .roadmapsqrcont:hover{
-    border-color: #61348f;
-    background-color: rgb(44, 28, 91) ; 
+    border-color: var(--roadmapsqrcont-border-hover);
+    background-color: var(--roadmapsqrcont-bg-hover) ; 
     box-shadow: 10px 25px 10px rgba(49, 30, 87, 0.1);
+    
 }
 .roadmapsqrcont:hover .mytitle{
     color: rgb(161, 69, 255);
@@ -101,23 +125,23 @@
 }
 .levelsqr[level="Beginner"]{
     border: 1px rgb(22, 158, 124) solid;
-    background-color: rgba(18, 115, 78, 0.5);
+    background-color: var(--beginner-bg);
     color: rgb(22, 158, 124) !important;
 }
 .levelsqr[level="Intermediate"]{
     border: 1px rgb(245, 93, 17) solid;
-    background-color: rgba(154, 100, 38, 0.5);
+    background-color: var(--Intermediate-bg);
     color: rgb(245, 93, 17) !important;
 }
 .levelsqr[level="Expert"]{
     border: 1px rgb(241, 19, 90) solid;
-    background-color: rgba(166, 27, 83, 0.5);
+    background-color: var(--Expert-bg);
     color: rgb(241, 19, 90) !important;
 }
 .duration{
     border-radius: 10px;
     border: 1px rgb(99, 68, 139) solid;
-    background-color: rgba(105, 20, 170, 0.5);
+    background-color: var(--duration-bg);
     padding: 0 5px 0 5px;
     height: 30px;
     font-size: small;

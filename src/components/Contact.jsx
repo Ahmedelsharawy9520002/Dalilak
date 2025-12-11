@@ -27,22 +27,22 @@ function Contact() {
             <form>
               <div className="mb-3">
                 <label className="form-label">{t('contact.name')}</label>
-                <input type="text" className="form-control" placeholder={t('contact.phName')} required />
+                <input type="text" className="form-control contact-input" placeholder={t('contact.phName')} required />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">{t('contact.email')}</label>
-                <input type="email" className="form-control" placeholder="your.email@example.com" required />
+                <input type="email" className="form-control contact-input" placeholder="your.email@example.com" required />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">{t('contact.subject')}</label>
-                <input type="text" className="form-control" placeholder={t('contact.phSubject')} required />
+                <input type="text" className="form-control contact-input" placeholder={t('contact.phSubject')} required />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">{t('contact.message')}</label>
-                <textarea className="form-control" rows="4" placeholder={t('contact.phMessage')}></textarea>
+                <textarea className="form-control contact-textarea" rows="4" placeholder={t('contact.phMessage')}></textarea>
               </div>
 
               <button type="submit" className="formButton px-4 w-100 mt-4">

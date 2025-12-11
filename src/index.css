@@ -37,7 +37,7 @@
   --infosqr-p-color: #b8b8d1;
 
   --repeated-component-bg:linear-gradient(to right, #33285c, #4a2a7d, rgb(130, 57, 107, 0.5));
-  --repeated-component-border:rgb(53, 9, 65);
+  --repeated-component-border:rgb(97, 52, 143);
   --repeated-component-btn-bg:#F254D6;
   --repeated-component-btn-bg-hover:#e64eca;
 
@@ -50,6 +50,23 @@
   /* roadmaps */
   --word-color:rgb(161, 69, 255);
   --p-color:#cdc7d2;
+  --searchinp-bg:rgba(14, 12, 28, 0.5);
+  --searchinp-border:rgb(75, 55, 130);
+  --level-bg:#2c1c5b;
+  --level-border:rgba(141, 107, 251, 0.5);
+  --level-border-hover:rgb(92, 47, 136);
+  --level-active:#9763d2;
+
+  --roadmapsqrcont-border:#312e4e;
+  --roadmapsqrcont-bg:#1E1640;
+  --roadmapsqrcont-border-hover:#61348f;
+  --roadmapsqrcont-bg-hover:rgb(44, 28, 91);
+
+  --beginner-bg:rgba(18, 115, 78, 0.5);
+  --Intermediate-bg:rgba(154, 100, 38, 0.5);
+  --Expert-bg:rgba(166, 27, 83, 0.5);
+  --duration-bg:rgba(105, 20, 170, 0.5);
+
 
 
   /* footer */
@@ -73,7 +90,7 @@
   
 
 
-  --navbar-border: rgb(218, 199, 239);
+  --navbar-border: rgb(215, 195, 235);
   /* --navbar-border: rgb(184, 128, 244); */
   --signup-btn:rgb(126, 34, 206);
   --signup-btn-hover: rgb(146, 63, 233);
@@ -103,9 +120,18 @@
 
   /* --repeated-component-bg:linear-gradient(to right, #d3cddc, #ecd8f1, #f5eaf7); */
   --repeated-component-bg:linear-gradient(to right, #d3cddc, #e5c2ee, #f5eaf7);
-  --repeated-component-border:rgb(218, 199, 239);
-  --repeated-component-btn-bg:rgb(156, 47, 199);
-  --repeated-component-btn-bg-hover:rgb(166, 57, 209);
+  /* --repeated-component-bg:linear-gradient( to right, 
+    rgba(126, 34, 206, 0.2), 
+    rgba(107, 33, 168, 0.2), 
+    rgba(192, 38, 211, 0.2)  
+  ); */
+  --repeated-component-border:rgba(126, 34, 206, 0.3);
+  /* --repeated-component-btn-bg:rgb(156, 47, 199); */
+  --repeated-component-btn-bg:#c026d3;
+
+  /* --repeated-component-btn-bg-hover:rgb(166, 57, 209); */
+  --repeated-component-btn-bg-hover:rgba(192, 38, 211, 0.9);
+
 
 
   /* about */
@@ -122,6 +148,23 @@
   /* roadmaps */
   --word-color:#7e22ce;
   --p-color:#66758c;
+  --searchinp-bg:#eeeeee;
+  --searchinp-border:rgb(218, 199, 239);
+  --level-bg:#eeeeee;
+  --level-border:rgb(233, 213, 255);
+  --level-border-hover:rgb(206, 186, 228);
+  --level-active:rgb(126, 34, 206);
+
+  --roadmapsqrcont-border:rgb(233, 213, 255);
+  --roadmapsqrcont-bg:rgb(238, 234, 238);
+  --roadmapsqrcont-border-hover:rgb(206, 186, 228);
+  --roadmapsqrcont-bg-hover:rgb(44, 28, 91);
+
+  --beginner-bg:#d6f6ee;
+  --Intermediate-bg:#f9dcce;
+  --Expert-bg:#ffd1e0;
+  --duration-bg:#ebe0f9;
+
 
   /* footer */
   --footr-a-bg-hover:#edd2f4;

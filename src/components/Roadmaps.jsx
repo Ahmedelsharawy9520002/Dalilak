@@ -113,7 +113,7 @@ const levels = [
                     </div>
                 ))}
             </div>
-            <p>{t('roadmapsPage.showing')} {displayed.length} {t('roadmapsPage.of')}  {roadmaps.length} {t('roadmapsPage.items')}</p>
+            <p className="showing-text">{t('roadmapsPage.showing')} {displayed.length} {t('roadmapsPage.of')}  {roadmaps.length} {t('roadmapsPage.items')}</p>
             <div className='cardscont d-flex flex-wrap gap-4'>
                 {
                 displayed.map((elem)=>(

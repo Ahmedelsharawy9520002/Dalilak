@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    border-bottom: 1px solid rgb(36, 27, 66);
+    border-bottom: 1px solid var(--tracksnavbar-border);
     position: sticky !important;
     /* top: 58px; */
     top: 0;
@@ -25,16 +25,16 @@
     color:rgb(126, 54, 200);
 }
 .containerdetails[level="Beginner"]{
-    border-bottom: 1px rgb(8, 101, 78) solid;
-    background: linear-gradient(to bottom, rgb(10, 64, 56), rgb(14, 32, 42));
+    border-bottom: 1px var(--containerdetails-beginner-border) solid;
+    background: var(--containerdetails-beginner-bg);
 }
 .containerdetails[level="Intermediate"]{
-    border-bottom: 1px rgb(72, 49, 63) solid;
-    background: linear-gradient(to bottom, rgb(85, 54, 19), rgb(38, 26, 26));
+    border-bottom: 1px var(--containerdetails-intermediate-border) solid;
+    background: var(--containerdetails-intermediate-bg);
 }
 .containerdetails[level="Expert"]{
-    border-bottom: 1px rgb(137, 22, 58)solid;
-     background: linear-gradient(to bottom, rgb(85, 17, 44), rgb(39, 14, 34));
+    border-bottom: 1px var(--containerdetails-expert-border) solid;
+    background: var(--containerdetails-expert-bg);
 }
 .roadmapsstats{
     display: flex;
@@ -54,14 +54,18 @@
     
 }
 .roadmaptitle{
-    color: rgb(255, 255, 255) !important;
+    color: var(--text-hover)!important;
     font-size: 45px !important;
     font-weight: 700;
 }
 .roadmapdescription{
     font-size: 18px !important;
-    color: rgb(176, 175, 203) !important;
+    color: var(--p-color) !important;
     font-weight: 500;
+}
+
+.track-steps, .track-duration{
+  color: var(--text-hover)
 }
 
 .roadmaplevel span{
@@ -116,6 +120,7 @@
     width: 800px;
     margin-left: auto !important;
     margin-right: auto !important;
+    
 }
 .stepNumber{
     width: 47px;
@@ -154,6 +159,8 @@
     height: max-content;
     padding: 21px 30px;
     cursor: pointer;
+    background-color: var(--roadmapsqrcont-bg);
+
 }
 .topics{
     display: flex;
@@ -161,7 +168,7 @@
     flex-wrap: wrap;
 }
 .onetopic{
-    background-color: #2c1c5b;
+    background-color: var(--onetopic-bg);
     border: 1px solid rgba(141, 107, 251, 0.5);
     color: rgb(169, 64, 244);
     border-radius: 11px;

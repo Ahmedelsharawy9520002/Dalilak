@@ -86,6 +86,27 @@
   --stat-card-border:rgba(141, 107, 251, 0.5);
   --progress-bar-container-bg:rgb(16, 13, 29);
 
+
+  /* tracks */
+  --tracksnavbar-border:rgb(36, 27, 66);
+
+  --containerdetails-beginner-bg:linear-gradient(to bottom, rgb(10, 64, 56), rgb(14, 32, 42));
+  --containerdetails-beginner-border:rgb(8, 101, 78);
+
+  --containerdetails-intermediate-bg: linear-gradient(to bottom, rgb(85, 54, 19), rgb(38, 26, 26));
+  --containerdetails-intermediate-border:rgb(72, 49, 63) ;
+
+  --containerdetails-expert-bg: linear-gradient(to bottom, rgb(85, 17, 44), rgb(39, 14, 34));
+  --containerdetails-expert-border:rgb(137, 22, 58);
+
+  --onetopic-bg:#2c1c5b;
+  --onetopic-border:rgba(141, 107, 251, 0.5);
+  --complete-prev:#3e365c;
+  --complete-prev-color:#777293;
+
+
+
+
   /* footer */
   --footr-a-bg-hover:#2c1c5b;
 }
@@ -209,6 +230,28 @@
   --stat-card-bg:#f9f9f9;
   --stat-card-border:rgb(185 165 247 / 50%);
   --progress-bar-container-bg:#afafaf;
+
+
+
+
+  
+  /* tracks */
+  --tracksnavbar-border:rgb(215, 195, 235);
+
+  --containerdetails-beginner-bg:linear-gradient(to bottom, rgb(157 217 174), rgb(229 247 235));
+  --containerdetails-beginner-border:rgb(199 199 199);
+
+
+  --containerdetails-intermediate-bg: linear-gradient(to bottom, rgb(255 186 107), rgb(255 243 230));
+  --containerdetails-intermediate-border:rgb(204 200 193);
+
+  --containerdetails-expert-bg: linear-gradient(to bottom, rgb(247 155 192), rgb(255 239 252));
+  --containerdetails-expert-border:rgb(222 203 209);
+
+  --onetopic-bg:#cec2f1;
+  --onetopic-border:rgba(141, 107, 251, 0.5);
+  --complete-prev:#807b92;
+  --complete-prev-color:#c6c4d3;
 
 
   /* footer */

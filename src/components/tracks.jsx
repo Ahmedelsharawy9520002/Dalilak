@@ -72,12 +72,12 @@ export default function RoadmapDetail() {
         <div className="flex info-row roadmapsstats">
           <div className="flex">
             <BookOpen className="me-2 BookOpen" />
-            <span>{roadmap.steps.length} {lang === 'ar' ? "خطوة" : "steps"}</span>
+            <span className="track-steps">{roadmap.steps.length} {lang === 'ar' ? "خطوة" : "steps"}</span>
           </div>
 
           <div className="flex">
             <Clock className="me-2 Clock" />
-            <span>{roadmap.duration[lang]}</span>
+            <span className="track-duration">{roadmap.duration[lang]}</span>
           </div>
 
           <div className="flex roadmaplevel" level={roadmap.level[lang]}>
@@ -112,8 +112,8 @@ export default function RoadmapDetail() {
               >
                 <div className="containercomplete">
                   <div className="title-wrapper">
-                    <h3 style={{ color: "#eee" , fontSize:'24px'}}>{step.title[lang]}</h3>
-                    <span style={{ fontSize: "20px", color: "white" }}>
+                    <h3 style={{ color: 'var(--text-hover)' , fontSize:'24px'}}>{step.title[lang]}</h3>
+                    <span style={{ fontSize: "20px", color: "var(--text-hover)" }}>
                         {openSteps[step.number] ? (
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 15l-6-6-6 6" /></svg>
                         ) : (
@@ -131,7 +131,7 @@ export default function RoadmapDetail() {
                             handleCompleteStep(index);
                             }}
                             style={{
-                            backgroundColor: "#331b58",
+                            backgroundColor: "var(--onetopic-bg)",
                             border:'none',
                             color: "#9d42ef",
                             }}
@@ -147,14 +147,14 @@ export default function RoadmapDetail() {
                         </span>
                         )}
                         {isLocked && !isActive && !isCompleted && (
-                        <span style={{ color: "#777293",backgroundColor:'#3e365c',border:'1px solid #777293'}} className="complete">
+                        <span style={{ color: "var(--complete-prev-color)",backgroundColor:'var(--complete-prev)',border:'1px solid #777293'}} className="complete">
                             {lang === 'ar' ? "أكمل السابق" : "Complete Previous"}
                         </span>
                     )}
                   </div>
                 </div>
 
-                <p>{step.description[lang]}</p>
+                <p style={{color:'var(--p-color)'}}>{step.description[lang]}</p>
                 
                 {/* Topics */}
                 {step.topics && (

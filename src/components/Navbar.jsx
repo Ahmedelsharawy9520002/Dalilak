@@ -65,7 +65,9 @@ function Navbar({ theme, switchTheme, currentUser }) {
           </div> */}
 
           <div className="d-flex align-items-center gap-2 ">
-            <button className="navbarthemebtn" onClick={switchTheme}><Sun className="sun"/></button>
+            <button className="navbarthemebtn" onClick={switchTheme}>
+              {theme === 'dark' ? <Sun className="sun"/> : <Moon className="moon"/>}
+            </button>
             <button className="navbarlanguagebtn" onClick={toggleLanguage}>
                           <Languages className="lang" />
                           <span className="ennavbar"> {t('nav.langBtn')}</span>

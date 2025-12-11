@@ -76,7 +76,15 @@
   --contact-btn-bg:rgb(161, 69, 255);
   /* --contact-btn-bg-hover:rgb(148, 64, 235); */
 
+  
 
+
+  /* dashboard */
+  --top-container-bg:rgb(29, 19, 58);
+  --explore-btn-bg:#a145ff;
+  --stat-card-bg:rgb(29, 19, 58);
+  --stat-card-border:rgba(141, 107, 251, 0.5);
+  --progress-bar-container-bg:rgb(16, 13, 29);
 
   /* footer */
   --footr-a-bg-hover:#2c1c5b;
@@ -166,9 +174,13 @@
 
   --roadmapsqrcont-border:rgb(233, 213, 255);
   /* --roadmapsqrcont-bg:rgb(238, 234, 238); */
-  --roadmapsqrcont-bg:rgb(238 226 238);
+  /* --roadmapsqrcont-bg:rgb(238 226 238); */
+  --roadmapsqrcont-bg:#f9f9f9;
+
   --roadmapsqrcont-border-hover:rgb(206, 186, 228);
-  --roadmapsqrcont-bg-hover:rgb(44, 28, 91);
+  /* --roadmapsqrcont-bg-hover:rgb(44, 28, 91); */
+  --roadmapsqrcont-bg-hover:rgb(238 226 238);
+
 
   --beginner-bg:#d6f6ee;
   --Intermediate-bg:#f9dcce;
@@ -186,6 +198,14 @@
   --contact-btn-bg:#7e22ce;
   /* --contact-btn-bg-hover:#7e22ce; */
 
+
+
+  /* dashboard */
+  --top-container-bg:#eeeeee;
+  --explore-btn-bg:rgb(126, 34, 206);
+  --stat-card-bg:#f9f9f9;
+  --stat-card-border:rgb(185 165 247 / 50%);
+  --progress-bar-container-bg:#afafaf;
 
 
   /* footer */

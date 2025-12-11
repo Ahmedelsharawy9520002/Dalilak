@@ -94,7 +94,7 @@ export default function RoadmapDetail() {
         <div className="steps">
           {roadmap.steps.map((step, index) => {
             const isCompleted = completedSteps.includes(index);
-            const isActive = index === activeStep;
+            const isActive = index === activeStep && !isCompleted;
             const isLocked = index > activeStep;
             return(
             <div

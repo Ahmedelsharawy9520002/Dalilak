@@ -43,7 +43,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Roadmaps" element={<Roadmaps />} />
-        <Route path="/Dashboard" element={<Dashboard completedSteps={[]} stepsCount={10} />} />
+        <Route path="/Dashboard" element={<Dashboard/>} />
         <Route path="/login" element={<Login setCurrentUser={setCurrentUser} />} />
         <Route path="/signup" element={<Signup setCurrentUser={setCurrentUser} />} />
         <Route path="/tracks/:title" element={<RoadmapDetail />} />

@@ -7,7 +7,7 @@ import { Button } from "react-bootstrap";
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
-function Dashboard({ progress, steps }) {
+function Dashboard() {
   const { t, i18n } = useTranslation(); 
   const isRtl = i18n.dir() === 'rtl';
   
@@ -18,12 +18,12 @@ function Dashboard({ progress, steps }) {
   ];
 
   const progressItems = [
-    { title: "Data Structures", level: "Intermediate", percent: steps > 0 ? (progress / steps) * 100 : 0},
-    { title: "Web Development", level: "Beginner", percent: steps > 0 ? (progress / steps) * 100 : 0},
-    { title: "Algorithms", level: "Intermediate", percent: steps > 0 ? (progress / steps) * 100 : 0},
-    { title: "System Design", level: "Intermediate", percent: steps > 0 ? (progress / steps) * 100 : 0},
-    { title: "Machine Learning", level: "Expert", percent: steps > 0 ? (progress / steps) * 100 : 0},
-    { title: "Compiler Design", level: "Expert", percent: steps > 0 ? (progress / steps) * 100 : 0},
+    { title: "Data Structures", level: "Intermediate", percent: 80},
+    { title: "Web Development", level: "Beginner", percent: 65},
+    { title: "Algorithms", level: "Intermediate", percent: 30},
+    { title: "System Design", level: "Intermediate", percent: 45},
+    { title: "Machine Learning", level: "Expert", percent:20 },
+    { title: "Compiler Design", level: "Expert", percent: 0},
   ];
 
   return (

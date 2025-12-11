@@ -83,6 +83,12 @@
       "name": "lekaa",
       "email": "lekaammm@gmail.com",
       "password": "12"
+    },
+    {
+      "id": "ce02",
+      "name": "lekaa",
+      "email": "lekaab@gmail.com",
+      "password": "12"
     }
   ]
 }

@@ -16,7 +16,7 @@ function Roadmapsqr(props){
                 <p className="levelsqr" level={props.level}>{props.level}</p>
                 <p className="duration">{props.duration}</p>
             </div>
-            <p className="fs-small">{props.steps}</p>
+            <p className="fs-small steps">{props.steps}</p>
             <p className="view">{t('roadmapsPage.view')} &gt;</p>
         </div>
         </Link>

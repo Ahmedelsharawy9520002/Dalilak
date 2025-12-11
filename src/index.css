@@ -73,14 +73,14 @@
   
 
 
-  /* --navbar-border: rgb(218, 199, 239); */
-  --navbar-border: rgb(184, 128, 244);
+  --navbar-border: rgb(218, 199, 239);
+  /* --navbar-border: rgb(184, 128, 244); */
   --signup-btn:rgb(126, 34, 206);
   --signup-btn-hover: rgb(146, 63, 233);
   --text-hover:rgb(74, 29, 150);
-  /* --text-color: rgb(174 152 208); */
-  --text-color: rgb(148, 95, 227);
-  --btn-hover-bg:white;
+  --text-color: rgb(174 152 208);
+  /* --text-color: rgb(148, 95, 227); */
+  --btn-hover-bg:#eeeeee;
   --btn-shadow: transparent;
   --btn-drop-shadow: rgba(126, 34, 206, 0.4);
   
@@ -112,8 +112,8 @@
 
   --about-border:rgb(233, 213, 255);
   /* --about-box-bg:rgb(254, 252, 255); */
-  /* --about-box-bg:rgb(238, 234, 238); */
-  --about-box-bg:rgb(227, 224, 227);
+  --about-box-bg:rgb(238, 234, 238);
+  /* --about-box-bg:rgb(227, 224, 227); */
 
 
   --stats-color:#8924cf;

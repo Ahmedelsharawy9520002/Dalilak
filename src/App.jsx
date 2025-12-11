@@ -19,7 +19,7 @@ import useLanguageSettings from './useLanguageSettings';
 function App() {
   useLanguageSettings();
     
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';

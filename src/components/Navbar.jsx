@@ -83,7 +83,7 @@ function Navbar(props) {
                     <img src={profilepic} alt="profilepic" className="rounded-circle" style={{height:"30px", width:"30px"}}/>
                   </button>
                   <ul class="dropdown-menu" style={{background:"var(--btn-shadow)"}}>
-                    <li className="d-flex"><a class="dropdown-item rounded" href="#" style={{color:"var(--text-hover)"}}>{props.currentUser}</a></li>
+                    <li className="d-flex"><a class="dropdown-item rounded" href="#" style={{color:"var(--text-hover)", background:"var(--btn-shadow)"}}>{props.currentUser}</a></li>
                     <li><Link to="/login" class="dropdown-item bg-danger rounded" style={{color:"var(--text-hover)"}}>Log Out</Link></li>
                   </ul>
                 </div>

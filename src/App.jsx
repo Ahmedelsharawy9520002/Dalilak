@@ -45,9 +45,7 @@ function App() {
         <Route path="/Roadmaps" element={<Roadmaps />} />
         <Route path="/Dashboard" element={<Dashboard currentUser={currentUser} />} />
         <Route path="/login" element={<Login setCurrentUser={setCurrentUser} />} />
-        {/* <Route path="/signup" element={<Signup setCurrentUser={setCurrentUser} />} /> */}
         <Route path="/Dalilak" element={<Signup setCurrentUser={setCurrentUser} />} />
-        {/* <Route path="/" element={<Signup setCurrentUser={setCurrentUser} />} /> */}
         <Route path="/tracks/:title" element={<RoadmapDetail />} />
 
       </Routes>

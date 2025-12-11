@@ -4,7 +4,6 @@
     color: var(--text-hover);
 }
 .touch{
-    
     background: linear-gradient(90deg, rgb(145, 56, 234), rgb(233, 57, 167));;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

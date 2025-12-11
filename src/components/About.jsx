@@ -5,41 +5,43 @@ import { Award, Users} from "lucide-react"
 import { GoGoal } from "react-icons/go";
 // import { FaMedal } from "react-icons/fa6";
 // import { BsPeopleFill } from "react-icons/bs";
+import { useTranslation } from 'react-i18next';
 
 export default function About() {
+  const { t } = useTranslation();
   return (
 
     <div className="aboutpage">
       <div className="contbox container">
         <header className="header">
           <h1 className="title home-title-text">
-            About <span className="imp">Dalilak</span>
+            {t('aboutPage.title')} <span className="imp">{t('brandName')}</span>
           </h1>
           <p className="subt">
-            Empowering learners worldwide with personalized learning paths and comprehensive roadmaps to achieve their goals.
+             {t('aboutPage.subtitle')}
           </p>
         </header>
 
         <section className="mission">
-          <h2 className="sectitle">Our Mission</h2>
+          <h2 className="sectitle">{t('aboutPage.missionTitle')}</h2>
           <p>
-            At Dalilak, we believe that everyone deserves access to quality education and clear learning paths. Our mission is to democratize learning by providing structured roadmaps that guide you from beginner to expert in your chosen field.
+            {t('aboutPage.missionP1')}
           </p>
           <p>
-            We combine expert knowledge with modern technology to create personalized learning experiences that adapt to your pace and style, helping you achieve your goals faster and more effectively.
+            {t('aboutPage.missionP2')}
           </p>
         </section>
 
-        <h2 className="sectitle cvalstitle">Our Core Values</h2>
+        <h2 className="sectitle cvalstitle">{t('aboutPage.valuesTitle')}</h2>
 
         <section className="cvals">
           <article className="corecard">
             <div className="icon">
               <FiBookOpen />
             </div>
-            <h3 className="infosqr-h">Accessible Learning</h3>
+            <h3 className="infosqr-h">{t('aboutPage.val1.title')}</h3>
             <p>
-              We believe education should be accessible to everyone, regardless of background or resources. Our platform is designed to be free and inclusive.
+              {t('aboutPage.val1.desc')}
             </p>
           </article>
 
@@ -47,9 +49,9 @@ export default function About() {
             <div className="icon">
               <GoGoal />
             </div>
-            <h3 className="infosqr-h">Goal-Oriented</h3>
+            <h3 className="infosqr-h">{t('aboutPage.val2.title')}</h3>
             <p>
-              Every roadmap is designed with clear milestones and objectives, helping you stay focused and motivated throughout your learning journey.
+              {t('aboutPage.val2.desc')}
             </p>
           </article>
 
@@ -57,9 +59,9 @@ export default function About() {
             <div className="icon">
               <Users />
             </div>
-            <h3 className="infosqr-h">Community-Driven</h3>
+            <h3 className="infosqr-h">{t('aboutPage.val3.title')}</h3>
             <p>
-              Our roadmaps are created and refined by experts and learners alike, ensuring they reflect real-world needs and best practices.
+              {t('aboutPage.val3.desc')}
             </p>
           </article>
 
@@ -67,9 +69,9 @@ export default function About() {
             <div className="icon">
               <Award />
             </div>
-            <h3 className="infosqr-h">Quality Content</h3>
+            <h3 className="infosqr-h"> {t('aboutPage.val4.title')}</h3>
             <p>
-              We curate and verify all learning resources to ensure you’re getting the most up-to-date and effective educational content available.
+              {t('aboutPage.val4.desc')}
             </p>
           </article>
         </section>
@@ -77,19 +79,19 @@ export default function About() {
         <section className="stats">
           <div className="statcard">
             <h2>50+</h2>
-            <p>Learning Roadmaps</p>
+            <p>{t('aboutPage.stats.roadmaps')}</p>
           </div>
           <div className="statcard">
             <h2>10K+</h2>
-            <p>Active Learners</p>
+            <p>{t('aboutPage.stats.learners')}</p>
           </div>
           <div className="statcard">
             <h2>100+</h2>
-            <p>Expert Contributors</p>
+            <p>{t('aboutPage.stats.experts')}</p>
           </div>
           <div className="statcard">
             <h2>95%</h2>
-            <p>Satisfaction Rate</p>
+            <p>{t('aboutPage.stats.satisfaction')}</p>
           </div>
         </section>
       </div>

@@ -262,6 +262,7 @@ import githubLogo from "../assets/github_logo-removebg-preview.png";
 import googleLogo from "../assets/google_logo-removebg-preview.png";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useTranslation } from 'react-i18next';
 
 const InputField = ({ label, type, placeholder, icon, name, value, onChange }) => {
   return (
@@ -298,6 +299,7 @@ const SocialLogin = () => {
 };
 
 const Signup = () => {
+  const { t } = useTranslation(); 
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -356,12 +358,12 @@ const Signup = () => {
     <div className="signup-page">
       <div className="app-container">
         <div className="signup-container">
-          <h1 className="welcome-title">Create Account</h1>
-          <p className="welcome-subtitle">Join thousands learning computer science</p>
+          <h1 className="welcome-title">{t('auth.signupTitle')}</h1>
+          <p className="welcome-subtitle">{t('auth.signupSub')}</p>
 
           <form className="signup-form" onSubmit={handleSubmit}>
             <InputField
-              label="Full Name"
+              label={t('auth.fullName')}
               type="text"
               placeholder="John Doe"
               icon="person"
@@ -370,7 +372,7 @@ const Signup = () => {
               onChange={handleChange}
             />
             <InputField
-              label="Email Address"
+              label={t('auth.email')}
               type="email"
               placeholder="you@example.com"
               icon="mail"
@@ -379,7 +381,7 @@ const Signup = () => {
               onChange={handleChange}
             />
             <InputField
-              label="Password"
+              label={t('auth.password')}
               type="password"
               placeholder="********"
               icon="lock"
@@ -388,7 +390,7 @@ const Signup = () => {
               onChange={handleChange}
             />
             <InputField
-              label="Confirm Password"
+              label={t('auth.confirmPass')}
               type="password"
               placeholder="********"
               icon="lock"
@@ -413,13 +415,13 @@ const Signup = () => {
             </button>
           </form>
 
-          <p className="separator"><span>Or sign up with</span></p>
+          <p className="separator"><span>{t('auth.orSignup')}</span></p>
 
           <SocialLogin />
 
           <p className="signup-text">
-            Already have an account?{" "}
-            <Link to="/login">Log in</Link>
+            {t('auth.haveAccount')}{" "}
+            <Link to="/login">{t('auth.loginBtn')}</Link>
           </p>
         </div>
       </div>

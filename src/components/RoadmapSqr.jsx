@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { RxLightningBolt } from "react-icons/rx";
+import { useTranslation } from 'react-i18next';
 
 function Roadmapsqr(props){
+    const { t } = useTranslation();
     return(
         <Link to={`/tracks/${props.title}`} style={{textDecoration: 'none', color: 'inherit'}}>
         <div className="roadmapsqrcont">
@@ -15,7 +17,7 @@ function Roadmapsqr(props){
                 <p className="duration">{props.duration}</p>
             </div>
             <p className="fs-small">{props.steps}</p>
-            <p className="view">View Roadmap &gt;</p>
+            <p className="view">{t('roadmapsPage.view')} &gt;</p>
         </div>
         </Link>
     )

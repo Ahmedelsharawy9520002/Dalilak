@@ -128,20 +128,27 @@
     border:2px solid rgb(161, 69, 228) !important;
     color: rgb(161, 69, 228);
     position: relative;
+    flex-shrink: 0;
 }
 /* ده الخط اللي بعد الرقم يعني (لو عايز تغير طوله عادي ، مش عارفه الطول المناسب) */
 .stepNumber::after{
     position: absolute;
     content: '';
-    height: 65px;
+    height: 100%; /* تعديل عشان يغطي المسافة */
     width: 2px;
     background-color:rgba(161, 69, 228,0.4) !important ;
-    top: 60px;
+    top: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
 }
+.onestep:last-child .stepNumber::after {
+    display: none;
+}
+
 .stepDescription{
     /* border: 0.2px solid rgb(161, 69, 228); */
     border: 0.1px solid rgba(187, 187, 187,0.6);
-    /* background-color: #2c1c5b; */
     border-radius: 14px;
     width: 720px;
     height: max-content;
@@ -151,6 +158,7 @@
 .topics{
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 }
 .onetopic{
     background-color: #2c1c5b;
@@ -164,7 +172,7 @@ hr{
     width: 610px;
     color: gray;
 }
-.ul{
+ul{
     margin-left: -28px;
 }
 .resourse{
@@ -178,6 +186,7 @@ hr{
     border-radius: 8px;
     padding: 10px;
     font-size: 15px;
+    position: relative;
 } 
 .resourse a{
     text-decoration: none;
@@ -200,7 +209,7 @@ hr{
 .iconlink{
     display: flex;
     color: white;
-    
+    width: 100%;
 }
 .url{
     text-decoration: none;
@@ -216,23 +225,47 @@ hr{
     position: absolute;
     right: 10px;
 }
+
+
+
 .containercomplete{
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
 }
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 /* دي البوتونز بتاعة الكومبليتد وكده (الاستايل المختلف بينهم عاملاه انلاين) */
 .complete{
     padding:5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    position: absolute;
-    right: 3px;
     width: max-content;
+    /* font-size: 14px;  */
+    white-space: nowrap;
+    position: relative;
+    /* right: 3px; */
 }
+
 /* استايل مخصص للاكتيف والكومبليتد (اللي فوق الستايل الاساسي لكل التانيين) */
 .active-step .stepDescription{
     border: 1px solid #a145ff;
-    background-color:  #251851;
-     
 }
 .completed-step .stepDescription{
     border: 1px solid #a82a68 ;
@@ -260,4 +293,20 @@ hr{
   transition: transform 180ms ease, box-shadow 180ms ease;
   top: 9px;
   left: 7px;
+}
+
+/* عشان العربي*/
+[dir="rtl"] .svg {
+    right: auto;
+    left: 10px;
+}
+
+[dir="rtl"] .type_resource {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+[dir="rtl"] .onestep.completed-step .stepNumber::before {
+    left: auto;
+    right: 7px;
 }

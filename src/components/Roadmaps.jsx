@@ -1,9 +1,11 @@
 import RoadmapSqr from './RoadmapSqr'
 import '../styles/roadmaps.css'
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 
 function Roadmaps(){
+    const { t } = useTranslation();
     const roadmaps = [
                         {
                             id: 1,
@@ -61,7 +63,13 @@ function Roadmaps(){
                         },
                         
                     ];
-    const levels = [{name:"All Roadmaps", category:0}, {name:"Beginner", category:1}, {name:"Intermediate", category:2}, {name:"Expert", category:3}];
+
+const levels = [
+        {name: t('roadmapsPage.levels.all'), category:0}, 
+        {name: t('roadmapsPage.levels.beg'), category:1}, 
+        {name: t('roadmapsPage.levels.int'), category:2}, 
+        {name: t('roadmapsPage.levels.exp'), category:3}
+    ];
 
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -80,15 +88,15 @@ function Roadmaps(){
     return(
         <div className="container ">
             
-            <h1 className='title'>Computer Science <span className='word'>Roadmaps</span></h1>
-            <p className='desc'>Select your skill level and dive into a structured learning path designed to take you from beginner to expert.</p>
+            <h1 className='title'>{t('roadmapsPage.title')} <span className='word'>{t('roadmapsPage.titleSpan')}</span></h1>
+            <p className='desc'> {t('roadmapsPage.desc')}</p>
             <div className="search">
                 <input type="text"
                 className='searchinp'
                 onChange={(e)=>{
                     handleSearch(e)
                 }}
-                placeholder='Search roadmaps by title or topic...'
+                placeholder={t('roadmapsPage.searchPh')}
                 />
             </div>
             <div className="levels d-flex gap-3">
@@ -105,7 +113,7 @@ function Roadmaps(){
                     </div>
                 ))}
             </div>
-            <p>Showing {displayed.length} of {roadmaps.length} roadmaps</p>
+            <p>{t('roadmapsPage.showing')} {displayed.length} {t('roadmapsPage.of')}  {roadmaps.length} {t('roadmapsPage.items')}</p>
             <div className='cardscont d-flex flex-wrap gap-4'>
                 {
                 displayed.map((elem)=>(

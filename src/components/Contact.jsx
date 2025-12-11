@@ -1,17 +1,20 @@
 import "../styles/contact.css";
 import {MdOutlineEmail,MdOutlinePhone,MdOutlineLocationOn} from "react-icons/md";
+import { useTranslation } from 'react-i18next';
+
+
 
 
 function Contact() {
+  const { t } = useTranslation(); 
   return (
     <div className="container contact-container py-5">
       <div className="d-flex flex-column align-items-center justify-content-center mb-5">
         <h1 className="headcontact mb-2">
-          Get in <span className="touch">Touch</span>
+          {t('contact.title')} <span className="touch">{t('contact.titleSpan')}</span>
         </h1>
         <p className="phead">
-          Have questions or feedback? We'd love to hear from you. Send us a
-          message and we'll respond as soon as possible.
+          {t('contact.sub')}
         </p>
       </div>
 
@@ -19,31 +22,31 @@ function Contact() {
         
         <div className="col-12 col-md-5 me-4 ms-5">
           <div className="form contact-form p-4 shadow rounded-4">
-            <h1 className="mb-4 text-white fw-bold">Send us a Message</h1>
+            <h1 className="mb-4 text-white fw-bold">{t('contact.formTitle')}</h1>
 
             <form>
               <div className="mb-3">
-                <label className="form-label">Name</label>
-                <input type="text" className="form-control" placeholder="Your name" required />
+                <label className="form-label">{t('contact.name')}</label>
+                <input type="text" className="form-control" placeholder={t('contact.phName')} required />
               </div>
 
               <div className="mb-3">
-                <label className="form-label">Email</label>
+                <label className="form-label">{t('contact.email')}</label>
                 <input type="email" className="form-control" placeholder="your.email@example.com" required />
               </div>
 
               <div className="mb-3">
-                <label className="form-label">Subject</label>
-                <input type="text" className="form-control" placeholder="How can we help?" required />
+                <label className="form-label">{t('contact.subject')}</label>
+                <input type="text" className="form-control" placeholder={t('contact.phSubject')} required />
               </div>
 
               <div className="mb-3">
-                <label className="form-label">Message</label>
-                <textarea className="form-control" rows="4" placeholder="Your message..."></textarea>
+                <label className="form-label">{t('contact.message')}</label>
+                <textarea className="form-control" rows="4" placeholder={t('contact.phMessage')}></textarea>
               </div>
 
               <button type="submit" className="formButton px-4 w-100 mt-4">
-                Send Message
+                {t('contact.sendBtn')}
               </button>
             </form>
           </div>
@@ -52,14 +55,14 @@ function Contact() {
         
         <div className="col-12 col-md-5">
           <div className="form contact-info p-4 shadow rounded-4">
-            <h1 className="mb-4 text-white fw-bold">Contact Information</h1>
+            <h1 className="mb-4 text-white fw-bold">{t('contact.infoTitle')}</h1>
 
             <div className="info-item d-flex align-items-center mb-4">
               <div className="icon-box">
                 <MdOutlineEmail size={25} color="black"/>
               </div>
               <div className="ps-3">
-                <h5 className="text-white fw-bold">Email</h5>
+                <h5 className="text-white fw-bold">{t('contact.email')}</h5>
                 <p className="text-white-50 m-0">support@dalilak.com</p>
               </div>
             </div>
@@ -87,15 +90,15 @@ function Contact() {
 
           
           <div className="form contact-info p-4 shadow rounded-4 mt-5">
-            <h1 className="mb-4 text-white fw-bold">Office Hours</h1>
+            <h1 className="mb-4 text-white fw-bold">{t('contact.officeTitle')}</h1>
 
             
               
               <div className="ps-3">
                 <p className="text-white-50 m-0">
-                  Monday - Friday: 9:00 AM - 6:00 PM <br />
-                  Saturday: 10:00 AM - 4:00 PM <br />
-                  Sunday: Closed
+                  {t('contact.days')} <br />
+                  {t('contact.sat')} <br />
+                  {t('contact.sun')}
                 </p>
               </div>
             

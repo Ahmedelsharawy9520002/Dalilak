@@ -10,15 +10,15 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import RoadmapDetail from './components/tracks';
 import { useState, useEffect} from 'react';
-
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/toast.css";
-
+import './i18n';
+import useLanguageSettings from './useLanguageSettings';
 
 function App() {
-
-
+  useLanguageSettings();
+    
   const [theme, setTheme] = useState('light');
 
   const switchTheme = () => {

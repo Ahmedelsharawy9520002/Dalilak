@@ -5,9 +5,11 @@ import React from "react";
 import { NavLink, Link } from "react-router";
 import "../styles/footer.css";
 import logo from '../images/Dalilak.png';
+import { useTranslation } from 'react-i18next';
 
 
 function Footer(){
+    const { t } = useTranslation();
     return(
 
 
@@ -19,38 +21,38 @@ function Footer(){
                         <Col className='columns first-column'> 
                             <Link to='/Dalilak'><img src={logo} alt="Company Logo" className="footer-logo "/></Link>
                             <p className="footer-pargraph">
-                                Master computer science with expertly crafted roadmaps.
+                                {t('footer.desc')}
                             </p>
                         </Col>
 
 
                         <Col className='columns'>
-                            <h4 className='footer-marketplace footer-heading roboto-font'>Product</h4>
+                            <h4 className='footer-marketplace footer-heading roboto-font'>{t('footer.product')}</h4>
                             <ul className='footer-list '>
                                 <li>
-                                    <Link to="/roadmaps" className="roboto-font">Roadmaps</Link>
+                                    <Link to="/roadmaps" className="roboto-font">{t('nav.roadmaps')}</Link>
                                 </li>
                                 <li>
-                                    <Link to="/Dashboard" className="roboto-font">Dashboard</Link>
+                                    <Link to="/Dashboard" className="roboto-font">{t('nav.dashboard')}</Link>
                                 </li>
                                 <li>
-                                    <Link to="/pricing" className="roboto-font">Pricing</Link>
+                                    <Link to="/pricing" className="roboto-font">{t('footer.pricing')}</Link>
                                 </li>
                             </ul>
                         </Col>
 
 
                         <Col className='columns'>
-                            <h4 className='footer-heading roboto-font'>Resources</h4>
+                            <h4 className='footer-heading roboto-font'>{t('footer.resources')}</h4>
                             <ul className='footer-list'>
                                 <li>
-                                    <Link to="/blog" className="roboto-font">Blog</Link>
+                                    <Link to="/blog" className="roboto-font">{t('footer.blog')}</Link>
                                 </li>
                                 <li>
-                                    <Link to="/documentation" className="roboto-font">Documentation</Link>
+                                    <Link to="/documentation" className="roboto-font">{t('footer.docs')}</Link>
                                 </li>
                                 <li>
-                                    <Link to="/community" className="roboto-font">Community</Link>
+                                    <Link to="/community" className="roboto-font">{t('footer.community')}</Link>
                                 </li>
                                 
                             </ul>
@@ -58,16 +60,16 @@ function Footer(){
 
 
                         <Col className='columns'>
-                            <h4 className='footer-heading roboto-font'>Legal</h4>
+                            <h4 className='footer-heading roboto-font'>{t('footer.legal')}</h4>
                             <ul className='footer-list'>
                                 <li>
-                                    <Link to="/privacypolicy" className="roboto-font">Privacy Policy</Link>
+                                    <Link to="/privacypolicy" className="roboto-font">{t('footer.privacy')}</Link>
                                 </li>
                                 <li>
-                                    <Link to="/Termsofservice" className="roboto-font">Terms of service</Link>
+                                    <Link to="/Termsofservice" className="roboto-font">{t('footer.terms')}</Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact" className="roboto-font">contact</Link>
+                                    <Link to="/contact" className="roboto-font">{t('nav.contact')}</Link>
                                 </li>
                             </ul>
                         </Col>
@@ -77,7 +79,7 @@ function Footer(){
 
 
                 <div className='footer-bottom container'>
-                    <div className='copyrights'>© 2025 Dalilak. All rights reserved.</div>
+                    <div className='copyrights'>{t('footer.rights')}</div>
                 
                     <div className='social-media'>
                         <a href='#github'>

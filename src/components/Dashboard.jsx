@@ -5,8 +5,11 @@ import completedImg from "../images/complete.png";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 function Dashboard({ progress, steps }) {
+  const { t, i18n } = useTranslation(); 
+  const isRtl = i18n.dir() === 'rtl';
   
   const stats = [
     { title: "Roadmaps Started", number: 6, img: startImg },
@@ -29,16 +32,16 @@ function Dashboard({ progress, steps }) {
       <div className="top-container d-flex justify-content-between mb-5 rounded-4 shadow">
         <div className="container d-flex justify-content-between">
           <div>
-            <h1 className="welcome-title">Welcome back, Learner</h1>
+            <h1 className="welcome-title">{t('dashboard.welcome')}</h1>
             <p className="welcome-sub">
-              Track your progress and continue your learning journey
+              {t('dashboard.sub')}
             </p>
           </div>
 
           <div>
             <Link to="/Roadmaps">
               <button className="explore-btn px-4 py-2 mt-3">
-                Explore More Roadmaps
+                {t('dashboard.explore')} 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -67,7 +70,7 @@ function Dashboard({ progress, steps }) {
             className="stat-card col-10 col-md-3 d-flex align-items-center shadow rounded-4 justify-content-between me-3 p-4"
           >
             <div>
-              <p className="stat-title">{item.title}</p>
+              <p className="stat-title">{t('dashboard.started')}</p>
               <h2 className="stat-number">{item.number}</h2>
             </div>
             <img src={item.img} alt="stat" className="stat-img" />
@@ -76,7 +79,7 @@ function Dashboard({ progress, steps }) {
       </div>
 
       <div className="container progress-section">
-        <h4>Your Progress</h4>
+        <h4>{t('dashboard.yourProgress')}</h4>
         <br />
 
         {progressItems.map((p, index) => (
@@ -115,12 +118,12 @@ function Dashboard({ progress, steps }) {
           <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
         </svg>
 
-        <h4>Keep the momentum going</h4>
-        <p>Continue with your next milestone or explore a new roadmap</p>
+        <h4>{t('dashboard.keepGoing')}</h4>
+        <p>{t('dashboard.keepGoingSub')}</p>
 
         <Link to="/Roadmaps">
           <button className="explore-btn learn-btn px-4 py-2">
-            Continue Learning
+            {t('dashboard.continueBtn')} 
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

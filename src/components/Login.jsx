@@ -237,6 +237,7 @@ import githubLogo from "../assets/github_logo-removebg-preview.png";
 import googleLogo from "../assets/google_logo-removebg-preview.png";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useTranslation } from 'react-i18next';
 
 const InputField = ({ label, type, placeholder, icon, name, value, onChange }) => {
   return (
@@ -273,6 +274,7 @@ const SocialLogin = () => {
 };
 
 const Login = () => {
+  const { t } = useTranslation();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -328,12 +330,12 @@ const Login = () => {
     <div className="login-page">
       <div className="app-container">
         <div className="login-container">
-          <h1 className="welcome-title">Welcome Back</h1>
-          <p className="welcome-subtitle">Log in to your Dalilak account</p>
+          <h1 className="welcome-title">{t('auth.loginTitle')}</h1>
+          <p className="welcome-subtitle">{t('auth.loginSub')}</p>
 
           <form className="login-form" onSubmit={handleSubmit}>
             <InputField
-              label="Email Address"
+              label={t('auth.email')}
               type="email"
               placeholder="you@example.com"
               icon="mail"
@@ -342,7 +344,7 @@ const Login = () => {
               onChange={handleChange}
             />
             <InputField
-              label="Password"
+              label={t('auth.password')}
               type="password"
               placeholder="********"
               icon="lock"
@@ -351,7 +353,7 @@ const Login = () => {
               onChange={handleChange}
             />
 
-            <a href="#" className="forgot-pass-link">Forgot password</a>
+            <a href="#" className="forgot-pass-link">{t('auth.forgot')}</a>
 
             {error && (
               <p style={{ color: "salmon", marginTop: "4px", fontSize: "0.9rem" }}>
@@ -362,20 +364,20 @@ const Login = () => {
             <button className="login-button" type="submit" disabled={loading}>
               {loading ? "Logging in..." : (
                 <>
-                  Log In{" "}
+                  {t('auth.loginBtn')}{" "}
                   <span className="material-symbols-outlined">arrow_right_alt</span>
                 </>
               )}
             </button>
           </form>
 
-          <p className="separator"><span>Or continue with</span></p>
+          <p className="separator"><span>{t('auth.orContinue')}</span></p>
 
           <SocialLogin />
 
           <p className="signup-text">
-            Don't have an account?{" "}
-            <Link to="/signup">Sign up</Link>
+            {t('auth.noAccount')}{" "}
+            <Link to="/signup">{t('auth.signupBtn')}</Link>
           </p>
         </div>
       </div>

@@ -31,7 +31,7 @@
 .Toastify__progress-bar {
   height: 3px !important;
   border-radius: 6px;
-  background: linear-gradient(90deg,#A020F0,#6A5CFF) !important;
+  /* background: linear-gradient(90deg,#A020F0,#6A5CFF) !important; */
   opacity: 0.95 !important;
 }
 

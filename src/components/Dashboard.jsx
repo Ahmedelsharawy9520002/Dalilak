@@ -7,7 +7,7 @@ import { Button } from "react-bootstrap";
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
-function Dashboard() {
+function Dashboard(props) {
   const { t, i18n } = useTranslation(); 
   const isRtl = i18n.dir() === 'rtl';
   
@@ -32,7 +32,7 @@ function Dashboard() {
       <div className="top-container d-flex justify-content-between mb-5 rounded-4 shadow">
         <div className="container d-flex justify-content-between">
           <div>
-            <h1 className="welcome-title">{t('dashboard.welcome')}</h1>
+            <h1 className="welcome-title">{t('dashboard.welcome')} {props.currentUser}</h1>
             <p className="welcome-sub">
               {t('dashboard.sub')}
             </p>

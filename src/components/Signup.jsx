@@ -265,7 +265,7 @@ import { toast } from "react-toastify";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 
-const InputField = ({ label, type, placeholder, icon, name, value, onChange, setCurrentUser }) => {
+const InputField = ({ label, type, placeholder, icon, name, value, onChange}) => {
   return (
     <div className="input-wrapper">
       <label className="input-label">{label}</label>
@@ -299,7 +299,7 @@ const SocialLogin = () => {
   );
 };
 
-const Signup = () => {
+const Signup = ({setCurrentUser}) => {
   const { t } = useTranslation(); 
   const [form, setForm] = useState({
     fullName: "",
@@ -339,7 +339,7 @@ const Signup = () => {
       .then((res) => {
         console.log("Signed up user:", res.data);
         toast.success("Account created successfully");
-        navigate("/Dalilak");
+        navigate("/login");
 
         setCurrentUser(form.fullName)
 

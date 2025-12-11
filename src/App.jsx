@@ -33,19 +33,21 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const location = useLocation();
 
-  const hideNavbar = location.pathname === "/login" || location.pathname === "/signup";
+  const hideNavbar = location.pathname === "/login" || location.pathname === "/Dalilak/" || location.pathname === "/Dalilak";
 
   return (
     <>
       {!hideNavbar && <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser} />}
       <Routes>
-        <Route path="/Dalilak" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Roadmaps" element={<Roadmaps />} />
         <Route path="/Dashboard" element={<Dashboard currentUser={currentUser} />} />
         <Route path="/login" element={<Login setCurrentUser={setCurrentUser} />} />
-        <Route path="/signup" element={<Signup setCurrentUser={setCurrentUser} />} />
+        {/* <Route path="/signup" element={<Signup setCurrentUser={setCurrentUser} />} /> */}
+        <Route path="/Dalilak" element={<Signup setCurrentUser={setCurrentUser} />} />
+        {/* <Route path="/" element={<Signup setCurrentUser={setCurrentUser} />} /> */}
         <Route path="/tracks/:title" element={<RoadmapDetail />} />
 
       </Routes>

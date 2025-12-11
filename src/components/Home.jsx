@@ -9,6 +9,7 @@ import { FiTarget } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
+
 function Home() {
     const { t, i18n } = useTranslation(); 
     const isRtl = i18n.dir() === 'rtl';
@@ -18,7 +19,9 @@ function Home() {
         {icon:< FiTarget className='myicon fs-4 '/>, header:t('home.cards.goalHeader'), p:t('home.cards.goalP')}]
 
     return (
+
     <>
+        
         <div className='cont container'>
             <div className='first-part d-flex flex-column align-items-center'>
                 <h1 className='header1'><span className='home-title-text'>{t('home.heroTitle')}</span> <span className='mycolor'>{t('home.heroTitleSpan')}</span></h1>

@@ -314,7 +314,7 @@ const Login = ({setCurrentUser}) => {
           toast.success("Login successful");
 
           localStorage.setItem("user", JSON.stringify(foundUser));
-          navigate("/Dalilak");
+          navigate("/Home");
           setCurrentUser(foundUser.name)
         }
       })
@@ -378,7 +378,7 @@ const Login = ({setCurrentUser}) => {
 
           <p className="signup-text">
             {t('auth.noAccount')}{" "}
-            <Link to="/signup">{t('auth.signupBtn')}</Link>
+            <Link to="/Dalilak">{t('auth.signupBtn')}</Link>
           </p>
         </div>
       </div>

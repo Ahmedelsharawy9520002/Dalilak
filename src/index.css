@@ -7,7 +7,7 @@
 
 :root {
 
-  --root-bg:linear-gradient(to top, #0c0a18, #24184b, #0c0a18);
+  --root-bg:linear-gradient(to top, #24184b, #0c0a18);
 
   /* navar */
   --navbar-bg: rgba(13, 11, 26,0.98);

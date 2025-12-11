@@ -310,3 +310,141 @@ ul{
     left: auto;
     right: 7px;
 }
+
+
+
+@media (max-width: 1200px) {
+  .onestep {
+    width: 90%;
+  }
+  
+  .stepDescription {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .roadmaptitle {
+    font-size: 36px !important;
+  }
+
+  .roadmapdescription {
+    font-size: 16px !important;
+  }
+   
+  .containerdetails {
+    height: auto;
+    padding: 25px 20px;
+  }
+
+  .roadmapsstats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .roadmapsstats > div {
+    width: 48%;
+  }
+
+  .onestep {
+    width: 100%;
+    gap: 15px;
+  }
+
+  .stepDescription {
+    width: 100%;
+    padding: 18px 20px;
+  }
+
+  .stepNumber {
+    width: 40px;
+    height: 40px;
+  }
+
+  .stepNumber::after {
+    top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .containerdetails {
+    height: auto;
+    padding: 25px 20px;
+  }
+
+  .roadmapsstats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .roadmapsstats > div {
+    width: 100%;
+  }
+
+  .onestep {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .stepNumber {
+    margin-bottom: 5px;
+  }
+
+  .stepNumber::after {
+    display: none; 
+  }
+
+
+  .stepDescription {
+    width: 100%;
+    padding: 18px 18px;
+  }
+
+  .title-wrapper h3 {
+    font-size: 18px !important;
+  }
+
+  .complete {
+    font-size: 14px;
+  }
+
+  .topics {
+    gap: 5px;
+  }
+
+  hr {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 576px) {
+
+  .roadmaptitle {
+    font-size: 28px !important;
+  }
+
+  .roadmapdescription {
+    font-size: 14px !important;
+  }
+
+  .stepDescription {
+    padding: 15px;
+  }
+
+  .onetopic {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+
+  .resourse {
+    font-size: 13px;
+  }
+}
+
+

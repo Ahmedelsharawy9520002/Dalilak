@@ -29,6 +29,12 @@
       "name": "john",
       "email": "a@a.a",
       "password": "1"
+    },
+    {
+      "id": "72ec",
+      "name": "lekaa",
+      "email": "lekaa@gmail.com",
+      "password": "12345"
     }
   ]
 }

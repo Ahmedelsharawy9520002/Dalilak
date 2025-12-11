@@ -263,8 +263,9 @@ import googleLogo from "../assets/google_logo-removebg-preview.png";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from "react-router-dom";
 
-const InputField = ({ label, type, placeholder, icon, name, value, onChange }) => {
+const InputField = ({ label, type, placeholder, icon, name, value, onChange, setCurrentUser }) => {
   return (
     <div className="input-wrapper">
       <label className="input-label">{label}</label>
@@ -309,6 +310,7 @@ const Signup = () => {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm((prev) => ({
@@ -337,6 +339,9 @@ const Signup = () => {
       .then((res) => {
         console.log("Signed up user:", res.data);
         toast.success("Account created successfully");
+        navigate("/Dalilak");
+
+        setCurrentUser(form.fullName)
 
         setForm({
           fullName: "",

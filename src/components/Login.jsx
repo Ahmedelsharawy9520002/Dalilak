@@ -273,7 +273,7 @@ const SocialLogin = () => {
   );
 };
 
-const Login = () => {
+const Login = ({setCurrentUser}) => {
   const { t } = useTranslation();
   const [form, setForm] = useState({
     email: "",
@@ -315,6 +315,7 @@ const Login = () => {
 
           localStorage.setItem("user", JSON.stringify(foundUser));
           navigate("/Dalilak");
+          setCurrentUser(foundUser.name)
         }
       })
       .catch((err) => {

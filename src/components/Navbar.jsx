@@ -1,4 +1,6 @@
 import React from "react";
+import Dropdown from 'react-bootstrap/Dropdown';
+import profilepic from '../images/profilepic.webp'
 import { BrowserRouter, Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import '../styles/navBar.css'
@@ -9,7 +11,7 @@ import { BookOpen, Menu, X, Sun, Moon, Languages } from "lucide-react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './Dashboard';
 import { useTranslation } from 'react-i18next';
-function Navbar({ theme, switchTheme }) {
+function Navbar({ theme, switchTheme, currentUser }) {
   const { t, i18n } = useTranslation(); 
 
   const toggleLanguage = () => {
@@ -68,13 +70,35 @@ function Navbar({ theme, switchTheme }) {
                           <Languages className="lang" />
                           <span className="ennavbar"> {t('nav.langBtn')}</span>
                         </button>            
-                        <Link to="/login">
-              <button className="navbarloginbtn">{t('nav.login')}</button>
-            </Link>
+            {
+              !currentUser &&( 
+              <>
+                <Link to="/login">
+                  <button className="navbarloginbtn">Login</button>
+                </Link>
 
-            <Link to="/signup">
-              <button className="navbarsignupbtn">{t('nav.signup')}</button>
-            </Link>
+                <Link to="/signup">
+                  <button className="navbarsignupbtn">Sign Up</button>
+                </Link>
+              </>
+            )}
+
+            {
+              currentUser &&( 
+              <>
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle border border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src={profilepic} alt="profilepic" className="rounded-circle" style={{height:"30px", width:"30px"}}/>
+                  </button>
+                  <ul class="dropdown-menu" style={{background:"var(--btn-shadow)"}}>
+                    <li className="d-flex"><a class="dropdown-item rounded mb-1" href="#" style={{color:"var(--text-hover)", background:"var(--btn-shadow)"}}>{currentUser}</a></li>
+                  
+                    <li><Link to="/login" class="dropdown-item bg-danger rounded" style={{color:"var(--text-hover)"}}>Log Out</Link></li>
+                  </ul>
+                </div>
+              </>
+            )}
+
           </div>
 
 

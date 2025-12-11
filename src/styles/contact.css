@@ -1,6 +1,7 @@
 .headcontact{
     font-size: 48px !important;
     font-weight: bold !important;
+    color: var(--text-hover);
 }
 .touch{
     
@@ -8,9 +9,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .form{
-    background-color: rgb(29, 19, 58) !important;
-    border: 0.1px solid rgba(141, 107, 251,0.7);
+    background-color: var(--contact-form-bg) !important;
+    border: 0.1px solid var(--contact-form-border);
     color: #eee !important;
     line-height: 31px;
 }
@@ -19,8 +21,8 @@
     font-size: 16px !important;
 }
 .contact-input , .contact-textarea{
-    background-color: rgb(26, 22, 40) !important;
-    border: 0.1px solid rgba(138, 102, 255, 0.8) !important;
+    background-color: var(--contact-input-bg) !important;
+    border: 0.1px solid var(--contact-input-border) !important;
     border-radius: 14px !important;
 }
 input{
@@ -33,17 +35,29 @@ textarea{
 h1{
     font-size: 25px !important;
 }
-p{
-    color:#cdc7d2;
+
+
+.contact-form-h , .contact-info-h ,.form-label, .info-item-h ,.office-hours-h{
+    color: var(--text-hover);
+}
+
+.info-item-desc{
+   color: var(--p-color); 
+}
+
+
+.contact-info p{
+    /* color:#cdc7d2; */
+   color: var(--p-color); 
 }
 .phead{
-    color: #cdc7d2 !important;
+    color: var(--p-color) !important;
     font-size: 18px !important;
     width: 680px !important;
     text-align: center;
 }
 .formButton{
-    background-color: rgb(161, 69, 255);
+    background-color: var(--contact-btn-bg);
     height: 50px;
     text-align: center;
     font-size: 17px;

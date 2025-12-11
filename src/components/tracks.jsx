@@ -173,7 +173,7 @@ export default function RoadmapDetail() {
                 {step.resources && (
                   <>
                     {openSteps[step.number] && (
-                      <ul type="none">
+                      <ul type="none" className="ul">
                         <hr />
                         <h4 style={{ fontSize: "16px" }}>{lang === 'ar' ? "المصادر:" : "Resources:"}</h4>
 

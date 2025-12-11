@@ -19,7 +19,7 @@ function Footer(){
                     <Row> 
 
                         <Col className='columns first-column'> 
-                            <Link to='/Dalilak'><img src={logo} alt="Company Logo" className="footer-logo "/></Link>
+                            <Link to='/Home'><img src={logo} alt="Company Logo" className="footer-logo "/></Link>
                             <p className="footer-pargraph">
                                 {t('footer.desc')}
                             </p>

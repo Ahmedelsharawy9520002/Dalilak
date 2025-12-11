@@ -30,21 +30,18 @@ function Footer(){
                             <h4 className='footer-marketplace footer-heading roboto-font'>{t('footer.product')}</h4>
                             <ul className='footer-list '>
                                 <li>
-                                    <Link to="/roadmaps" className="roboto-font">{t('nav.roadmaps')}</Link>
-                                </li>
-                                <li>
-                                    <Link to="/Dashboard" className="roboto-font">{t('nav.dashboard')}</Link>
-                                </li>
-                                <li>
-                                    <Link to="/pricing" className="roboto-font">{t('footer.pricing')}</Link>
+                                    
                                     <NavLink to="/roadmaps" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>Roadmaps</NavLink>
                                 </li>
+                                
                                 <li>
                                     <NavLink to="/Dashboard" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>Dashboard</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/pricing" className="roboto-font">Pricing</NavLink>
+                                    <Link to="/pricing" className="roboto-font">{t('footer.pricing')}</Link>
+                                    
                                 </li>
+                                
                             </ul>
                         </Col>
 
@@ -76,7 +73,7 @@ function Footer(){
                                     <Link to="/Termsofservice" className="roboto-font">{t('footer.terms')}</Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact" className="roboto-font">{t('nav.contact')}</Link>
+                                    <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>{t('nav.contact')}</NavLink>
                                 </li>
                             </ul>
                         </Col>

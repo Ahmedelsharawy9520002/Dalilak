@@ -60,12 +60,15 @@
 
 [data-theme='light'] {
   /* --root-bg : rgb(254, 252, 255); */
-  --root-bg : rgb(235, 231, 237);
+  /* --root-bg : rgb(235, 231, 237); */
+  --root-bg :rgb(224, 220, 226);
 
 
   /* navar */
   /* --navbar-bg: rgb(254, 252, 255); */
-  --navbar-bg: rgb(235, 231, 237);
+  /* --navbar-bg: rgb(235, 231, 237); */
+  --navbar-bg: rgb(224, 220, 226);
+
 
   --navbar-border: rgb(218, 199, 239);
   --signup-btn:rgb(126, 34, 206);
@@ -94,7 +97,7 @@
 
   --repeated-component-bg:linear-gradient(to right, #d3cddc, #ecd8f1, #f5eaf7);
 
-  --repeated-component-border:#cba8ec;
+  --repeated-component-border:rgb(218, 199, 239);
   --repeated-component-btn-bg:rgb(156, 47, 199);
   --repeated-component-btn-bg-hover:rgb(166, 57, 209);
 
@@ -103,7 +106,9 @@
 
   --about-border:rgb(233, 213, 255);
   /* --about-box-bg:rgb(254, 252, 255); */
-  --about-box-bg:rgb(238, 234, 238);
+  /* --about-box-bg:rgb(238, 234, 238); */
+  --about-box-bg:rgb(227, 224, 227);
+
 
   --stats-color:#8924cf;
 

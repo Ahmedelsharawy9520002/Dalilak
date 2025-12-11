@@ -66,7 +66,7 @@ const resources = {
         phMessage: "Your message..."
       },
       dashboard: {
-        welcome: "Welcome back, Learner",
+        welcome: "Welcome back,",
         sub: "Track your progress and continue your learning journey",
         explore: "Explore More Roadmaps",
         started: "Roadmaps Started",
@@ -88,7 +88,9 @@ const resources = {
         community: "Community",
         privacy: "Privacy Policy",
         terms: "Terms of service",
-        rights: "© 2025 Dalilak. All rights reserved."
+        rights: "© 2025 Dalilak. All rights reserved.",
+        roadmaps:"Roadmaps",
+        dashboard:"Dashboard"
       },
       auth: {
         loginTitle: "Welcome Back",
@@ -189,7 +191,7 @@ const resources = {
         phMessage: "اكتب رسالتك هنا..."
       },
       dashboard: {
-        welcome: "مرحباً بعودتك، أيها المتعلم",
+        welcome: "مرحباً بعودتك، ",
         sub: "تتبع تقدمك واستمر في رحلتك التعليمية",
         explore: "استكشف المزيد من المسارات",
         started: "مسارات بدأت",
@@ -211,7 +213,9 @@ const resources = {
         community: "المجتمع",
         privacy: "سياسة الخصوصية",
         terms: "شروط الخدمة",
-        rights: "© 2025 دليلك. جميع الحقوق محفوظة."
+        rights: "© 2025 دليلك. جميع الحقوق محفوظة.",
+        roadmaps:"المسارات",
+        dashboard:"لوحة التحكم"
       },
       auth: {
         loginTitle: "مرحباً بعودتك",

@@ -12,9 +12,9 @@ function Dashboard(props) {
   const isRtl = i18n.dir() === 'rtl';
   
   const stats = [
-    { title: "Roadmaps Started", number: 6, img: startImg },
-    { title: "In Progress", number: 6, img: progressImg },
-    { title: "Completed", number: 0, img: completedImg },
+    { title: t('dashboard.started'), number: 6, img: startImg },
+    { title: t('dashboard.progress'), number: 6, img: progressImg },
+    { title: t('dashboard.completed'), number: 0, img: completedImg },
   ];
 
   const progressItems = [
@@ -70,7 +70,7 @@ function Dashboard(props) {
             className="stat-card col-10 col-md-3 d-flex align-items-center shadow rounded-4 justify-content-between me-3 p-4"
           >
             <div>
-              <p className="stat-title">{t('dashboard.started')}</p>
+              <p className="stat-title">{item.title}</p>
               <h2 className="stat-number">{item.number}</h2>
             </div>
             <img src={item.img} alt="stat" className="stat-img" />

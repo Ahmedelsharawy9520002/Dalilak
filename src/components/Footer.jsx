@@ -28,13 +28,13 @@ function Footer(){
                             <h4 className='footer-marketplace footer-heading roboto-font'>Product</h4>
                             <ul className='footer-list '>
                                 <li>
-                                    <Link to="/roadmaps" className="roboto-font">Roadmaps</Link>
+                                    <NavLink to="/roadmaps" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>Roadmaps</NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/Dashboard" className="roboto-font">Dashboard</Link>
+                                    <NavLink to="/Dashboard" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>Dashboard</NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/pricing" className="roboto-font">Pricing</Link>
+                                    <NavLink to="/pricing" className="roboto-font">Pricing</NavLink>
                                 </li>
                             </ul>
                         </Col>

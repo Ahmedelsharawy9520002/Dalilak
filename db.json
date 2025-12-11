@@ -84,6 +84,7 @@
       "email": "lekaammm@gmail.com",
       "password": "12"
     },
+
     {
       "name": "mariam nawara",
       "email": "mariamnawara2005@gmail.com",
@@ -95,6 +96,19 @@
       "name": "lekaa",
       "email": "lekaab@gmail.com",
       "password": "12"
+    },
+    {
+      "id": "a20e",
+      "name": "دارين",
+      "email": "dareenaldeak@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "4d9f",
+      "name": "dareen ashraf aldeek",
+      "email": "dareenaldeak@gmail.com",
+      "password": "123456"
+  
     }
   ]
 }

@@ -31,11 +31,11 @@ function Footer(){
                             <ul className='footer-list '>
                                 <li>
                                     
-                                    <NavLink to="/roadmaps" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>Roadmaps</NavLink>
+                                    <NavLink to="/roadmaps" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>{t('footer.roadmaps')}</NavLink>
                                 </li>
                                 
                                 <li>
-                                    <NavLink to="/Dashboard" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>Dashboard</NavLink>
+                                    <NavLink to="/Dashboard" className={({ isActive }) => isActive ? "active-link roboto-font" : "roboto-font"}>{t('footer.dashboard')}</NavLink>
                                 </li>
                                 <li>
                                     <Link to="/pricing" className="roboto-font">{t('footer.pricing')}</Link>

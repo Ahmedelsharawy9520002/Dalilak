@@ -316,7 +316,7 @@ const Login = ({setCurrentUser}) => {
 
           localStorage.setItem("user", JSON.stringify(foundUser));
           navigate("/Home");
-          setCurrentUser(foundUser.name)
+          setCurrentUser({name:foundUser.name, role:foundUser.role})
         }
       })
       .catch((err) => {

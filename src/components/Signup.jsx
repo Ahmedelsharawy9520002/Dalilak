@@ -345,7 +345,7 @@ const Signup = ({setCurrentUser}) => {
         toast.success("Account created successfully");
         navigate("/login");
 
-        setCurrentUser(form.fullName)
+        setCurrentUser({name:form.fullName, role:"user"})
 
         setForm({
           fullName: "",

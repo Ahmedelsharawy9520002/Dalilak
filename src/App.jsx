@@ -31,21 +31,22 @@ function App() {
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
 
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState({name:null, role:null})
+  console.log(currentUser)
   const location = useLocation();
 
   const hideNavbar = location.pathname === "/login" || location.pathname === "/Dalilak/" || location.pathname === "/Dalilak";
   
   return (
     <>
-      {!hideNavbar && <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser} />}
+      {!hideNavbar && <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser.name} />}
       <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Roadmaps" element={<Roadmaps />} />
-        <Route path="/Dashboard" element={<Dashboard currentUser={currentUser} />} />
+        <Route path="/Dashboard" element={<Dashboard currentUser={currentUser.name} />} />
         <Route path="/login" element={<Login setCurrentUser={setCurrentUser} />} />
         <Route path="/Dalilak" element={<Signup setCurrentUser={setCurrentUser} />} />
         <Route path="/tracks/:title" element={<RoadmapDetail />} />

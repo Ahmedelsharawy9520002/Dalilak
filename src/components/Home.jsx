@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import '../styles/home.css'
 import Infosqr from './Infosqr'
@@ -8,7 +8,6 @@ import { SlEnergy } from "react-icons/sl";
 import { FiTarget } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import PageWrapper from "./PageWrapper";
 
 
 function Home() {
@@ -22,7 +21,7 @@ function Home() {
     return (
 
     <>
-        <PageWrapper>
+        
         <div className='cont container'>
             <div className='first-part d-flex flex-column align-items-center'>
                 <h1 className='header1'><span className='home-title-text'>{t('home.heroTitle')}</span> <span className='mycolor'>{t('home.heroTitleSpan')}</span></h1>
@@ -41,8 +40,8 @@ function Home() {
 
             <div className='sec-part d-flex gap-4 justify-content-center '>
                 {
-                    elements.map((val)=>(
-                        <Infosqr icon={val.icon} header={val.header} p={val.p}  />
+                    elements.map((val, idx)=>(
+                        <Infosqr icon={val.icon} header={val.header} p={val.p} key={idx} />
                     ))
                 }            
             </div>
@@ -57,7 +56,6 @@ function Home() {
                 
             </div>
         </div>
-        </PageWrapper>
     </>
     )
 }

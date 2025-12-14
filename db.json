@@ -4,121 +4,148 @@
       "id": "926e",
       "name": "Ahmed",
       "email": "ahmed11@gmail.com",
-      "password": "1234"
+      "password": "1234",
+      "role": "user"
     },
     {
       "id": "84f5",
       "name": "fatma",
       "email": "fatma@gmail.com",
-      "password": "123"
+      "password": "123",
+      "role": "user"
     },
     {
       "id": "deda",
       "name": "fatma aboelnaga",
       "email": "fatma1@gmail.com",
-      "password": "123"
+      "password": "123",
+      "role": "admin"
     },
     {
       "id": "1d15",
       "name": "sara",
       "email": "sara@gmail.com",
-      "password": "12"
+      "password": "12",
+      "role": "user"
     },
     {
       "id": "5e46",
       "name": "john",
       "email": "a@a.a",
-      "password": "1"
+      "password": "1",
+      "role": "user"
     },
     {
       "id": "72ec",
       "name": "lekaa",
       "email": "lekaa@gmail.com",
-      "password": "12345"
+      "password": "12345",
+      "role": "user"
     },
     {
       "id": "7c08",
       "name": "lekaa",
       "email": "lekaamohamed@gmail.com",
-      "password": "123"
+      "password": "123",
+      "role": "user"
     },
     {
       "id": "3260",
       "name": "lekaa",
       "email": "lekaabikhet@gmail.com",
-      "password": "12"
+      "password": "12",
+      "role": "user"
     },
     {
       "id": "c3d4",
       "name": "a",
       "email": "s@s.s",
-      "password": "1"
+      "password": "1",
+      "role": "user"
     },
     {
       "id": "9d33",
       "name": "fatma2",
       "email": "f@f.f",
-      "password": "1"
+      "password": "1",
+      "role": "user"
     },
     {
       "id": "0db7",
       "name": "h",
       "email": "h@h.h",
-      "password": "1"
+      "password": "1",
+      "role": "user"
     },
     {
       "id": "7d58",
       "name": "lekaa",
       "email": "lekaa12@gmail.com",
-      "password": "12"
+      "password": "12",
+      "role": "user"
     },
     {
       "id": "0b26",
       "name": "lekaa",
       "email": "lekaamo@gmail.com",
-      "password": "123"
+      "password": "123",
+      "role": "user"
     },
     {
       "id": "0dda",
       "name": "lekaa",
       "email": "lekaammm@gmail.com",
-      "password": "12"
+      "password": "12",
+      "role": "user"
     },
     {
       "name": "mariam nawara",
       "email": "mariamnawara2005@gmail.com",
       "password": "mariam",
-      "id": "So0N06E"
+      "id": "So0N06E",
+      "role": "user"
     },
     {
       "id": "ce02",
       "name": "lekaa",
       "email": "lekaab@gmail.com",
-      "password": "12"
+      "password": "12",
+      "role": "user"
     },
     {
       "id": "a20e",
       "name": "دارين",
       "email": "dareenaldeak@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "role": "user"
     },
     {
       "id": "4d9f",
       "name": "dareen ashraf aldeek",
       "email": "dareenaldeak@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "role": "user"
     },
     {
       "id": "42cd",
       "name": "ahmed",
       "email": "ahmed@gmail.com",
-      "password": "ahmed"
+      "password": "ahmed",
+      "role": "user"
     },
     {
       "id": "77af",
       "name": "ahmed",
       "email": "ahmed@gmail.com",
-      "password": "ahmed"
+      "password": "ahmed",
+      "role": "user"
+    },
+    {
+      "id": "c6d4",
+      "name": "1",
+      "email": "1@1.1",
+      "password": "1",
+      "role": "user"
     }
   ]
 }

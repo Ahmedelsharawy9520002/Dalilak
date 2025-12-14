@@ -338,6 +338,7 @@ const Signup = ({setCurrentUser}) => {
         name: form.fullName,
         email: form.email,
         password: form.password,
+        role: "user"
       })
       .then((res) => {
         console.log("Signed up user:", res.data);

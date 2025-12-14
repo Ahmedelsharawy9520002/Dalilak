@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
 import { RxLightningBolt } from "react-icons/rx";
 import { useTranslation } from 'react-i18next';
+import { motion } from "framer-motion";
+
 
 function Roadmapsqr(props){
     const { t } = useTranslation();
     return(
+        <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        whileHover={{ scale: 1.04 }}
+        transition={{ duration: 0.1, ease: "easeOut" }}
+        >
         <Link to={`/tracks/${props.title}`} style={{textDecoration: 'none', color: 'inherit'}}>
         <div className="roadmapsqrcont">
             <div className="iconcont d-flex justify-content-center align-items-center">
@@ -20,6 +28,7 @@ function Roadmapsqr(props){
             <p className="view">{t('roadmapsPage.view')} &gt;</p>
         </div>
         </Link>
+        </motion.div>
     )
 }
 export default Roadmapsqr;

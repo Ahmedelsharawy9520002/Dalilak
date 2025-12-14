@@ -11,6 +11,8 @@ import { BookOpen, Menu, X, Sun, Moon, Languages } from "lucide-react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './Dashboard';
 import { useTranslation } from 'react-i18next';
+import { motion } from "framer-motion";
+
 function Navbar({ theme, switchTheme, currentUser }) {
   const { t, i18n } = useTranslation(); 
 
@@ -21,7 +23,10 @@ function Navbar({ theme, switchTheme, currentUser }) {
 
   return (
     <>
-      <div className="  p-3  d-flex  justify-content-between  navbar navbar_content">
+      <motion.div className="  p-3  d-flex  justify-content-between  navbar navbar_content"
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}>
         <div className="container ">
           <Link to="/Home" className="flex items-center gap-2 group logo ">
             <span className="booklogo"><BookOpen  /></span> <span className="Logoname">{t('brandName')}</span>
@@ -106,7 +111,7 @@ function Navbar({ theme, switchTheme, currentUser }) {
 
         </div>
           
-        </div>
+        </motion.div>
     </>
   );
 }

@@ -238,6 +238,7 @@ import googleLogo from "../assets/google_logo-removebg-preview.png";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useTranslation } from 'react-i18next';
+import PageWrapper from "./PageWrapper";
 
 const InputField = ({ label, type, placeholder, icon, name, value, onChange }) => {
   return (
@@ -328,6 +329,7 @@ const Login = ({setCurrentUser}) => {
   };
 
   return (
+    <PageWrapper>
     <div className="login-page">
       <div className="app-container">
         <div className="login-container">
@@ -383,6 +385,8 @@ const Login = ({setCurrentUser}) => {
         </div>
       </div>
     </div>
+    </PageWrapper>
+
   );
 };
 

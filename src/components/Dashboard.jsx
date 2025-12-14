@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
+import PageWrapper from "./PageWrapper";
+
 
 function Dashboard(props) {
   const { t, i18n } = useTranslation(); 
@@ -27,6 +29,7 @@ function Dashboard(props) {
   ];
 
   return (
+    <PageWrapper>
     <div className="dashboard-container">
 
       <div className="top-container d-flex justify-content-between mb-5 rounded-4 shadow">
@@ -144,6 +147,7 @@ function Dashboard(props) {
       </div>
 
     </div>
+    </PageWrapper>
   );
 }
 

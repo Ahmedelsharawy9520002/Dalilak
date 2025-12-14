@@ -1,7 +1,16 @@
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
 #root {
   background: var(--root-bg);
   color: white;
 }
+
 
 
 

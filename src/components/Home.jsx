@@ -8,6 +8,7 @@ import { SlEnergy } from "react-icons/sl";
 import { FiTarget } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import PageWrapper from "./PageWrapper";
 
 
 function Home() {
@@ -21,7 +22,7 @@ function Home() {
     return (
 
     <>
-        
+        <PageWrapper>
         <div className='cont container'>
             <div className='first-part d-flex flex-column align-items-center'>
                 <h1 className='header1'><span className='home-title-text'>{t('home.heroTitle')}</span> <span className='mycolor'>{t('home.heroTitleSpan')}</span></h1>
@@ -56,6 +57,7 @@ function Home() {
                 
             </div>
         </div>
+        </PageWrapper>
     </>
     )
 }

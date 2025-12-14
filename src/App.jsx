@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar'
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Roadmaps from './components/Roadmaps';
 import Home from './components/Home';
 import About from './components/About';
@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./styles/toast.css";
 import './i18n';
 import useLanguageSettings from './useLanguageSettings';
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   useLanguageSettings();
@@ -34,11 +35,12 @@ function App() {
   const location = useLocation();
 
   const hideNavbar = location.pathname === "/login" || location.pathname === "/Dalilak/" || location.pathname === "/Dalilak";
-
+  
   return (
     <>
       {!hideNavbar && <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser} />}
-      <Routes>
+      <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
@@ -49,6 +51,7 @@ function App() {
         <Route path="/tracks/:title" element={<RoadmapDetail />} />
 
       </Routes>
+      </AnimatePresence>
       {!hideNavbar && <Footer/>}
       <ToastContainer position="top-center" autoClose={3000} pauseOnHover draggable closeOnClick icon={false}/>
     </>

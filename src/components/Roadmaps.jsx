@@ -2,6 +2,8 @@ import RoadmapSqr from './RoadmapSqr'
 import '../styles/roadmaps.css'
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import PageWrapper from "./PageWrapper";
+
 
 
 function Roadmaps(){
@@ -86,6 +88,7 @@ const levels = [
         setcategory(selectedCategory)
     }
     return(
+        <PageWrapper>
         <div className="container">
             
             <h1 className='title'>{t('roadmapsPage.title')} <span className='word'>{t('roadmapsPage.titleSpan')}</span></h1>
@@ -122,6 +125,7 @@ const levels = [
                 }
             </div>
         </div>
+        </PageWrapper>
     )
 }
 export default Roadmaps;

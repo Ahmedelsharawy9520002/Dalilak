@@ -264,9 +264,12 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
+import PageWrapper from "./PageWrapper";
+
 
 const InputField = ({ label, type, placeholder, icon, name, value, onChange}) => {
   return (
+    
     <div className="input-wrapper">
       <label className="input-label">{label}</label>
       <div className="input-container">
@@ -360,6 +363,7 @@ const Signup = ({setCurrentUser}) => {
   };
 
   return (
+    <PageWrapper>
     <div className="signup-page">
       <div className="app-container">
         <div className="signup-container">
@@ -431,6 +435,7 @@ const Signup = ({setCurrentUser}) => {
         </div>
       </div>
     </div>
+    </PageWrapper>
   );
 };
 

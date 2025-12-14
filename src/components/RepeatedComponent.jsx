@@ -2,11 +2,14 @@ import React from "react"
 import Button from '@mui/material/Button';
 import '../styles/RepeatedComponent.css'
 import { Link } from "react-router-dom";
+import PageWrapper from "./PageWrapper";
+
 
 function RepeatedComponent(props) {
 
   return (
     <>
+    <PageWrapper>
       <div className='rep-comp-container d-flex flex-column gap-2 justify-content-center align-items-center'>
         {/* <i></i>  لو فيه ايكون */}
         <h2 className="infosqr-h fw-bold">{props.header}</h2>
@@ -14,6 +17,7 @@ function RepeatedComponent(props) {
         <Link to='/Roadmaps'><Button variant="contained" className='mybutn'><span className="mytxt">{props.btntxt}</span>{props.mysvg}</Button>
         </Link>
       </div>
+      </PageWrapper>
     </>
   )
 }

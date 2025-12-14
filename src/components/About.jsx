@@ -6,11 +6,12 @@ import { GoGoal } from "react-icons/go";
 // import { FaMedal } from "react-icons/fa6";
 // import { BsPeopleFill } from "react-icons/bs";
 import { useTranslation } from 'react-i18next';
+import PageWrapper from "./PageWrapper";
 
 export default function About() {
   const { t } = useTranslation();
   return (
-
+    <PageWrapper>
     <div className="aboutpage">
       <div className="contbox container">
         <header className="header">
@@ -96,6 +97,7 @@ export default function About() {
         </section>
       </div>
     </div>
+    </PageWrapper>
 
   );
 }

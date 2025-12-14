@@ -6,6 +6,9 @@ import { ChevronLeft, Clock, BookOpen } from "lucide-react"
 import "../styles/tracks.css"
 import { roadmapDetails } from "../roadmapsData";
 import { useTranslation } from "react-i18next";
+import PageWrapper from "./PageWrapper";
+import { motion } from "framer-motion";
+
 
 export default function RoadmapDetail() {
   const { title } = useParams();
@@ -51,7 +54,7 @@ export default function RoadmapDetail() {
   return (
     <>
       
-      
+      <PageWrapper>
       <div className="tracksnavbar navbar">
         <div className="navbar container ">
           <Link
@@ -97,12 +100,16 @@ export default function RoadmapDetail() {
             const isActive = index === activeStep && !isCompleted;
             const isLocked = index > activeStep;
             return(
-            <div
+            <motion.div 
+            
                 className={`onestep ${isActive ? "active-step" : ""} ${
                   isCompleted ? "completed-step" : ""
                 }`}
                 key={step.number}
                 style={{ marginBottom: "20px" }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
               >
               <div className="stepNumber">{step.number}</div>
 
@@ -217,11 +224,12 @@ export default function RoadmapDetail() {
                   </>
                 )}
               </div>
-            </div>
+            </motion.div>
           );
           })}
         </div>
       </div>
+      </PageWrapper>
       
     </>
   );

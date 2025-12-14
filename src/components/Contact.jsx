@@ -1,6 +1,7 @@
 import "../styles/contact.css";
 import {MdOutlineEmail,MdOutlinePhone,MdOutlineLocationOn} from "react-icons/md";
 import { useTranslation } from 'react-i18next';
+import PageWrapper from "./PageWrapper";
 
 
 
@@ -8,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 function Contact() {
   const { t } = useTranslation(); 
   return (
+    <PageWrapper>
     <div className="container contact-container py-5">
       <div className="d-flex flex-column align-items-center justify-content-center mb-5">
         <h1 className="headcontact mb-2">
@@ -107,6 +109,7 @@ function Contact() {
         </div>
       </div>
     </div>
+    </PageWrapper>
   );
 }
 

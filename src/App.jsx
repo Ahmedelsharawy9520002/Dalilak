@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Messages from './components/Messages';
 import RoadmapDetail from './components/tracks';
 import { useState, useEffect} from 'react';
 import { ToastContainer } from "react-toastify";
@@ -39,7 +40,7 @@ function App() {
   
   return (
     <>
-      {!hideNavbar && <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser.name} />}
+      {!hideNavbar && <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser.name} role={currentUser.role} />}
       <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/Home" element={<Home />} />
@@ -50,6 +51,7 @@ function App() {
         <Route path="/login" element={<Login setCurrentUser={setCurrentUser} />} />
         <Route path="/Dalilak" element={<Signup setCurrentUser={setCurrentUser} />} />
         <Route path="/tracks/:title" element={<RoadmapDetail />} />
+        <Route path="/messages" element={<Messages />} />
 
       </Routes>
       </AnimatePresence>

@@ -23,6 +23,7 @@
     background-color: var(--contact-input-bg) !important;
     border: 0.1px solid var(--contact-input-border) !important;
     border-radius: 14px !important;
+    color: var(--p-color);
 }
 input{
     height: 54px;
@@ -91,6 +92,7 @@ h1{
 .contact-form input:focus,
 .contact-form textarea:focus {
     box-shadow: 0 0 9px rgba(138, 102, 255, 0.8);
+    color: var(--p-color);
 }
 
 

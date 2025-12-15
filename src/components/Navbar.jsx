@@ -13,7 +13,7 @@ import Dashboard from './Dashboard';
 import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion";
 
-function Navbar({ theme, switchTheme, currentUser }) {
+function Navbar({ theme, switchTheme, currentUser, role }) {
   const { t, i18n } = useTranslation(); 
 
   const toggleLanguage = () => {
@@ -33,16 +33,16 @@ function Navbar({ theme, switchTheme, currentUser }) {
           </Link>
 
           <div className="d-flex gap-5 navbar navbarwords ">
-            <div>
+            {!(role==="admin") && <div>
               <NavLink to="/Home" className={({ isActive }) => isActive ? "active-link" : ""} >
                 {t('nav.home')}
               </NavLink>
-            </div>
-            <div>
+            </div>}
+            {!(role==="admin") && <div>
               <NavLink to="/About" className={({ isActive }) => isActive ? "active-link" : ""}>
                 {t('nav.about')}
               </NavLink>
-            </div>
+            </div>}
             <div>
               <NavLink to="/Roadmaps" className={({ isActive }) => isActive ? "active-link" : ""}>
                 {t('nav.roadmaps')}
@@ -53,12 +53,18 @@ function Navbar({ theme, switchTheme, currentUser }) {
                 {t('nav.dashboard')}
               </NavLink>
             </div>
-            <div>
+            {!(role==="admin") && <div>
               <NavLink to="/Contact"className={({ isActive }) => isActive ? "active-link" : ""}>
               {t('nav.contact')}
               </NavLink>
               
-            </div>
+            </div>}
+            {(role==="admin") && <div>
+              <NavLink to="/messages"className={({ isActive }) => isActive ? "active-link" : ""}>
+                Messages
+              </NavLink>
+              
+            </div>}
           </div>
           {/* <div className="d-flex align-items-center gap-2 ">
             

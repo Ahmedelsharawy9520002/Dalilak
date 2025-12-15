@@ -2,12 +2,26 @@ import "../styles/contact.css";
 import {MdOutlineEmail,MdOutlinePhone,MdOutlineLocationOn} from "react-icons/md";
 import { useTranslation } from 'react-i18next';
 import PageWrapper from "./PageWrapper";
-
+import axios from "axios";
 
 
 
 function Contact() {
   const { t } = useTranslation(); 
+
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    axios
+    .post("http://localhost:3000/messages", {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        subject: e.target.subject.value,
+        message: e.target.message.value
+      })
+    .then((res)=>console.log(res))
+    .catch((err)=>console.log(err))
+  }
+
   return (
     <PageWrapper>
     <div className="container contact-container py-5">
@@ -26,25 +40,25 @@ function Contact() {
           <div className="form contact-form p-4 shadow rounded-4">
             <h1 className="mb-4 contact-form-h fw-bold">{t('contact.formTitle')}</h1>
 
-            <form>
+            <form onSubmit={(e)=>handleSubmit(e)}>
               <div className="mb-3">
                 <label className="form-label">{t('contact.name')}</label>
-                <input type="text" className="form-control contact-input" placeholder={t('contact.phName')} required />
+                <input type="text" name="name" className="form-control contact-input" placeholder={t('contact.phName')} required />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">{t('contact.email')}</label>
-                <input type="email" className="form-control contact-input" placeholder="your.email@example.com" required />
+                <input type="email" name="email" className="form-control contact-input" placeholder="your.email@example.com" required />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">{t('contact.subject')}</label>
-                <input type="text" className="form-control contact-input" placeholder={t('contact.phSubject')} required />
+                <input type="text" name="subject" className="form-control contact-input" placeholder={t('contact.phSubject')} required />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">{t('contact.message')}</label>
-                <textarea className="form-control contact-textarea" rows="4" placeholder={t('contact.phMessage')}></textarea>
+                <textarea name="message" className="form-control contact-textarea" rows="4" placeholder={t('contact.phMessage')}></textarea>
               </div>
 
               <button type="submit" className="formButton px-4 w-100 mt-4">

@@ -1,0 +1,39 @@
+.messagescont{
+    margin-bottom: 150px;
+}
+.msgheader{
+    background: var(--home-mycolor);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 300% !important;
+    font-weight: 700;
+    margin-top: 60px;
+}
+.msgcont{
+    width: 100%;
+    height: auto;
+    background-color: var(--stat-card-bg);
+    border: 1px solid var(--stat-card-border);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.trash-icon{
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.trash-icon:hover{
+    background-color: var(--Expert-bg);
+
+}
+.heightfix{
+    margin-bottom: 5px;
+}
+.whitetext{
+    color: var(--text-hover);
+}

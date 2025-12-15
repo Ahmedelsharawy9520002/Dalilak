@@ -1,6 +1,6 @@
 .rep-comp-container{
     border: 1px solid var(--repeated-component-border);
-    width: 70%;
+    width: 100%;
     height: 35vh;
     border-radius: 19px;
     padding: 50px;

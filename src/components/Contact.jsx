@@ -3,22 +3,44 @@ import {MdOutlineEmail,MdOutlinePhone,MdOutlineLocationOn} from "react-icons/md"
 import { useTranslation } from 'react-i18next';
 import PageWrapper from "./PageWrapper";
 import axios from "axios";
-
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 
 function Contact() {
   const { t } = useTranslation(); 
 
+  const [data, setData] = useState({name:"", email:"", subject:"", message:""})
+
+  const handleChange = (e)=>{
+    setData({...data, [e.target.name]:e.target.value})
+  }
+
   const handleSubmit = (e)=>{
     e.preventDefault()
+
+    const now = new Date();
+    const formattedTime = now.toLocaleString("en-US", {
+      month: "long",
+      day: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    }).replace(",", " at");
+
     axios
     .post("http://localhost:3000/messages", {
-        name: e.target.name.value,
-        email: e.target.email.value,
-        subject: e.target.subject.value,
-        message: e.target.message.value
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+        sentTime: formattedTime,
       })
-    .then((res)=>console.log(res))
+    .then((res)=>{
+      setData({name:"", email:"", subject:"", message:""})
+      toast.info("message sent successfully")
+    })
     .catch((err)=>console.log(err))
   }
 
@@ -43,22 +65,22 @@ function Contact() {
             <form onSubmit={(e)=>handleSubmit(e)}>
               <div className="mb-3">
                 <label className="form-label">{t('contact.name')}</label>
-                <input type="text" name="name" className="form-control contact-input" placeholder={t('contact.phName')} required />
+                <input type="text" name="name" value={data.name} onChange={(e)=>handleChange(e)} className="form-control contact-input" placeholder={t('contact.phName')} required />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">{t('contact.email')}</label>
-                <input type="email" name="email" className="form-control contact-input" placeholder="your.email@example.com" required />
+                <input type="email" name="email" value={data.email} onChange={(e)=>handleChange(e)} className="form-control contact-input" placeholder="your.email@example.com" required />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">{t('contact.subject')}</label>
-                <input type="text" name="subject" className="form-control contact-input" placeholder={t('contact.phSubject')} required />
+                <input type="text" name="subject" value={data.subject} onChange={(e)=>handleChange(e)} className="form-control contact-input" placeholder={t('contact.phSubject')} required />
               </div>
 
               <div className="mb-3">
                 <label className="form-label">{t('contact.message')}</label>
-                <textarea name="message" className="form-control contact-textarea" rows="4" placeholder={t('contact.phMessage')}></textarea>
+                <textarea name="message" value={data.message} onChange={(e)=>handleChange(e)} className="form-control contact-textarea" rows="4" placeholder={t('contact.phMessage')}></textarea>
               </div>
 
               <button type="submit" className="formButton px-4 w-100 mt-4">

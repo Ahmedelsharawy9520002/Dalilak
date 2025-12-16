@@ -4,19 +4,26 @@ import PageWrapper from "./PageWrapper";
 import axios from 'axios';
 import { IoTimeOutline } from "react-icons/io5";
 import Swal from 'sweetalert2';
+import { FaCheck } from "react-icons/fa6";
 import '../styles/messages.css'
 
 function Messages() {
 
   const [messages, setmessages] = useState([])
 
-  useEffect(()=>{
+  const fetchmsgs = ()=>{
     axios
     .get("http://localhost:3000/messages")
     .then((res)=>{
       setmessages(res.data.reverse())
     })
-    .catch((err)=>console.log(err))
+    .catch((err)=>console.log(err))  
+  }
+
+  useEffect(()=>{
+    fetchmsgs()
+    const interval = setInterval(fetchmsgs, 3000)
+    return ()=>clearInterval(interval)
   }, [])
 
 const handleDelete = (id) => {
@@ -32,7 +39,7 @@ const handleDelete = (id) => {
       axios.delete(`http://localhost:3000/messages/${id}`)
         .then(() => {
           setmessages(prev => prev.filter(msg => msg.id !== id));
-          Swal.fire('Deleted!', 'Message has been deleted.', 'success');
+          Swal.fire('Deleted!', 'Message has been deleted.');
         });
     }
   });
@@ -50,19 +57,27 @@ const handleDelete = (id) => {
               <div className='d-flex justify-content-between'>
                 <div>
                   <h5 className='fw-bold heightfix whitetext'>{msg.name}</h5>
-                  <p className='opacity-50 heightfix whitetext'>{msg.email}</p>
+                  <p className='opacity-75 heightfix whitetext'>{msg.email}</p>
                   <div className='d-flex gap-2 align-items-center'>
-                    <IoTimeOutline className='opacity-50 heightfix whitetext' />
-                    <p className='opacity-50 heightfix whitetext'>{msg.sentTime}</p>
+                    <div style={{height:"26px"}}>
+                      <IoTimeOutline className='opacity-75 heightfix whitetext' />
+                    </div>
+                    <p className='opacity-75 heightfix whitetext'>{msg.sentTime}</p>
                   </div>
                 </div>
-                <div className='trash-icon'>
-                  <FaRegTrashCan className='fs-5 text-danger' onClick={()=>handleDelete(msg.id)} />
+                <div className='d-flex gap-2'>
+                  <div className='unread'>unread</div>
+                  <div className='checkicon d-flex justify-content-center align-items-center'>
+                    <FaCheck />
+                  </div>
+                  <div className='trash-icon'>
+                    <FaRegTrashCan className='fs-5 text-danger' onClick={()=>handleDelete(msg.id)} />
+                  </div>
                 </div>
               </div>
               <hr className='heightfix' style={{width:"100%"}}/>
               <p className="fw-bold heightfix whitetext">{msg.subject}</p>
-              <p className="opacity-50 whitetext">{msg.message}</p>
+              <p className="opacity-75 whitetext">{msg.message}</p>
             </div>
           ))
         }

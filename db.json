@@ -158,12 +158,20 @@
       "sentTime": "December 15 at 2025 at 08:49 PM"
     },
     {
-      "id": "f253",
+      "id": "3e4e",
       "name": "Ahmed Hassan",
       "email": "ahmed.hassan@techmail.com",
       "subject": "Partnership Opportunity",
       "message": "Hello Dalilak Team,\n\nI represent a tech education company and we're interested in partnering with you to create custom roadmaps for our students. Would love to discuss this further. Please let me know when you're available for a call.\n\nBest regards,\nAhmed",
-      "sentTime": "December 15 at 2025 at 08:57 PM"
+      "sentTime": "December 16 at 2025 at 04:24 AM"
+    },
+    {
+      "id": "bd6a",
+      "name": "Emily Chen",
+      "email": "emily.chen@student.edu",
+      "subject": "Thank You!",
+      "message": "Just wanted to say thank you for creating such an amazing platform! The Machine Learning roadmap has been incredibly helpful in structuring my learning journey. Keep up the great work!",
+      "sentTime": "December 16 at 2025 at 04:37 AM"
     }
   ]
 }

@@ -18,6 +18,27 @@
     border-radius: 15px;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
 }
+.unread{
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px rgb(0, 203, 88) solid;
+    background-color: rgba(22, 207, 52, 0.3);
+    color: rgb(0, 203, 88);
+    padding: 5px;
+    border-radius: 5px;
+}
+.checkicon{
+    width: 35px;
+    height: 35px;
+    color: rgb(0, 203, 88);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.checkicon:hover{
+    background-color: rgba(117, 201, 100, 0.2);
+}
 .trash-icon{
     cursor: pointer;
     width: 35px;

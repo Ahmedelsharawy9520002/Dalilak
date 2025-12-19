@@ -7,26 +7,38 @@ import { Button } from "react-bootstrap";
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import PageWrapper from "./PageWrapper";
+import { useProgress } from "../context/ProgressContext";
+
 
 
 function Dashboard(props) {
-  const { t, i18n } = useTranslation(); 
+  const { t, i18n } = useTranslation();
+  const { progress } = useProgress(); 
   const isRtl = i18n.dir() === 'rtl';
   
-  const stats = [
-    { title: t('dashboard.started'), number: 6, img: startImg },
-    { title: t('dashboard.progress'), number: 6, img: progressImg },
-    { title: t('dashboard.completed'), number: 0, img: completedImg },
-  ];
+  const totalStarted = Object.keys(progress).length;
 
-  const progressItems = [
-    { title: "Data Structures", level: "Intermediate", percent: 80},
-    { title: "Web Development", level: "Beginner", percent: 65},
-    { title: "Algorithms", level: "Intermediate", percent: 30},
-    { title: "System Design", level: "Intermediate", percent: 45},
-    { title: "Machine Learning", level: "Expert", percent:20 },
-    { title: "Compiler Design", level: "Expert", percent: 0},
-  ];
+const totalCompleted = Object.values(progress).filter(
+  (p) => p.completed === p.total
+).length;
+
+const totalInProgress = Object.values(progress).filter(
+  (p) => p.completed > 0 && p.completed < p.total
+).length;
+
+const stats = [
+  { title: t('dashboard.started'), number: totalStarted, img: startImg },
+  { title: t('dashboard.progress'), number: totalInProgress, img: progressImg },
+  { title: t('dashboard.completed'), number: totalCompleted, img: completedImg },
+];
+
+
+  const progressItems = Object.entries(progress).map(([title, data]) => ({
+  title,
+  level: "",
+  percent: data.percent,
+}));
+
 
   return (
     <PageWrapper>

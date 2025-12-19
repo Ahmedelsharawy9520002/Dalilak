@@ -3,10 +3,14 @@ import App from "./App";
 import './index.css'
 import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ProgressProvider } from "./context/ProgressContext";
+
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
 root.render(
   <BrowserRouter>
-    <App />
+    <ProgressProvider>
+      <App />
+    </ProgressProvider>
   </BrowserRouter>
 );

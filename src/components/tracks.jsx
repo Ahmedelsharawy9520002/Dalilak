@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { useState } from "react"
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ChevronLeft, Clock, BookOpen } from "lucide-react"
 import "../styles/tracks.css"
@@ -8,6 +8,8 @@ import { roadmapDetails } from "../roadmapsData";
 import { useTranslation } from "react-i18next";
 import PageWrapper from "./PageWrapper";
 import { motion } from "framer-motion";
+import { useProgress } from "../context/ProgressContext";
+
 
 
 export default function RoadmapDetail() {
@@ -19,7 +21,7 @@ export default function RoadmapDetail() {
 
   const [completedSteps, setCompletedSteps] = useState([]);
   const [expandedSteps, setExpandedSteps] = useState([]);
-
+  const { updateProgress, progress } = useProgress();
   const roadmap = roadmapDetails[title];
 
   if (!roadmap) {
@@ -33,23 +35,45 @@ export default function RoadmapDetail() {
       </>
     );
   }
-
   const stepsCount = roadmap.steps.length;
-
   const [openSteps, setOpenSteps] = useState({});
+  
   const toggleStep = (num) => {
     setOpenSteps((prev) => ({ ...prev, [num]: !prev[num] }));
   };
 
   const [activeStep, setActiveStep] = useState(0);
+  
   const handleCompleteStep = (index) => {
-    if (!completedSteps.includes(index)) {
-      setCompletedSteps([...completedSteps, index]);
-    }
-    if (index < roadmap.steps.length - 1) {
-      setActiveStep(index + 1);
-    }
-  };
+  if (!completedSteps.includes(index)) {
+    const newCompleted = [...completedSteps, index];
+    setCompletedSteps(newCompleted);
+
+    updateProgress(
+      roadmap.title.en,     
+      newCompleted.length,  
+      stepsCount            
+    );
+  }
+
+  if (index < roadmap.steps.length - 1) {
+    setActiveStep(index + 1);
+  }
+};
+  useEffect(() => {
+  const savedProgress = progress[roadmap.title.en];
+
+  if (savedProgress && savedProgress.completed > 0) {
+    const restoredSteps = Array.from(
+      { length: savedProgress.completed },
+      (_, i) => i
+    );
+
+    setCompletedSteps(restoredSteps);
+    setActiveStep(savedProgress.completed);
+  }
+}, [roadmap.title.en, progress]);
+
 
   return (
     <>

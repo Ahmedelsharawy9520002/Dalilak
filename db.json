@@ -146,6 +146,13 @@
       "email": "1@1.1",
       "password": "1",
       "role": "user"
+    },
+    {
+      "id": "beda",
+      "name": "lekaa mohamed",
+      "email": "lekaamohamed@gmail.com",
+      "password": "1234",
+      "role": "admin"
     }
   ],
   "messages": [
@@ -172,6 +179,14 @@
       "subject": "Thank You!",
       "message": "Just wanted to say thank you for creating such an amazing platform! The Machine Learning roadmap has been incredibly helpful in structuring my learning journey. Keep up the great work!",
       "sentTime": "December 16 at 2025 at 04:37 AM"
+    },
+    {
+      "id": "4df7",
+      "name": "lekaa mohamed",
+      "email": "lekaamohamed004@gmail.com",
+      "subject": "Thank You!",
+      "message": "Just wanted to say thank you for creating such an amazing platform!",
+      "sentTime": "December 16 at 2025 at 03:14 PM"
     }
   ]
 }

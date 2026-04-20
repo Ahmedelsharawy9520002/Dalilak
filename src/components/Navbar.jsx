@@ -1,121 +1,180 @@
-import React from "react";
-import Dropdown from 'react-bootstrap/Dropdown';
+import React, { useState, useEffect } from "react";
 import profilepic from '../images/profilepic.webp'
 import DalilakLogo from '../images/Dalilak.png'
-import { BrowserRouter, Link, NavLink } from "react-router-dom";
-import '../styles/navBar.css'
-import { Form, Button } from "react-bootstrap";
-import { BookOpen, Menu, X, Sun, Moon, Languages } from "lucide-react"
+import { Link, NavLink } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dashboard from './Dashboard';
+import '../styles/navBar.css'
 import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion";
+import { X, Sun, Moon, Languages, Menu } from "lucide-react";
 
 function Navbar({ theme, switchTheme, currentUser, role }) {
   const { t, i18n } = useTranslation(); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'ar' : 'en';
     i18n.changeLanguage(newLang);
   };
 
+  const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) setIsMenuOpen(false);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isMenuOpen]);
+
+  const navLinks = (
+    <>
+      {!(role === "admin") && (
+        <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} onClick={closeMenu}>
+          {t('nav.home')}
+        </NavLink>
+      )}
+      {!(role === "admin") && (
+        <NavLink to="/About" className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} onClick={closeMenu}>
+          {t('nav.about')}
+        </NavLink>
+      )}
+      <NavLink to="/Roadmaps" className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} onClick={closeMenu}>
+        {t('nav.roadmaps')}
+      </NavLink>
+      <NavLink to="/Dashboard" className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} onClick={closeMenu}>
+        {t('nav.dashboard')}
+      </NavLink>
+      {!(role === "admin") && (
+        <NavLink to="/Contact" className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} onClick={closeMenu}>
+          {t('nav.contact')}
+        </NavLink>
+      )}
+      {role === "admin" && (
+        <NavLink to="/messages" className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} onClick={closeMenu}>
+          Messages
+        </NavLink>
+      )}
+    </>
+  );
+
   return (
     <>
-      <motion.div className="  p-3  d-flex  justify-content-between  navbar navbar_content"
-      initial={{ y: -60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}>
-        <div className="container ">
-          <Link to="/Home" className="flex items-center gap-2 group logo ">
-            <span className="booklogo"><img src={DalilakLogo} alt="Dalilak" style={{ width: '32px', height: '32px', objectFit: 'contain' }} /></span> <span className="Logoname">{t('brandName')}</span>
+      {/* ── DARK OVERLAY ── */}
+      {isMenuOpen && (
+        <div className="sidebar-overlay" onClick={closeMenu} />
+      )}
+
+      {/* ── MOBILE SIDEBAR ── */}
+      <div className={`mobile-sidebar ${isMenuOpen ? 'open' : ''}`}>
+        <div className="sidebar-header">
+          <Link to="/" className="sidebar-logo" onClick={closeMenu}>
+            <span className="booklogo">
+              <img src={DalilakLogo} alt="Dalilak" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+            </span>
+            <span className="Logoname">{t('brandName')}</span>
           </Link>
+          <button className="sidebar-close-btn" onClick={closeMenu} aria-label="Close menu">
+            <X size={20} />
+          </button>
+        </div>
 
-          <div className="d-flex gap-5 navbar navbarwords ">
-            {!(role==="admin") && <div>
-              <NavLink to="/Home" className={({ isActive }) => isActive ? "active-link" : ""} >
-                {t('nav.home')}
-              </NavLink>
-            </div>}
-            {!(role==="admin") && <div>
-              <NavLink to="/About" className={({ isActive }) => isActive ? "active-link" : ""}>
-                {t('nav.about')}
-              </NavLink>
-            </div>}
-            <div>
-              <NavLink to="/Roadmaps" className={({ isActive }) => isActive ? "active-link" : ""}>
-                {t('nav.roadmaps')}
-              </NavLink>
-            </div>
-            <div>
-              <NavLink to="/Dashboard" className={({ isActive }) => isActive ? "active-link" : ""}>
-                {t('nav.dashboard')}
-              </NavLink>
-            </div>
-            {!(role==="admin") && <div>
-              <NavLink to="/Contact"className={({ isActive }) => isActive ? "active-link" : ""}>
-              {t('nav.contact')}
-              </NavLink>
-              
-            </div>}
-            {(role==="admin") && <div>
-              <NavLink to="/messages"className={({ isActive }) => isActive ? "active-link" : ""}>
-                Messages
-              </NavLink>
-              
-            </div>}
-          </div>
-          {/* <div className="d-flex align-items-center gap-2 ">
-            
-            <button className="navbarthemebtn"><Sun  className="sun"/></button>
-            <button className="  navbarlanguagebtn"><Languages className="lang" /><span className="ennavbar"> EN</span></button>
-            <button className=" navbarloginbtn">Login</button>
-            <button className=" navbarsignupbtn">Sign Up</button>
-              
-          </div> */}
+        <nav className="sidebar-nav">
+          {navLinks}
+        </nav>
 
-          <div className="d-flex align-items-center gap-2 ">
-            <button className="navbarthemebtn" onClick={switchTheme}>
-              {theme === 'dark' ? <Sun className="sun"/> : <Moon className="moon"/>}
+        <div className="sidebar-footer">
+          <button className="navbarthemebtn" onClick={switchTheme} title="Toggle theme">
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button className="navbarlanguagebtn" onClick={toggleLanguage} title="Toggle language">
+            <Languages size={18} />
+            <span style={{ fontSize: '13px', fontWeight: 600 }}>{t('nav.langBtn')}</span>
+          </button>
+        </div>
+      </div>
+
+      {/* ── DESKTOP + MOBILE TOP NAVBAR ── */}
+      <motion.nav
+        className="navbar_content"
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <div className="navbar-inner">
+
+          {/* LEFT: Hamburger + Logo */}
+          <div className="navbar-left">
+            <button className="hamburger-btn" onClick={() => setIsMenuOpen(true)} aria-label="Open menu">
+              <Menu size={24} />
             </button>
-            <button className="navbarlanguagebtn" onClick={toggleLanguage}>
-                          <Languages className="lang" />
-                          <span className="ennavbar"> {t('nav.langBtn')}</span>
-                        </button>            
-            {
-              !currentUser &&( 
+            <Link to="/" className="logo-link">
+              <span className="booklogo">
+                <img src={DalilakLogo} alt="Dalilak" style={{ width: '30px', height: '30px', objectFit: 'contain' }} />
+              </span>
+              <span className="Logoname">{t('brandName')}</span>
+            </Link>
+          </div>
+
+          {/* CENTER: Desktop Nav Links */}
+          <div className="navbar-center">
+            {navLinks}
+          </div>
+
+          {/* RIGHT: Controls */}
+          <div className="navbar-right">
+            <button className="navbarthemebtn" onClick={switchTheme} title="Toggle theme">
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+            <button className="navbarlanguagebtn" onClick={toggleLanguage} title="Toggle language">
+              <Languages size={18} />
+              <span className="lang-label">{t('nav.langBtn')}</span>
+            </button>
+
+            {!currentUser && (
               <>
                 <Link to="/login">
                   <button className="navbarloginbtn">Login</button>
                 </Link>
-
                 <Link to="/signup">
                   <button className="navbarsignupbtn">Sign Up</button>
                 </Link>
               </>
             )}
 
-            {
-              currentUser &&( 
-              <>
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle border border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src={profilepic} alt="profilepic" className="rounded-circle" style={{height:"30px", width:"30px"}}/>
-                  </button>
-                  <ul class="dropdown-menu" style={{background:"var(--btn-shadow)"}}>
-                    <li className="d-flex"><Link to="./Dashboard" class="dropdown-item rounded mb-1" style={{color:"var(--text-hover)", background:"var(--btn-shadow)"}}>{currentUser}</Link></li>
-                  
-                    <li><Link to="/login" class="dropdown-item bg-danger rounded" style={{color:"var(--text-hover)"}}>Log Out</Link></li>
-                  </ul>
-                </div>
-              </>
+            {currentUser && (
+              <div className="dropdown">
+                <button className="btn border-0 p-0 ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img
+                    src={profilepic}
+                    alt="profile"
+                    className="rounded-circle"
+                    style={{ height: '32px', width: '32px', objectFit: 'cover', border: '2px solid var(--accent-border)' }}
+                  />
+                </button>
+                <ul className="dropdown-menu dropdown-menu-end custom-dropdown">
+                  <li>
+                    <Link to="/Dashboard" className="dropdown-item custom-dropdown-item">
+                      <span>👤</span> {currentUser}
+                    </Link>
+                  </li>
+                  <li><hr className="dropdown-divider" style={{ borderColor: 'var(--dropdown-border)' }} /></li>
+                  <li>
+                    <Link to="/login" className="dropdown-item custom-dropdown-item danger">
+                      <span>🚪</span> Log Out
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             )}
-
           </div>
-
-
         </div>
-          
-        </motion.div>
+      </motion.nav>
     </>
   );
 }

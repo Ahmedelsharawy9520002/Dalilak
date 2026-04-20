@@ -83,7 +83,11 @@ const Login = ({ setCurrentUser }) => {
     localStorage.setItem("user", JSON.stringify(userObj));
     setCurrentUser(userObj);
     toast.success("Login successful");
-    navigate("/Home");
+    if (userObj.role === "admin") {
+      navigate("/Dashboard");
+    } else {
+      navigate("/Home");
+    }
   };
 
   return (

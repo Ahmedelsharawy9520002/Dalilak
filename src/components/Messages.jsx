@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { FaRegTrashCan } from "react-icons/fa6";
 import PageWrapper from "./PageWrapper";
-import axios from 'axios';
+import { supabase } from "../supabaseClient";
 import { IoTimeOutline } from "react-icons/io5";
 import Swal from 'sweetalert2';
 import { FaCheck } from "react-icons/fa6";
@@ -11,13 +11,13 @@ function Messages() {
 
   const [messages, setmessages] = useState([])
 
-  const fetchmsgs = ()=>{
-    axios
-    .get("http://localhost:3000/messages")
-    .then((res)=>{
-      setmessages(res.data.reverse())
-    })
-    .catch((err)=>console.log(err))  
+  const fetchmsgs = async () => {
+    const { data, error } = await supabase.from('messages').select('*');
+    if (error) {
+      console.log(error);
+    } else if (data) {
+      setmessages(data.reverse());
+    }
   }
 
   useEffect(()=>{
@@ -36,10 +36,14 @@ const handleDelete = (id) => {
     confirmButtonText: 'Yes'
   }).then((result) => {
     if (result.isConfirmed) {
-      axios.delete(`http://localhost:3000/messages/${id}`)
-        .then(() => {
-          setmessages(prev => prev.filter(msg => msg.id !== id));
-          Swal.fire('Deleted!', 'Message has been deleted.');
+      supabase.from('messages').delete().eq('id', id)
+        .then(({ error }) => {
+          if (!error) {
+            setmessages(prev => prev.filter(msg => msg.id !== id));
+            Swal.fire('Deleted!', 'Message has been deleted.');
+          } else {
+            console.log(error);
+          }
         });
     }
   });

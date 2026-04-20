@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 10rem;
+    padding: 0 16px;
 }
 
 .first-part{
@@ -12,13 +13,11 @@
 .header1{
     font-size: 500% !important;
     font-weight: 700;
-    
 }
 
 .home-title-text {
     color: var(--text-hover); 
 }
-
 
 .mycolor{
     background: var(--home-mycolor);
@@ -30,9 +29,8 @@
     width: 60%;
     margin-bottom: 3%;
     color: var(--text-hover);
-    opacity: var(--header2-oacity)
+    opacity: var(--header2-oacity);
 }
-
 
 .butn1, .butn2{
     height: 65px;
@@ -67,16 +65,26 @@
 
 .readydiv Button:hover{
     background-color: rgb(234, 72, 191);
-
 }
 
 .homeroutes{
     text-decoration: none !important;
 }
 
+/* Cards section */
+.sec-part {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    padding: 0 8px;
+}
+
+/* ≤ 767px – Mobile */
 @media (max-width: 767px) {
     .cont {
         gap: 80px;
+        padding: 0 12px;
     }
 
     .first-part {
@@ -85,12 +93,12 @@
     }
 
     .header1 {
-        font-size: 48px !important;
+        font-size: 42px !important;
     }
 
     .header2 {
-        width: 90%;
-        margin: 24px auto 36px auto;
+        width: 92%;
+        margin: 20px auto 32px auto;
         font-size: 14px;
     }
 
@@ -102,14 +110,19 @@
     .butn1, .butn2 {
         width: 100%;
         max-width: 260px;
-        height: 60px;
-        font-size: 16px !important;
+        height: 56px;
+        font-size: 15px !important;
     }
 
     .sec-part {
         flex-direction: column;
-        gap: 36px;
         align-items: center;
+        gap: 20px;
+    }
+
+    .outer-box {
+        max-width: 100% !important;
+        width: 100% !important;
     }
 
     .readydiv Button {
@@ -119,54 +132,66 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+/* 768px – 1024px: iPad Mini, iPad, Nest Hub */
+@media (min-width: 768px) and (max-width: 1024px) {
     .cont {
-        gap: 112px;
+        gap: 80px;
+        padding: 0 24px;
     }
 
     .first-part {
-        margin-top: 112px;
+        margin-top: 80px;
     }
 
     .header1 {
-        font-size: 64px !important;
+        font-size: 56px !important;
     }
 
     .header2 {
-        width: 70%;
-        margin-bottom: 32px;
-        font-size: 18px;
+        width: 78%;
+        margin-bottom: 28px;
+        font-size: 16px;
     }
 
     .buttons {
         flex-direction: row;
         justify-content: center;
-        gap: 36px;
+        gap: 24px;
     }
 
     .butn1, .butn2 {
-        width: 180px;
-        height: 60px;
-        font-size: 18px !important;
+        width: 170px;
+        height: 58px;
+        font-size: 15px !important;
     }
 
     .sec-part {
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 36px;
+        gap: 20px;
         justify-content: center;
+        padding: 0 12px;
+    }
+
+    /* 2-column grid for cards at tablet sizes */
+    .sec-part > * {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        min-width: 200px;
     }
 
     .readydiv Button {
-        width: 230px;
+        width: 220px;
         height: 50px;
         font-size: 14px;
     }
 }
 
-@media (min-width: 992px) {
+/* ≥ 1025px – Desktop */
+@media (min-width: 1025px) {
     .cont {
         gap: 160px;
+        padding: 0;
     }
 
     .header1 {
@@ -179,7 +204,13 @@
     }
 
     .sec-part {
-        gap: 64px;
+        gap: 48px;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .sec-part > * {
+        flex: 0 0 auto;
+        width: 300px;
     }
 }
-

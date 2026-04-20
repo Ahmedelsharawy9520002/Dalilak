@@ -36,8 +36,13 @@ function App() {
   }, [theme]);
 
   const [currentUser, setCurrentUser] = useState(() => {
-    const saved = localStorage.getItem("user");
-    return saved ? JSON.parse(saved) : {name: null, role: null};
+    try {
+      const saved = localStorage.getItem("user");
+      return saved && saved !== "undefined" ? JSON.parse(saved) : {name: null, role: null};
+    } catch (e) {
+      console.error("Error parsing user from localStorage:", e);
+      return {name: null, role: null};
+    }
   });
 
   // Sync with Supabase session on load and auth state changes

@@ -1,166 +1,385 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ===================================================
+   NAVBAR — Clean responsive layout, no Bootstrap flex
+   =================================================== */
 
-.navbar_content{
-  background-color: var(--navbar-bg);
-  border-bottom: 1px solid ;
-  border-color: var(--navbar-border);
-  position: sticky !important;
+/* Base sticky navbar */
+.navbar_content {
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-border);
+  position: sticky;
   top: 0;
-  z-index: 100;
-}
-.navbarwords a {
-  position: relative;
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.4s;
+  z-index: 1000;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-.navbarwords a:hover{
-  color: var(--text-hover);
-}
-.navbarwords a.active-link {
-  color: var(--active-link) !important;
+/* Inner row — NEVER wraps */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 20px;
+  height: 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 12px;
 }
 
-.logo{
-  text-decoration: none;
-  background-color: transparent;
+/* ── LEFT: hamburger + logo ── */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
-.navbarsignupbtn{
-  background-color: var(--signup-btn) ;
-  color:rgb(255, 255, 245);
+
+/* Hamburger hidden on desktop */
+.hamburger-btn {
+  display: none;
+  background: transparent;
   border: none;
-  padding: 8px 14px;
+  color: var(--text-hover);
+  cursor: pointer;
+  padding: 6px;
   border-radius: 8px;
-
+  transition: background 0.2s;
+  line-height: 1;
 }
-.navbarsignupbtn:hover{
-  background-color: var(--signup-btn-hover);
-}
-
-
-.navbarloginbtn{
-  background-color: transparent ;
-  color: var(--text-hover);
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  margin: 0px 4px;
+.hamburger-btn:hover {
+  background: var(--btn-hover-bg);
 }
 
-
-.navbarloginbtn:hover{
-  background-color: var(--btn-hover-bg);
-  filter: drop-shadow(0px 2px 3px  var(--btn-drop-shadow));
-  
+/* Logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
 }
 
-.navbarthemebtn{
-  background-color: transparent ;
-  color:var(--signup-btn);
-  border: none;
-  padding: 7px 7px;
-  border-radius: 10px;
-  margin: 0px 4px;
-}
-
-.navbarthemebtn:hover{
-  background-color: var(--btn-hover-bg);
-  box-shadow: 0 2px 0 0 var(--btn-shadow);
-  filter: drop-shadow(0px 2px 3px  var(--btn-drop-shadow));
-}
-
-.navbarlanguagebtn{
-  background-color: transparent ;
-  color:var(--signup-btn);
-  border: none;
-  padding: 7px 7px;
-  border-radius: 10px;
-  margin: 0px 4px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.lang{
-  width: 20px;
-}
-
-.sun{
-  width: 20px;
-}
-
-.navbarlanguagebtn:hover{
-  background-color: var(--btn-hover-bg);
-  box-shadow: 0 2px 0 0 var(--btn-shadow);
-  filter: drop-shadow(0px 2px 3px  var(--btn-drop-shadow));
-}
-
-.ennavbar{
-  color: var(--text-hover);
-}
-
-
-.Logoname{
-  background: linear-gradient(to right, rgb(163, 70, 254), rgb(250, 77, 204));
-  background-clip: text; 
+.Logoname {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent; 
-  font-size: 22px;
+  color: transparent;
+  font-size: 21px;
   font-weight: 700;
-  font-family: "Trirong", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  position: relative;
-  top: -3px;
+  font-family: "Trirong", 'Trebuchet MS', Arial, sans-serif;
+  white-space: nowrap;
 }
 
-.booklogo{
-  color:black;
-  border-radius: 12px;
-  padding: 6px;
+.booklogo {
+  border-radius: 10px;
+  padding: 5px;
   background: var(--logo-container-bg);
   border: 1px solid var(--logo-container-border);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(4px);
+  transition: all 0.25s;
+  flex-shrink: 0;
 }
-.booklogo:hover{
-  box-shadow: 0 2px 0 0 rgb(47, 25, 79);
-  filter: drop-shadow(0px 5px 3px  rgb(80, 37, 131));
-}
-
-.logo:hover .booklogo {
-  box-shadow: 0 2px 0 0 var(--btn-shadow);
-  filter: drop-shadow(0px 5px 3px  rgb(80, 37, 131));
+.logo-link:hover .booklogo {
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.5);
 }
 
+/* ── CENTER: desktop nav links ── */
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
+.nav-link {
+  position: relative;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: color 0.25s, background 0.25s;
+  white-space: nowrap;
+}
+.nav-link:hover {
+  color: var(--text-hover);
+  background: var(--btn-hover-bg);
+}
+.nav-link.active-link {
+  color: var(--active-link) !important;
+  background: var(--active-link-bg);
+}
+
+/* Underline on active */
+.nav-link.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: var(--active-link);
+  border-radius: 2px;
+}
+
+/* ── RIGHT: controls ── */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* Theme button */
+.navbarthemebtn {
+  background: transparent;
+  border: none;
+  color: var(--accent-color);
+  padding: 7px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.navbarthemebtn:hover { background: var(--btn-hover-bg); }
+
+/* Language button */
+.navbarlanguagebtn {
+  background: transparent;
+  border: none;
+  color: var(--accent-color);
+  padding: 7px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.navbarlanguagebtn:hover { background: var(--btn-hover-bg); }
+
+.lang-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-hover);
+}
+
+/* Login / Signup buttons */
+.navbarloginbtn {
+  background: transparent;
+  color: var(--text-hover);
+  border: 1px solid var(--navbar-border);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.navbarloginbtn:hover { background: var(--btn-hover-bg); }
+
+.navbarsignupbtn {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.navbarsignupbtn:hover {
+  background: var(--accent-hover);
+  transform: scale(1.02);
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+  background: var(--dropdown-bg) !important;
+  border: 1px solid var(--dropdown-border) !important;
+  border-radius: 12px !important;
+  padding: 4px !important;
+  width: 140px;
+  min-width: 140px;
+  box-shadow: 0 8px 32px var(--dropdown-shadow) !important;
+}
+.dropdown-divider{
+  width: 100%;
+}
+.custom-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-hover) !important;
+  transition: background 0.18s;
+}
+.custom-dropdown-item:hover { background: var(--btn-hover-bg) !important; }
+.custom-dropdown-item.danger { color: #f87171 !important; }
+.custom-dropdown-item.danger:hover { background: rgba(239, 68, 68, 0.1) !important; }
+
+/* ===================================================
+   SIDEBAR — Full proper design, uses solid colors
+   =================================================== */
+
+/* Dark overlay — fixed, covers full screen */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1001;
+  animation: fadeIn 0.25s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Sidebar panel */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 272px;
+  height: 100dvh;
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  box-shadow: 4px 0 40px rgba(0, 0, 0, 0.4);
+  transform: translateX(-100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+.mobile-sidebar.open {
+  transform: translateX(0);
+}
+
+/* Sidebar header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--sidebar-border);
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.sidebar-close-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--btn-hover-bg);
+  color: var(--text-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+.sidebar-close-btn:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: rotate(90deg);
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  gap: 4px;
+  overflow-y: auto;
+}
+
+.sidebar-nav .nav-link {
+  display: block;
+  padding: 13px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sidebar-text);
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.sidebar-nav .nav-link:hover {
+  background: var(--sidebar-link-hover);
+  color: var(--text-hover);
+  border-color: var(--sidebar-border);
+  transform: translateX(4px);
+}
+.sidebar-nav .nav-link.active-link {
+  background: var(--sidebar-link-active-bg);
+  color: var(--active-link) !important;
+  border-color: var(--sidebar-link-active-border);
+}
+.sidebar-nav .nav-link.active-link::after {
+  display: none; /* no underline in sidebar */
+}
+
+/* Sidebar footer */
+.sidebar-footer {
+  padding: 14px 16px;
+  border-top: 1px solid var(--sidebar-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ===================================================
+   RESPONSIVE
+   =================================================== */
+
+/* Nest Hub / iPad landscape — medium range */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar-inner { padding: 0 16px; gap: 8px; }
+  .nav-link { font-size: 13px; padding: 5px 8px; }
+  .Logoname { font-size: 18px; }
+  .navbarsignupbtn, .navbarloginbtn { padding: 5px 10px; font-size: 12px; }
+}
+
+/* Mobile ≤ 768px */
 @media (max-width: 768px) {
-  .navbarwords {
-    gap: 5px ; 
-  }
-  .navbarwords a {
-    font-size:11px;
-    margin: 1 4px;
-  }
-  .navbarsignupbtn,
-  .navbarloginbtn,
-  .navbarthemebtn,
-  .navbarlanguagebtn {
-    padding: 4px 18px; 
-    font-size: 12px; 
-    margin: 0 20px;
-  }
-  .booklogo {
-    padding: 3px 3px;
-  }
-  .Logoname {
-    font-size: 18px; 
-    margin-right: 9px;
-  }
+  /* Show hamburger */
+  .hamburger-btn { display: flex; }
+
+  /* Hide desktop nav links */
+  .navbar-center { display: none; }
+
+  /* Compact right side */
+  .navbar-inner { padding: 0 12px; height: 58px; gap: 6px; }
+  .Logoname { font-size: 18px; }
+  .navbarsignupbtn, .navbarloginbtn { padding: 5px 10px; font-size: 12px; }
+  .lang-label { display: none; } /* hide language text, keep icon */
+  .navbarlanguagebtn { padding: 6px; }
+}
+
+/* Very small phones ≤ 375px */
+@media (max-width: 375px) {
+  .Logoname { font-size: 16px; }
+  .booklogo { padding: 4px; }
+  .navbarsignupbtn, .navbarloginbtn { padding: 4px 8px; font-size: 11px; }
 }

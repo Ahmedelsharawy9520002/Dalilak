@@ -1,16 +1,19 @@
 .outer-box{
     border-radius: 19px;
-    width: 350px;
-    height: 250px;
-    border: 1px solid var(--navbar-border);
+    width: 100%;
+    max-width: 340px;
+    min-width: 200px;
+    height: auto;
+    min-height: 220px;
+    border: 1px solid var(--infosr-outer-box-border);
     background-color: var(--about-box-bg); 
-
     transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 .outer-box:hover{
     border-color: var(--infosr-outer-box-border-hover);
-    background-color: var(--infosr-outer-box-bg-hover) ; 
-    box-shadow: 10px 10px 15px rgba(26, 17, 63, 0.1);
+    background-color: var(--infosr-outer-box-bg-hover);
+    box-shadow: 10px 10px 20px rgba(26, 17, 63, 0.15);
 }
 .outer-box:hover .icon-bg{
     background: linear-gradient(to right, #a655f8, #d260fc, #fc60f4);
@@ -23,11 +26,11 @@
     background: linear-gradient(to right, #9c41f7, #8f60fc);
     transition: all 0.5s ease;
     margin-bottom: 10px;
+    flex-shrink: 0;
 }
 .myicon{
-    color: #930dd6;
+    color: #f8f0ff;
 }
-
 
 .infosqr-h {
     color: var(--text-hover); 
@@ -36,4 +39,6 @@
 .infosqr-p{
     color: var(--infosqr-p-color); 
     opacity: var(--infosqr-p-opacity);
+    font-size: 14px;
+    line-height: 1.5;
 }

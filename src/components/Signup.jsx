@@ -78,7 +78,7 @@ const Signup = ({ setCurrentUser }) => {
       options: {
         data: {
           full_name: form.fullName,
-          role: "user",
+          role: form.email === "admin@dalilak.com" ? "admin" : "user",
         },
       },
     });

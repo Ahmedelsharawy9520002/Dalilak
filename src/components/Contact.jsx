@@ -2,7 +2,7 @@ import "../styles/contact.css";
 import {MdOutlineEmail,MdOutlinePhone,MdOutlineLocationOn} from "react-icons/md";
 import { useTranslation } from 'react-i18next';
 import PageWrapper from "./PageWrapper";
-import axios from "axios";
+import { supabase } from "../supabaseClient";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
@@ -10,14 +10,17 @@ import { toast } from "react-toastify";
 function Contact() {
   const { t } = useTranslation(); 
 
-  const [data, setData] = useState({name:"", email:"", subject:"", message:""})
+  const [data, setData] = useState({ name: "", email: "", subject: "", message: "" })
+  const [loading, setLoading] = useState(false)
 
-  const handleChange = (e)=>{
-    setData({...data, [e.target.name]:e.target.value})
+  const handleChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e)=>{
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setLoading(true)
 
     const now = new Date();
     const formattedTime = now.toLocaleString("en-US", {
@@ -29,20 +32,27 @@ function Contact() {
       hour12: true,
     }).replace(",", " at");
 
-    axios
-    .post("http://localhost:3000/messages", {
+    const { error } = await supabase
+      .from("messages")
+      .insert([{
         name: data.name,
         email: data.email,
         subject: data.subject,
         message: data.message,
         sentTime: formattedTime,
-      })
-    .then((res)=>{
-      setData({name:"", email:"", subject:"", message:""})
-      toast.info("message sent successfully")
-    })
-    .catch((err)=>console.log(err))
+      }]);
+
+    setLoading(false)
+
+    if (error) {
+      console.error(error);
+      toast.error("Failed to send message: " + error.message);
+    } else {
+      setData({ name: "", email: "", subject: "", message: "" })
+      toast.success("Message sent successfully! ✉️")
+    }
   }
+
 
   return (
     <PageWrapper>
@@ -83,8 +93,8 @@ function Contact() {
                 <textarea name="message" value={data.message} onChange={(e)=>handleChange(e)} className="form-control contact-textarea" rows="4" placeholder={t('contact.phMessage')}></textarea>
               </div>
 
-              <button type="submit" className="formButton px-4 w-100 mt-4">
-                {t('contact.sendBtn')}
+              <button type="submit" className="formButton px-4 w-100 mt-4" disabled={loading}>
+                {loading ? "Sending..." : t('contact.sendBtn')}
               </button>
             </form>
           </div>

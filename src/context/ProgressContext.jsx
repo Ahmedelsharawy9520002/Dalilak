@@ -2,9 +2,18 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 const ProgressContext = createContext();
 
+const safeJSONParse = (key, fallback) => {
+  try {
+    const saved = localStorage.getItem(key);
+    return saved && saved !== "undefined" ? JSON.parse(saved) : fallback;
+  } catch (e) {
+    return fallback;
+  }
+};
+
 export const ProgressProvider = ({ children }) => {
   const [allProgress, setAllProgress] = useState(() => {
-    return JSON.parse(localStorage.getItem("allProgress")) || {};
+    return safeJSONParse("allProgress", {});
   });
 
   useEffect(() => {
@@ -12,8 +21,8 @@ export const ProgressProvider = ({ children }) => {
   }, [allProgress]);
 
   const updateProgress = (roadmapTitle, completed, total) => {
-    const savedUser = localStorage.getItem("user");
-    const userEmail = savedUser ? JSON.parse(savedUser).email : "guest";
+    const savedUser = safeJSONParse("user", null);
+    const userEmail = savedUser ? savedUser.email : "guest";
 
     setAllProgress((prev) => {
       const userProg = prev[userEmail] || {};
@@ -32,8 +41,8 @@ export const ProgressProvider = ({ children }) => {
   };
 
   const getProgress = () => {
-    const savedUser = localStorage.getItem("user");
-    const userEmail = savedUser ? JSON.parse(savedUser).email : "guest";
+    const savedUser = safeJSONParse("user", null);
+    const userEmail = savedUser ? savedUser.email : "guest";
     return allProgress[userEmail] || {};
   };
 

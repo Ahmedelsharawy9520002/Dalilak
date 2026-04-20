@@ -261,13 +261,17 @@ const InputField = ({ label, type, placeholder, icon, name, value, onChange }) =
 };
 
 const SocialLogin = () => {
+  const handleSocialClick = (provider) => {
+    toast.info(`${provider} login simulated successfully`);
+  };
+
   return (
     <div className="social-login">
-      <button className="social-button">
-        <img src={githubLogo} alt="Github" className="social-icon" /> Github
+      <button className="social-button" type="button" onClick={() => handleSocialClick('GitHub')}>
+        <img src={githubLogo} alt="Github" className="social-icon" /> GitHub
       </button>
 
-      <button className="social-button">
+      <button className="social-button" type="button" onClick={() => handleSocialClick('Google')}>
         <img src={googleLogo} alt="Google" className="social-icon" /> Google
       </button>
     </div>
@@ -316,7 +320,7 @@ const Login = ({setCurrentUser}) => {
 
           localStorage.setItem("user", JSON.stringify(foundUser));
           navigate("/Home");
-          setCurrentUser({name:foundUser.name, role:foundUser.role})
+          setCurrentUser(foundUser)
         }
       })
       .catch((err) => {
@@ -356,7 +360,7 @@ const Login = ({setCurrentUser}) => {
               onChange={handleChange}
             />
 
-            <a href="#" className="forgot-pass-link">{t('auth.forgot')}</a>
+            <Link to="/forgot-password" className="forgot-pass-link text-decoration-none">{t('auth.forgot')}</Link>
 
             {error && (
               <p style={{ color: "salmon", marginTop: "4px", fontSize: "0.9rem" }}>

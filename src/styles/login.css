@@ -20,14 +20,14 @@
   text-align: center;
   font-size: 2.1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-hover);
   margin-bottom: 4px;
 }
 
 .welcome-subtitle {
   text-align: center;
   font-size: 1.1rem;
-  color: #cfcde4;
+  color: var(--p-color);
   margin-bottom: 28px;
 }
 
@@ -36,13 +36,15 @@
   justify-content: center;  
   align-items: center;     
   min-height: 100vh;        
-  background: linear-gradient(to bottom, #0a0720, #1c1145 50%, #0a0720);
+  background: var(--root-bg);
+  padding: 20px;
 }
 
 
 .login-container {
-  width: 420px;
-  background: rgba(33, 21, 70, 0.42);
+  width: 100%;
+  max-width: 480px;
+  background: var(--about-box-bg);
   border-radius: 14px;
   padding: 32px 28px;
   border: 1px solid rgba(255,255,255,0.12);
@@ -58,15 +60,15 @@
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: var(--text-hover);
   display: block;
 }
 
 .input-container {
   position: relative;
   height: 45px;
-  background: #1d133a;
-  border: 0.5px solid rgba(255,255,255,0.12);
+  background: var(--contact-input-bg);
+  border: 0.5px solid var(--contact-input-border);
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -81,7 +83,7 @@
   outline: none;
   padding: 0 1rem 0 3.1rem;
   font-size: 1rem;
-  color: #fff;
+  color: var(--text-hover);
 }
 
 .input-field::placeholder {
@@ -94,18 +96,18 @@
   left: 14px;
   transform: translateY(-50%);
   font-size: 1.3rem;
-  color: #d7d3f8;
+  color: var(--text-color);
   pointer-events: none;
 }
 
 .input-container:hover {
-  border-color: #b57aff;
-  background: #0d0b1a;
+  border-color: var(--active-link);
+  background: var(--btn-hover-bg);
 }
 
 .input-container:focus-within {
-  border-color: #c08aff;
-  box-shadow: 0 0 8px #9f63ff;
+  border-color: var(--signup-btn);
+  box-shadow: 0 0 8px var(--btn-drop-shadow);
 }
 
 .input-field:focus ~ i {
@@ -133,7 +135,7 @@
   justify-content: center;
   width: 100%;
   height: 52px;
-  background: linear-gradient(90deg, #A020F0, #6A5CFF);
+  background: var(--signup-btn);
   color: white;
   padding: 16px 40px;
   border-radius: 12px;
@@ -159,7 +161,7 @@
 }
 
 .separator span {
-  background: rgba(33,21,70, 0.6);
+  background: var(--about-box-bg);
   padding: 0 10px;
   color: #bfb6e6;
   font-size: 0.94rem;
@@ -193,8 +195,8 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: #2a2249;
-  border: 1px solid rgba(255,255,255,0.15);
+  background: var(--contact-input-bg);
+  border: 1px solid var(--contact-form-border);
   padding: 0.7rem 0;
   color: #ddd;
   border-radius: 8px;
@@ -204,7 +206,7 @@
 }
 
 .social-button:hover {
-  background: #3b3357;
+  background: var(--btn-hover-bg);
 }
 
 .social-icon {

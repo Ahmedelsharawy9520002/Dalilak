@@ -10,6 +10,8 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Messages from './components/Messages';
 import RoadmapDetail from './components/tracks';
+import ForgotPassword from './components/ForgotPassword';
+import { ProgressProvider } from './context/ProgressContext';
 import { useState, useEffect} from 'react';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -32,17 +34,19 @@ function App() {
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
 
-  const [currentUser, setCurrentUser] = useState({name:null, role:null})
-  console.log(currentUser)
+  const [currentUser, setCurrentUser] = useState(() => {
+    const saved = localStorage.getItem("user");
+    return saved ? JSON.parse(saved) : {name:null, role:null};
+  });
   const location = useLocation();
 
-  const hideNavbar = location.pathname === "/login" || location.pathname === "/Dalilak/" || location.pathname === "/Dalilak";
-  
   return (
     <>
-      {!hideNavbar && <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser.name} role={currentUser.role} />}
+      <Navbar theme={theme} switchTheme={switchTheme} currentUser={currentUser.name} role={currentUser.role} />
       <AnimatePresence mode="wait">
+      <ProgressProvider key={currentUser?.email || "guest"}>
       <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
@@ -50,12 +54,14 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard currentUser={currentUser.name} />} />
         <Route path="/login" element={<Login setCurrentUser={setCurrentUser} />} />
         <Route path="/Dalilak" element={<Signup setCurrentUser={setCurrentUser} />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/tracks/:title" element={<RoadmapDetail />} />
         <Route path="/messages" element={<Messages />} />
 
       </Routes>
+      </ProgressProvider>
       </AnimatePresence>
-      {!hideNavbar && <Footer/>}
+      <Footer/>
       <ToastContainer position="top-center" autoClose={3000} pauseOnHover draggable closeOnClick icon={false}/>
     </>
   )

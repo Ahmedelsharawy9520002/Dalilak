@@ -114,13 +114,20 @@
   font-size: 22px;
   font-weight: 700;
   font-family: "Trirong", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  position: relative;
+  top: -3px;
 }
 
 .booklogo{
   color:black;
-  border-radius: 10px;
-  padding: 6px 5px;
-  background: linear-gradient(to bottom right,rgb(173, 73, 249), rgb(245, 79, 209));
+  border-radius: 12px;
+  padding: 6px;
+  background: var(--logo-container-bg);
+  border: 1px solid var(--logo-container-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
 }
 .booklogo:hover{
   box-shadow: 0 2px 0 0 rgb(47, 25, 79);

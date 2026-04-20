@@ -44,8 +44,8 @@ const stats = [
     <PageWrapper>
     <div className="dashboard-container">
 
-      <div className="top-container d-flex justify-content-between mb-5 rounded-4 shadow">
-        <div className="container d-flex justify-content-between">
+      <div className="top-container mb-5 rounded-4 shadow py-4">
+        <div className="container d-flex flex-column flex-lg-row text-center text-lg-start justify-content-center justify-content-lg-between align-items-center gap-4">
           <div>
             <h1 className="welcome-title">{t('dashboard.welcome')} {props.currentUser}</h1>
             <p className="welcome-sub">
@@ -78,11 +78,11 @@ const stats = [
         </div>
       </div>
 
-      <div className="container stats-section mb-5 d-flex gap-2">
+      <div className="container stats-section mb-5 d-flex flex-wrap flex-md-nowrap gap-4 justify-content-center justify-content-md-between">
         {stats.map((item, index) => (
           <div
             key={index}
-            className="stat-card col-10 col-md-3 d-flex align-items-center shadow rounded-4 justify-content-between me-3 p-4"
+            className="stat-card w-100 w-md-33 d-flex align-items-center shadow rounded-4 justify-content-between p-4"
           >
             <div>
               <p className="stat-title">{item.title}</p>

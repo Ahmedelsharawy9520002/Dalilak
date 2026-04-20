@@ -56,9 +56,9 @@ function Contact() {
         </p>
       </div>
 
-      <div className="row g-4 align-items-start ms-5">
+      <div className="row g-4 justify-content-center mx-0 ms-lg-5">
         
-        <div className="col-12 col-md-5 me-4 ms-5">
+        <div className="col-12 col-md-10 col-lg-5 me-lg-4 ms-lg-5">
           <div className="form contact-form p-4 shadow rounded-4">
             <h1 className="mb-4 contact-form-h fw-bold">{t('contact.formTitle')}</h1>
 
@@ -90,8 +90,7 @@ function Contact() {
           </div>
         </div>
 
-        
-        <div className="col-12 col-md-5">
+        <div className="col-12 col-md-10 col-lg-5">
           <div className="form contact-info p-4 shadow rounded-4">
             <h1 className="mb-4 fw-bold contact-info-h">{t('contact.infoTitle')}</h1>
 

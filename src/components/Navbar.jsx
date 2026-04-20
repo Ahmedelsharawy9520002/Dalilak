@@ -1,12 +1,10 @@
 import React from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 import profilepic from '../images/profilepic.webp'
-import { BrowserRouter, Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import DalilakLogo from '../images/Dalilak.png'
+import { BrowserRouter, Link, NavLink } from "react-router-dom";
 import '../styles/navBar.css'
-import { Form } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import Logo from "../assets/Logo.jpg";
+import { Form, Button } from "react-bootstrap";
 import { BookOpen, Menu, X, Sun, Moon, Languages } from "lucide-react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './Dashboard';
@@ -29,7 +27,7 @@ function Navbar({ theme, switchTheme, currentUser, role }) {
       transition={{ duration: 0.5, ease: "easeOut" }}>
         <div className="container ">
           <Link to="/Home" className="flex items-center gap-2 group logo ">
-            <span className="booklogo"><BookOpen  /></span> <span className="Logoname">{t('brandName')}</span>
+            <span className="booklogo"><img src={DalilakLogo} alt="Dalilak" style={{ width: '32px', height: '32px', objectFit: 'contain' }} /></span> <span className="Logoname">{t('brandName')}</span>
           </Link>
 
           <div className="d-flex gap-5 navbar navbarwords ">

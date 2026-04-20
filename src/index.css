@@ -11,6 +11,15 @@ body {
   color: white;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--contact-input-bg) inset !important;
+    -webkit-text-fill-color: var(--p-color) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 
 
 
@@ -29,6 +38,9 @@ body {
   --signup-btn-hover: rgb(146, 63, 233);
   --btn-shadow:rgb(47, 25, 79);
   --btn-drop-shadow:rgb(80, 37, 131);
+
+  --logo-container-bg: rgba(46, 26, 102, 0.6);
+  --logo-container-border: rgba(173, 73, 249, 0.3);
 
 
 
@@ -123,17 +135,10 @@ body {
 
 
 [data-theme='light'] {
-  /* --root-bg : rgb(254, 252, 255); */
-  /* --root-bg : rgb(235, 231, 237); */
-  /* --root-bg :rgb(224, 220, 226); */
-  --root-bg :#eee;
-
+  --root-bg :#f7f5f9;
 
   /* navar */
-  /* --navbar-bg: rgb(254, 252, 255); */
-  /* --navbar-bg: rgb(235, 231, 237); */
-  /* --navbar-bg: rgb(224, 220, 226); */
-  --navbar-bg: #eeeeee;
+  --navbar-bg: #ffffff;
   
 
 
@@ -141,12 +146,15 @@ body {
   /* --navbar-border: rgb(184, 128, 244); */
   --signup-btn:rgb(126, 34, 206);
   --signup-btn-hover: rgb(146, 63, 233);
-  --text-hover:rgb(74, 29, 150);
-  --text-color: rgb(174 152 208);
+  --text-hover:#222222;
+  --text-color: #666666;
   /* --text-color: rgb(148, 95, 227); */
   --btn-hover-bg:#eeeeee;
   --btn-shadow: transparent;
   --btn-drop-shadow: rgba(126, 34, 206, 0.4);
+  
+  --logo-container-bg: rgba(161, 69, 255, 0.1);
+  --logo-container-border: rgb(215, 195, 235);
   
 
   

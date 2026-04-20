@@ -275,8 +275,8 @@ hr{
     border: 1px solid #a145ff;
 }
 .completed-step .stepDescription{
-    border: 1px solid #a82a68 ;
-    background-color: #1c1028;
+    border: 1px solid var(--infosr-outer-box-border-hover) ;
+    background-color: var(--roadmapsqrcont-bg-hover);
 }
 
 /* دي الصح اللي بتبقى ع الرقم بعد الكومبليت */
@@ -298,8 +298,7 @@ hr{
   height: 27px;
   transform: scale(0.95);
   transition: transform 180ms ease, box-shadow 180ms ease;
-  top: 9px;
-  left: 7px;
+  margin: auto;
 }
 
 /* عشان العربي*/

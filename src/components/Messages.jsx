@@ -53,31 +53,31 @@ const handleDelete = (id) => {
         <p className='opacity-75 fs-5 whitetext'>View and manage messages from your contact form.</p>
         {
           messages.map((msg)=>(
-            <div className='msgcont mb-3'>
-              <div className='d-flex justify-content-between'>
-                <div>
-                  <h5 className='fw-bold heightfix whitetext'>{msg.name}</h5>
-                  <p className='opacity-75 heightfix whitetext'>{msg.email}</p>
+            <div className='msgcont mb-3' key={msg.id}>
+              <div className='d-flex flex-wrap justify-content-between gap-3'>
+                <div className='flex-grow-1' style={{ minWidth: "200px" }}>
+                  <h5 className='fw-bold whitetext'>{msg.name}</h5>
+                  <p className='opacity-75 whitetext'>{msg.email}</p>
                   <div className='d-flex gap-2 align-items-center'>
-                    <div style={{height:"26px"}}>
-                      <IoTimeOutline className='opacity-75 heightfix whitetext' />
+                    <div style={{height:"24px"}}>
+                      <IoTimeOutline className='opacity-75 whitetext' />
                     </div>
-                    <p className='opacity-75 heightfix whitetext'>{msg.sentTime}</p>
+                    <p className='opacity-75 whitetext mb-0 pb-1'>{msg.sentTime}</p>
                   </div>
                 </div>
-                <div className='d-flex gap-2'>
+                <div className='d-flex gap-2 align-items-start mt-2 mt-md-0'>
                   <div className='unread'>unread</div>
                   <div className='checkicon d-flex justify-content-center align-items-center'>
                     <FaCheck />
                   </div>
-                  <div className='trash-icon'>
-                    <FaRegTrashCan className='fs-5 text-danger' onClick={()=>handleDelete(msg.id)} />
+                  <div className='trash-icon cursor-pointer' onClick={() => handleDelete(msg.id)}>
+                    <FaRegTrashCan className='fs-5 text-danger' style={{ cursor: "pointer" }} />
                   </div>
                 </div>
               </div>
-              <hr className='heightfix' style={{width:"100%"}}/>
-              <p className="fw-bold heightfix whitetext">{msg.subject}</p>
-              <p className="opacity-75 whitetext">{msg.message}</p>
+              <hr className='my-3' style={{width:"100%"}}/>
+              <p className="fw-bold whitetext">{msg.subject}</p>
+              <p className="opacity-75 whitetext text-break">{msg.message}</p>
             </div>
           ))
         }

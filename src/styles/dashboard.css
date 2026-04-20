@@ -4,7 +4,6 @@
 }
 .top-container {
   background-color: var(--top-container-bg);
-  height:20vh;
   padding-top:50px;
 }
 
@@ -131,7 +130,6 @@
   .top-container .container {
     flex-direction: column !important;
     text-align: center !important;
-    height: 100px !important;
     justify-content: center !important;
   }
   .welcome-title {
@@ -143,7 +141,7 @@
   }
 
   .explore-btn {
-    margin-top: 15px;
+    margin-top: 5px;
     height: 40px;
     font-size: 13px;
     padding: 5px 10px;

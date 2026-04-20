@@ -19,7 +19,10 @@ function Footer(){
                     <Row> 
 
                         <Col className='columns first-column'> 
-                            <Link to='/Home'><img src={logo} alt="Company Logo" className="footer-logo "/></Link>
+                            <Link to='/Home' className="footer-brand d-flex align-items-center gap-2 mb-3" style={{textDecoration:'none'}}>
+                                <span className="footer-logo-wrapper"><img src={logo} alt="Dalilak" className="footer-logo"/></span>
+                                <span className="footer-brand-name" style={{color:'var(--text-hover)', fontWeight:'600', fontSize:'22px'}}>{t('brandName')}</span>
+                            </Link>
                             <p className="footer-pargraph">
                                 {t('footer.desc')}
                             </p>

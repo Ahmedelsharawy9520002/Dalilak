@@ -289,13 +289,17 @@ const InputField = ({ label, type, placeholder, icon, name, value, onChange}) =>
 };
 
 const SocialLogin = () => {
+  const handleSocialClick = (provider) => {
+    toast.info(`${provider} sign up simulated successfully`);
+  };
+
   return (
     <div className="social-login">
-      <button className="social-button">
+      <button className="social-button" type="button" onClick={() => handleSocialClick('GitHub')}>
         <img src={githubLogo} alt="Github" className="social-icon" /> GitHub
       </button>
 
-      <button className="social-button">
+      <button className="social-button" type="button" onClick={() => handleSocialClick('Google')}>
         <img src={googleLogo} alt="Google" className="social-icon" /> Google
       </button>
     </div>
@@ -345,7 +349,7 @@ const Signup = ({setCurrentUser}) => {
         toast.success("Account created successfully");
         navigate("/login");
 
-        setCurrentUser({name:form.fullName, role:"user"})
+        setCurrentUser({name:form.fullName, email:form.email, role:"user"})
 
         setForm({
           fullName: "",

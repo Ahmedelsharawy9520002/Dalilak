@@ -1,275 +1,15 @@
-// import "../styles/signup.css";
-// import githubLogo from "../assets/github_logo-removebg-preview.png";
-// import googleLogo from "../assets/google_logo-removebg-preview.png";
-// import { Link } from "react-router-dom";
-
-// const InputField = ({ label, type, placeholder, icon }) => {
-//   return (
-//     <div className="input-wrapper">
-//       <label className="input-label">{label}</label>
-//       <div className="input-container">
-//         <input
-//           type={type}
-//           placeholder={placeholder}
-//           className="input-field"
-//           required
-//         />
-//         <i className="material-symbols-rounded">{icon}</i>
-//       </div>
-//     </div>
-//   );
-// };
-
-// const SocialLogin = () => {
-//   return (
-//     <div className="social-login">
-//       <button className="social-button">
-//         <img src={githubLogo} alt="Github" className="social-icon" /> GitHub
-//       </button>
-
-//       <button className="social-button">
-//         <img src={googleLogo} alt="Google" className="social-icon" /> Google
-//       </button>
-//     </div>
-//   );
-// };
-
-// const Signup = () => {
-//   return (
-//     <div className="signup-page">
-//         <div className="app-container">
-//         <div className="signup-container">
-//             <h1 className="welcome-title">Create Account</h1>
-//             <p className="welcome-subtitle">Join thousands learning computer science</p>
-
-//             <form action="#" className="signup-form">
-//             <InputField label="Full Name" type="text" placeholder="John Doe" icon="person" />
-//             <InputField label="Email Address" type="email" placeholder="you@example.com" icon="mail" />
-//             <InputField label="Password" type="password" placeholder="********" icon="lock" />
-//             <InputField label="Confirm Password" type="password" placeholder="********" icon="lock" />
-
-//             <button className="signup-button">
-//                 Sign Up <span className="material-symbols-outlined">arrow_right_alt</span>
-//             </button>
-//             </form>
-
-//             <p className="separator"><span>Or sign up with</span></p>
-
-//             <SocialLogin />
-
-//             <p className="signup-text">
-//             Already have an account?{" "}
-//             <Link to="/login">Log in</Link>
-//             </p>
-//         </div>
-//         </div>
-//     </div>
-//   );
-// };
-
-// export default Signup;
-
-
-// import React, { useState } from "react";
-// import axios from "axios";
-// import "../styles/signup.css";
-// import githubLogo from "../assets/github_logo-removebg-preview.png";
-// import googleLogo from "../assets/google_logo-removebg-preview.png";
-// import { Link } from "react-router-dom";
-
-// const InputField = ({ label, type, placeholder, icon, name, value, onChange }) => {
-//   return (
-//     <div className="input-wrapper">
-//       <label className="input-label">{label}</label>
-//       <div className="input-container">
-//         <input
-//           type={type}
-//           placeholder={placeholder}
-//           className="input-field"
-//           required
-//           name={name}
-//           value={value}
-//           onChange={onChange}
-//         />
-//         <i className="material-symbols-rounded">{icon}</i>
-//       </div>
-//     </div>
-//   );
-// };
-
-// const SocialLogin = () => {
-//   return (
-//     <div className="social-login">
-//       <button className="social-button">
-//         <img src={githubLogo} alt="Github" className="social-icon" /> GitHub
-//       </button>
-
-//       <button className="social-button">
-//         <img src={googleLogo} alt="Google" className="social-icon" /> Google
-//       </button>
-//     </div>
-//   );
-// };
-
-// const Signup = () => {
-//   const [form, setForm] = useState({
-//     fullName: "",
-//     email: "",
-//     password: "",
-//     confirmPassword: "",
-//   });
-
-//   const [error, setError] = useState("");
-//   const [loading, setLoading] = useState(false);
-
-//   // أي تغيير في أي input
-//   const handleChange = (e) => {
-//     setForm((prev) => ({
-//       ...prev,
-//       [e.target.name]: e.target.value,
-//     }));
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     setError("");
-
-//     // تأكيد الباسورد
-//     if (form.password !== form.confirmPassword) {
-//       setError("Passwords do not match");
-//       return;
-//     }
-
-//     setLoading(true);
-
-//     // إرسال البيانات لـ json-server على http://localhost:3000/users
-//     axios
-//       .post("http://localhost:3000/users", {
-//         name: form.fullName,
-//         email: form.email,
-//         password: form.password,
-//       })
-//       .then((res) => {
-//         console.log("Signed up user:", res.data);
-//         alert("Account created successfully ✅");
-
-//         // تفضّلي: امسحي الفورم بعد التسجيل
-//         setForm({
-//           fullName: "",
-//           email: "",
-//           password: "",
-//           confirmPassword: "",
-//         });
-//       })
-//       .catch((err) => {
-//         console.error(err);
-//         setError("Error while signing up");
-//       })
-//       .finally(() => {
-//         setLoading(false);
-//       });
-//   };
-
-//   return (
-//     <div className="signup-page">
-//       <div className="app-container">
-//         <div className="signup-container">
-//           <h1 className="welcome-title">Create Account</h1>
-//           <p className="welcome-subtitle">Join thousands learning computer science</p>
-
-//           <form className="signup-form" onSubmit={handleSubmit}>
-//             <InputField
-//               label="Full Name"
-//               type="text"
-//               placeholder="John Doe"
-//               icon="person"
-//               name="fullName"
-//               value={form.fullName}
-//               onChange={handleChange}
-//             />
-//             <InputField
-//               label="Email Address"
-//               type="email"
-//               placeholder="you@example.com"
-//               icon="mail"
-//               name="email"
-//               value={form.email}
-//               onChange={handleChange}
-//             />
-//             <InputField
-//               label="Password"
-//               type="password"
-//               placeholder="********"
-//               icon="lock"
-//               name="password"
-//               value={form.password}
-//               onChange={handleChange}
-//             />
-//             <InputField
-//               label="Confirm Password"
-//               type="password"
-//               placeholder="********"
-//               icon="lock"
-//               name="confirmPassword"
-//               value={form.confirmPassword}
-//               onChange={handleChange}
-//             />
-
-//             {error && (
-//               <p style={{ color: "salmon", marginTop: "4px", fontSize: "0.9rem" }}>
-//                 {error}
-//               </p>
-//             )}
-
-//             <button className="signup-button" type="submit" disabled={loading}>
-//               {loading ? "Signing up..." : (
-//                 <>
-//                   Sign Up{" "}
-//                   <span className="material-symbols-outlined">arrow_right_alt</span>
-//                 </>
-//               )}
-//             </button>
-//           </form>
-
-//           <p className="separator"><span>Or sign up with</span></p>
-
-//           <SocialLogin />
-
-//           <p className="signup-text">
-//             Already have an account?{" "}
-//             <Link to="/login">Log in</Link>
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Signup;
-
-
-
-
-
-
-
-
-
 import React, { useState } from "react";
-import axios from "axios";
 import "../styles/signup.css";
 import githubLogo from "../assets/github_logo-removebg-preview.png";
 import googleLogo from "../assets/google_logo-removebg-preview.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from "react-router-dom";
 import PageWrapper from "./PageWrapper";
+import { supabase } from "../supabaseClient";
 
-
-const InputField = ({ label, type, placeholder, icon, name, value, onChange}) => {
+const InputField = ({ label, type, placeholder, icon, name, value, onChange }) => {
   return (
-    
     <div className="input-wrapper">
       <label className="input-label">{label}</label>
       <div className="input-container">
@@ -290,7 +30,7 @@ const InputField = ({ label, type, placeholder, icon, name, value, onChange}) =>
 
 const SocialLogin = () => {
   const handleSocialClick = (provider) => {
-    toast.info(`${provider} sign up simulated successfully`);
+    toast.info(`${provider} sign up coming soon`);
   };
 
   return (
@@ -298,7 +38,6 @@ const SocialLogin = () => {
       <button className="social-button" type="button" onClick={() => handleSocialClick('GitHub')}>
         <img src={githubLogo} alt="Github" className="social-icon" /> GitHub
       </button>
-
       <button className="social-button" type="button" onClick={() => handleSocialClick('Google')}>
         <img src={googleLogo} alt="Google" className="social-icon" /> Google
       </button>
@@ -306,27 +45,23 @@ const SocialLogin = () => {
   );
 };
 
-const Signup = ({setCurrentUser}) => {
-  const { t } = useTranslation(); 
+const Signup = ({ setCurrentUser }) => {
+  const { t } = useTranslation();
   const [form, setForm] = useState({
     fullName: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
-
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setForm((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
@@ -337,112 +72,105 @@ const Signup = ({setCurrentUser}) => {
 
     setLoading(true);
 
-    axios
-      .post("http://localhost:3000/users", {
-        name: form.fullName,
-        email: form.email,
-        password: form.password,
-        role: "user"
-      })
-      .then((res) => {
-        console.log("Signed up user:", res.data);
-        toast.success("Account created successfully");
-        navigate("/login");
+    const { data, error: authError } = await supabase.auth.signUp({
+      email: form.email,
+      password: form.password,
+      options: {
+        data: {
+          full_name: form.fullName,
+          role: "user",
+        },
+      },
+    });
 
-        setCurrentUser({name:form.fullName, email:form.email, role:"user"})
+    setLoading(false);
 
-        setForm({
-          fullName: "",
-          email: "",
-          password: "",
-          confirmPassword: "",
-        });
-      })
-      .catch((err) => {
-        console.error(err);
-        setError("Error while signing up");
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    if (authError) {
+      setError(authError.message);
+      return;
+    }
+
+    toast.success("Account created! Please check your email to confirm your account.");
+    navigate("/login");
+
+    setForm({ fullName: "", email: "", password: "", confirmPassword: "" });
   };
 
   return (
     <PageWrapper>
-    <div className="signup-page">
-      <div className="app-container">
-        <div className="signup-container">
-          <h1 className="welcome-title">{t('auth.signupTitle')}</h1>
-          <p className="welcome-subtitle">{t('auth.signupSub')}</p>
+      <div className="signup-page">
+        <div className="app-container">
+          <div className="signup-container">
+            <h1 className="welcome-title">{t('auth.signupTitle')}</h1>
+            <p className="welcome-subtitle">{t('auth.signupSub')}</p>
 
-          <form className="signup-form" onSubmit={handleSubmit}>
-            <InputField
-              label={t('auth.fullName')}
-              type="text"
-              placeholder="John Doe"
-              icon="person"
-              name="fullName"
-              value={form.fullName}
-              onChange={handleChange}
-            />
-            <InputField
-              label={t('auth.email')}
-              type="email"
-              placeholder="you@example.com"
-              icon="mail"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-            />
-            <InputField
-              label={t('auth.password')}
-              type="password"
-              placeholder="********"
-              icon="lock"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-            />
-            <InputField
-              label={t('auth.confirmPass')}
-              type="password"
-              placeholder="********"
-              icon="lock"
-              name="confirmPassword"
-              value={form.confirmPassword}
-              onChange={handleChange}
-            />
+            <form className="signup-form" onSubmit={handleSubmit}>
+              <InputField
+                label={t('auth.fullName')}
+                type="text"
+                placeholder="John Doe"
+                icon="person"
+                name="fullName"
+                value={form.fullName}
+                onChange={handleChange}
+              />
+              <InputField
+                label={t('auth.email')}
+                type="email"
+                placeholder="you@example.com"
+                icon="mail"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+              />
+              <InputField
+                label={t('auth.password')}
+                type="password"
+                placeholder="********"
+                icon="lock"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+              />
+              <InputField
+                label={t('auth.confirmPass')}
+                type="password"
+                placeholder="********"
+                icon="lock"
+                name="confirmPassword"
+                value={form.confirmPassword}
+                onChange={handleChange}
+              />
 
-            {error && (
-              <p style={{ color: "salmon", marginTop: "4px", fontSize: "0.9rem" }}>
-                {error}
-              </p>
-            )}
-
-            <button className="signup-button" type="submit" disabled={loading}>
-              {loading ? "Signing up..." : (
-                <>
-                  Sign Up{" "}
-                  <span className="material-symbols-outlined">arrow_right_alt</span>
-                </>
+              {error && (
+                <p style={{ color: "salmon", marginTop: "4px", fontSize: "0.9rem" }}>
+                  {error}
+                </p>
               )}
-            </button>
-          </form>
 
-          <p className="separator"><span>{t('auth.orSignup')}</span></p>
+              <button className="signup-button" type="submit" disabled={loading}>
+                {loading ? "Signing up..." : (
+                  <>
+                    Sign Up{" "}
+                    <span className="material-symbols-outlined">arrow_right_alt</span>
+                  </>
+                )}
+              </button>
+            </form>
 
-          <SocialLogin />
+            <p className="separator"><span>{t('auth.orSignup')}</span></p>
 
-          <p className="signup-text">
-            {t('auth.haveAccount')}{" "}
-            <Link to="/login">{t('auth.loginBtn')}</Link>
-          </p>
+            <SocialLogin />
+
+            <p className="signup-text">
+              {t('auth.haveAccount')}{" "}
+              <Link to="/login">{t('auth.loginBtn')}</Link>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
     </PageWrapper>
   );
 };
 
 export default Signup;
-

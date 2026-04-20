@@ -19,6 +19,7 @@ import "./styles/toast.css";
 import './i18n';
 import useLanguageSettings from './useLanguageSettings';
 import { AnimatePresence } from "framer-motion";
+import { supabase } from './supabaseClient';
 
 function App() {
   useLanguageSettings();
@@ -36,8 +37,43 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState(() => {
     const saved = localStorage.getItem("user");
-    return saved ? JSON.parse(saved) : {name:null, role:null};
+    return saved ? JSON.parse(saved) : {name: null, role: null};
   });
+
+  // Sync with Supabase session on load and auth state changes
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        const u = session.user;
+        const userObj = {
+          name: u.user_metadata?.full_name || u.email,
+          email: u.email,
+          role: u.user_metadata?.role || "user",
+        };
+        setCurrentUser(userObj);
+        localStorage.setItem("user", JSON.stringify(userObj));
+      }
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        const u = session.user;
+        const userObj = {
+          name: u.user_metadata?.full_name || u.email,
+          email: u.email,
+          role: u.user_metadata?.role || "user",
+        };
+        setCurrentUser(userObj);
+        localStorage.setItem("user", JSON.stringify(userObj));
+      } else {
+        setCurrentUser({ name: null, role: null });
+        localStorage.removeItem("user");
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   const location = useLocation();
 
   return (

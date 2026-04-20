@@ -1,237 +1,4 @@
-// import "../styles/login.css";
-// import githubLogo from "../assets/github_logo-removebg-preview.png";
-// import googleLogo from "../assets/google_logo-removebg-preview.png";
-// import { Link } from "react-router-dom";
-
-// const InputField = ({ label, type, placeholder, icon }) => {
-//   return (
-//     <div className="input-wrapper">
-//       <label className="input-label">{label}</label>
-//       <div className="input-container">
-//         <input
-//           type={type}
-//           placeholder={placeholder}
-//           className="input-field"
-//           required
-//         />
-//         <i className="material-symbols-rounded">{icon}</i>
-//       </div>
-//     </div>
-//   );
-// };
-
-// const SocialLogin = () => {
-//   return (
-//     <div className="social-login">
-//       <button className="social-button">
-//         <img src={githubLogo} alt="Github" className="social-icon" /> GitHub
-//       </button>
-
-//       <button className="social-button">
-//         <img src={googleLogo} alt="Google" className="social-icon" /> Google
-//       </button>
-//     </div>
-//   );
-// };
-
-// const Login = () => {
-//   return (
-//     <div className="login-page">
-//         <div className="app-container">
-//         <div className="login-container">
-//             <h1 className="welcome-title">Welcome Back</h1>
-//             <p className="welcome-subtitle">Log in to your Dalilak account</p>
-
-//             <form action="#" className="login-form">
-//             <InputField label="Email Address" type="email" placeholder="you@example.com" icon="mail" />
-//             <InputField label="Password" type="password" placeholder="********" icon="lock" />
-
-//             <a href="#" className="forgot-pass-link">Forgot password</a>
-
-//             <button className="login-button">
-//                 Log In <span className="material-symbols-outlined">arrow_right_alt</span>
-//             </button>
-//             </form>
-
-//             <p className="separator"><span>Or continue with</span></p>
-
-//             <SocialLogin />
-
-//             <p className="signup-text">
-//             Don't have an account?{" "}
-//             <Link to="/signup">Sign up</Link>
-//             </p>
-//         </div>
-//         </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
-
-// import React, { useState } from "react";
-// import axios from "axios";
-// import "../styles/login.css";
-// import githubLogo from "../assets/github_logo-removebg-preview.png";
-// import googleLogo from "../assets/google_logo-removebg-preview.png";
-// import { Link, useNavigate } from "react-router-dom";
-
-// const InputField = ({ label, type, placeholder, icon, name, value, onChange }) => {
-//   return (
-//     <div className="input-wrapper">
-//       <label className="input-label">{label}</label>
-//       <div className="input-container">
-//         <input
-//           type={type}
-//           placeholder={placeholder}
-//           className="input-field"
-//           required
-//           name={name}
-//           value={value}
-//           onChange={onChange}
-//         />
-//         <i className="material-symbols-rounded">{icon}</i>
-//       </div>
-//     </div>
-//   );
-// };
-
-// const SocialLogin = () => {
-//   return (
-//     <div className="social-login">
-//       <button className="social-button">
-//         <img src={githubLogo} alt="Github" className="social-icon" /> GitHub
-//       </button>
-
-//       <button className="social-button">
-//         <img src={googleLogo} alt="Google" className="social-icon" /> Google
-//       </button>
-//     </div>
-//   );
-// };
-
-// const Login = () => {
-//   const [form, setForm] = useState({
-//     email: "",
-//     password: "",
-//   });
-
-//   const [error, setError] = useState("");
-//   const [loading, setLoading] = useState(false);
-
-//   const navigate = useNavigate();
-
-//   const handleChange = (e) => {
-//     setForm(prev => ({
-//       ...prev,
-//       [e.target.name]: e.target.value,
-//     }));
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     setError("");
-//     setLoading(true);
-
-//     axios
-//       .get("http://localhost:3000/users")
-//       .then((res) => {
-//         const users = res.data;
-
-//         const foundUser = users.find(
-//           (user) =>
-//             user.email === form.email &&
-//             user.password === form.password
-//         );
-
-//         if (!foundUser) {
-//           setError("Invalid email or password");
-//         } else {
-//           alert("Login successful ");
-//           localStorage.setItem("user", JSON.stringify(foundUser)); // 👈 نحتفظ باليوزر
-//           navigate("/Dalilak"); // 👈 التحويل لصفحة Home
-//         }
-//       })
-//       .catch((err) => {
-//         console.error(err);
-//         setError("Error while logging in");
-//       })
-//       .finally(() => {
-//         setLoading(false);
-//       });
-//   };
-
-//   return (
-//     <div className="login-page">
-//       <div className="app-container">
-//         <div className="login-container">
-//           <h1 className="welcome-title">Welcome Back</h1>
-//           <p className="welcome-subtitle">Log in to your Dalilak account</p>
-
-//           <form className="login-form" onSubmit={handleSubmit}>
-//             <InputField
-//               label="Email Address"
-//               type="email"
-//               placeholder="you@example.com"
-//               icon="mail"
-//               name="email"
-//               value={form.email}
-//               onChange={handleChange}
-//             />
-//             <InputField
-//               label="Password"
-//               type="password"
-//               placeholder="********"
-//               icon="lock"
-//               name="password"
-//               value={form.password}
-//               onChange={handleChange}
-//             />
-
-//             <a href="#" className="forgot-pass-link">Forgot password</a>
-
-//             {error && (
-//               <p style={{ color: "salmon", marginTop: "4px", fontSize: "0.9rem" }}>
-//                 {error}
-//               </p>
-//             )}
-
-//             <button className="login-button" type="submit" disabled={loading}>
-//               {loading ? "Logging in..." : (
-//                 <>
-//                   Log In{" "}
-//                   <span className="material-symbols-outlined">arrow_right_alt</span>
-//                 </>
-//               )}
-//             </button>
-//           </form>
-
-//           <p className="separator"><span>Or continue with</span></p>
-
-//           <SocialLogin />
-
-//           <p className="signup-text">
-//             Don't have an account?{" "}
-//             <Link to="/signup">Sign up</Link>
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
-
-
-
-
-
-
-
 import React, { useState } from "react";
-import axios from "axios";
 import "../styles/login.css";
 import githubLogo from "../assets/github_logo-removebg-preview.png";
 import googleLogo from "../assets/google_logo-removebg-preview.png";
@@ -239,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useTranslation } from 'react-i18next';
 import PageWrapper from "./PageWrapper";
+import { supabase } from "../supabaseClient";
 
 const InputField = ({ label, type, placeholder, icon, name, value, onChange }) => {
   return (
@@ -262,7 +30,7 @@ const InputField = ({ label, type, placeholder, icon, name, value, onChange }) =
 
 const SocialLogin = () => {
   const handleSocialClick = (provider) => {
-    toast.info(`${provider} login simulated successfully`);
+    toast.info(`${provider} login coming soon`);
   };
 
   return (
@@ -270,7 +38,6 @@ const SocialLogin = () => {
       <button className="social-button" type="button" onClick={() => handleSocialClick('GitHub')}>
         <img src={githubLogo} alt="Github" className="social-icon" /> GitHub
       </button>
-
       <button className="social-button" type="button" onClick={() => handleSocialClick('Google')}>
         <img src={googleLogo} alt="Google" className="social-icon" /> Google
       </button>
@@ -278,119 +45,107 @@ const SocialLogin = () => {
   );
 };
 
-const Login = ({setCurrentUser}) => {
+const Login = ({ setCurrentUser }) => {
   const { t } = useTranslation();
-  const [form, setForm] = useState({
-    email: "",
-    password: "",
-  });
-
+  const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setForm(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setLoading(true);
 
-    axios
-      .get("http://localhost:3000/users")
-      .then((res) => {
-        const users = res.data;
+    const { data, error: authError } = await supabase.auth.signInWithPassword({
+      email: form.email,
+      password: form.password,
+    });
 
-        const foundUser = users.find(
-          (user) =>
-            user.email === form.email &&
-            user.password === form.password
-        );
+    setLoading(false);
 
-        if (!foundUser) {
-          setError("Invalid email or password");
-        } else {
-          toast.success("Login successful");
+    if (authError) {
+      setError(authError.message);
+      return;
+    }
 
-          localStorage.setItem("user", JSON.stringify(foundUser));
-          navigate("/Home");
-          setCurrentUser(foundUser)
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        setError("Error while logging in");
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    const user = data.user;
+    const userObj = {
+      name: user.user_metadata?.full_name || user.email,
+      email: user.email,
+      role: user.user_metadata?.role || "user",
+    };
+
+    localStorage.setItem("user", JSON.stringify(userObj));
+    setCurrentUser(userObj);
+    toast.success("Login successful");
+    navigate("/Home");
   };
 
   return (
     <PageWrapper>
-    <div className="login-page">
-      <div className="app-container">
-        <div className="login-container">
-          <h1 className="welcome-title">{t('auth.loginTitle')}</h1>
-          <p className="welcome-subtitle">{t('auth.loginSub')}</p>
+      <div className="login-page">
+        <div className="app-container">
+          <div className="login-container">
+            <h1 className="welcome-title">{t('auth.loginTitle')}</h1>
+            <p className="welcome-subtitle">{t('auth.loginSub')}</p>
 
-          <form className="login-form" onSubmit={handleSubmit}>
-            <InputField
-              label={t('auth.email')}
-              type="email"
-              placeholder="you@example.com"
-              icon="mail"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-            />
-            <InputField
-              label={t('auth.password')}
-              type="password"
-              placeholder="********"
-              icon="lock"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-            />
+            <form className="login-form" onSubmit={handleSubmit}>
+              <InputField
+                label={t('auth.email')}
+                type="email"
+                placeholder="you@example.com"
+                icon="mail"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+              />
+              <InputField
+                label={t('auth.password')}
+                type="password"
+                placeholder="********"
+                icon="lock"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+              />
 
-            <Link to="/forgot-password" className="forgot-pass-link text-decoration-none">{t('auth.forgot')}</Link>
+              <Link to="/forgot-password" className="forgot-pass-link text-decoration-none">
+                {t('auth.forgot')}
+              </Link>
 
-            {error && (
-              <p style={{ color: "salmon", marginTop: "4px", fontSize: "0.9rem" }}>
-                {error}
-              </p>
-            )}
-
-            <button className="login-button" type="submit" disabled={loading}>
-              {loading ? "Logging in..." : (
-                <>
-                  {t('auth.loginBtn')}{" "}
-                  <span className="material-symbols-outlined">arrow_right_alt</span>
-                </>
+              {error && (
+                <p style={{ color: "salmon", marginTop: "4px", fontSize: "0.9rem" }}>
+                  {error}
+                </p>
               )}
-            </button>
-          </form>
 
-          <p className="separator"><span>{t('auth.orContinue')}</span></p>
+              <button className="login-button" type="submit" disabled={loading}>
+                {loading ? "Logging in..." : (
+                  <>
+                    {t('auth.loginBtn')}{" "}
+                    <span className="material-symbols-outlined">arrow_right_alt</span>
+                  </>
+                )}
+              </button>
+            </form>
 
-          <SocialLogin />
+            <p className="separator"><span>{t('auth.orContinue')}</span></p>
 
-          <p className="signup-text">
-            {t('auth.noAccount')}{" "}
-            <Link to="/Dalilak">{t('auth.signupBtn')}</Link>
-          </p>
+            <SocialLogin />
+
+            <p className="signup-text">
+              {t('auth.noAccount')}{" "}
+              <Link to="/Dalilak">{t('auth.signupBtn')}</Link>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
     </PageWrapper>
-
   );
 };
 

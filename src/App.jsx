@@ -89,7 +89,7 @@ function App() {
         <Route path="/Roadmaps" element={<Roadmaps />} />
         <Route path="/Dashboard" element={<Dashboard currentUser={currentUser.name} />} />
         <Route path="/login" element={<Login setCurrentUser={setCurrentUser} />} />
-        <Route path="/Dalilak" element={<Signup setCurrentUser={setCurrentUser} />} />
+        <Route path="/signup" element={<Signup setCurrentUser={setCurrentUser} />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/tracks/:title" element={<RoadmapDetail />} />
         <Route path="/messages" element={<Messages />} />

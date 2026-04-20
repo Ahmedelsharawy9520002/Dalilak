@@ -140,7 +140,7 @@ const Login = ({ setCurrentUser }) => {
 
             <p className="signup-text">
               {t('auth.noAccount')}{" "}
-              <Link to="/Dalilak">{t('auth.signupBtn')}</Link>
+              <Link to="/signup">{t('auth.signupBtn')}</Link>
             </p>
           </div>
         </div>
